@@ -13,8 +13,21 @@ void LabRepository::writeString(ofstream &out, const string &s) {
 string LabRepository::readString(ifstream &in) {
     int len;
     in.read((char*)&len, sizeof(len));
+    if (!in) return string();
+
+    // basic sanity checks to avoid huge allocations from corrupted files
+    const int MAX_STR_LEN = 10 * 1000 * 1000; // 10MB
+    if (len < 0 || len > MAX_STR_LEN) {
+        in.setstate(std::ios::failbit);
+        return string();
+    }
+
     char *buffer = new char[len + 1];
     in.read(buffer, len);
+    if (!in) {
+        delete[] buffer;
+        return string();
+    }
     buffer[len] = '\0';
     string s(buffer);
     delete[] buffer;
@@ -93,6 +106,9 @@ void LabRepository::saveLabs(const vector<Lab> &labs) {
         writeString(out, lab.getCourseCode());
         writeString(out, lab.getSection());
 
+        int room = lab.getRoomId();
+        out.write((char*)&room, sizeof(int));
+
         int inst = lab.getInstructorId();
         out.write((char*)&inst, sizeof(int));
 
@@ -136,45 +152,65 @@ vector<Lab> LabRepository::loadLabs() {
 
     int size;
     in.read((char*)&size, sizeof(size));
+    if (!in) return labs;
 
     for (int i = 0; i < size; i++) {
         int id;
         in.read((char*)&id, sizeof(int));
+        if (!in) break;
 
         string courseCode = readString(in);
+        if (!in) break;
         string section = readString(in);
+        if (!in) break;
 
         Lab lab(id, courseCode, section);
 
+        int roomId;
+        in.read((char*)&roomId, sizeof(int));
+        if (!in) break;
+        lab.setRoomId(roomId);
+
         int inst;
         in.read((char*)&inst, sizeof(int));
+        if (!in) break;
         lab.setInstructorId(inst);
 
         // schedule
         string day = readString(in);
+        if (!in) break;
         string start = readString(in);
+        if (!in) break;
         string end = readString(in);
+        if (!in) break;
         lab.setSchedule(ScheduleTiming(day, start, end));
 
         // TAs
         int taCount;
         in.read((char*)&taCount, sizeof(int));
+        if (!in) break;
 
         for (int j = 0; j < taCount; j++) {
             int tid;
             in.read((char*)&tid, sizeof(int));
+            if (!in) break;
             string tname = readString(in);
+            if (!in) break;
             lab.addTA(TA(tid, tname));
         }
 
         // Actual timings
         int tsCount;
         in.read((char*)&tsCount, sizeof(int));
+        if (!in) break;
 
         for (int k = 0; k < tsCount; k++) {
             string d = readString(in);
+            if (!in) break;
             string s = readString(in);
+            if (!in) break;
             string e = readString(in);
+            if (!in) break;
             lab.addActualTiming(ActualTiming(d, s, e));
         }
 

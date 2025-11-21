@@ -1,0 +1,53 @@
+#include "AuthService.h"
+#include <sstream>
+#include <functional>
+
+AuthService::AuthService(UserRepository &repo, InstructorRepository *irepo, TARepository *trepo, HODRepository *hrepo, AcademicOfficerRepository *aorepo, BuildingRepository *brepo)
+    : userRepo(repo), instrRepo(irepo), taRepo(trepo), hodRepo(hrepo), aoRepo(aorepo), buildingRepo(brepo) {}
+
+std::string AuthService::hashPassword(const std::string &pw) {
+    // Not secure: use std::hash for simplicity in this assignment
+    std::hash<std::string> h;
+    std::stringstream ss;
+    ss << h(pw);
+    return ss.str();
+}
+
+bool AuthService::registerUser(const std::string &username, const std::string &password, const std::string &role) {
+    User existing = userRepo.findByUsername(username);
+    if (existing.getUsername().size() > 0) return false; // already exists
+    int id = userRepo.getNextId();
+    User u(id, username, hashPassword(password), role);
+    userRepo.add(u);
+    // create corresponding domain object when applicable
+    if (role == "TA" && taRepo != nullptr) {
+        int tid = taRepo->getNextId();
+        taRepo->add(TA(tid, username));
+    }
+    if (role == "Instructor" && instrRepo != nullptr) {
+        int iid = instrRepo->getNextId();
+        instrRepo->save(instrRepo->load()); // ensure file exists (no-op)
+        instrRepo->add(Instructor(iid, username));
+    }
+    if (role == "HOD" && hodRepo != nullptr) {
+        int hid = hodRepo->getNextId();
+        hodRepo->add(HOD(hid, username, ""));
+    }
+    if (role == "AcademicOfficer" && aoRepo != nullptr) {
+        int aid = aoRepo->getNextId();
+        aoRepo->add(AcademicOfficer(aid, username));
+    }
+    return true;
+}
+
+bool AuthService::assignAttendantToBuilding(int userId, int buildingId) {
+    if (buildingRepo == nullptr) return false;
+    return buildingRepo->setAttendant(buildingId, userId);
+}
+
+bool AuthService::authenticate(const std::string &username, const std::string &password, User &outUser) {
+    User u = userRepo.findByUsername(username);
+    if (u.getUsername().empty()) return false;
+    if (u.getPasswordHash() == hashPassword(password)) { outUser = u; return true; }
+    return false;
+}

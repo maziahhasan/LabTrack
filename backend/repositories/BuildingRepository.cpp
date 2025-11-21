@@ -47,3 +47,13 @@ int BuildingRepository::getNextId() { auto v = load(); int maxId = 0; for (auto 
 void BuildingRepository::add(const Building &b) { auto v = load(); v.push_back(b); save(v); }
 
 std::vector<Building> BuildingRepository::getAll() { return load(); }
+
+bool BuildingRepository::setAttendant(int buildingId, int userId) {
+    auto v = load();
+    bool found = false;
+    for (auto &b : v) {
+        if (b.getId() == buildingId) { b.setAttendantId(userId); found = true; break; }
+    }
+    if (found) save(v);
+    return found;
+}

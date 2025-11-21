@@ -18,6 +18,8 @@ public:
     std::string getName() const { return name; }
     int getAttendantId() const { return attendantId; }
 
+    void setAttendantId(int id) { attendantId = id; }
+
     void addRoom(int roomId) { roomIds.push_back(roomId); }
     const std::vector<int>& getRooms() const { return roomIds; }
 };

@@ -8,6 +8,7 @@ int main() {
     // create sample lab
     int id = repo.getNextId();
     Lab lab(id, "CS101", "A");
+    lab.setRoomId(1);
     lab.setInstructorId(1001);
     std::string monday = "Monday";
     lab.setSchedule(ScheduleTiming(monday, "09:00", "11:00"));

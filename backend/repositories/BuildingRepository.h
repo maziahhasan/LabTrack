@@ -13,4 +13,5 @@ public:
     int getNextId();
     void add(const Building &b);
     std::vector<Building> getAll();
+    bool setAttendant(int buildingId, int userId);
 };

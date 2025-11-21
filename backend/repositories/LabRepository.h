@@ -17,7 +17,6 @@ public:
 
     void saveLabs(const vector<Lab> &labs);
     vector<Lab> loadLabs();
-    
     // Convenience CRUD operations built on top of save/load
     vector<Lab> getAll();
     Lab getById(int id);
