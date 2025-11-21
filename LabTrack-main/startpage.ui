@@ -1,94 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RoleSelectionWindow</class>
- <widget class="QDialog" name="RoleSelectionWindow">
+ <widget class="QMainWindow" name="RoleSelectionWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
-
-  <!-- Gradient Background -->
+  <property name="windowTitle">
+   <string>LabTrack - Role Selection</string>
+  </property>
   <property name="styleSheet">
-   <string>
-    QWidget {
-        font-family: "Segoe UI";
+   <string notr="true">
+    QMainWindow {
         background: qlineargradient(
-            x1:0, y1:0, x2:0, y2:1,
-            stop:0 #1ABC9C,
-            stop:1 #2C3E50
+            x1:0, y1:0, x2:1, y2:1,
+            stop:0 #138A7D,
+            stop:1 #1F2D3D
         );
-    }
-
-    /* Buttons (Theme-Matched) */
-    QPushButton {
-        background-color: #34495E;
-        color: #ECF0F1;
-        font-size: 16px;
-        font-weight: 600;
-        border-radius: 8px;
-        padding: 12px;
-    }
-    QPushButton:hover {
-        background-color: #1ABC9C;
+        font-family: "Segoe UI";
         color: white;
     }
-    QPushButton:pressed {
-        background-color: #16A085;
-        color: #FDFEFE;
-    }
 
-    QLabel#lblTitle {
-        font-size: 22px;
+    QLabel {
+        font-size: 24px;
         font-weight: bold;
         color: white;
     }
+
+    QPushButton {
+        background-color: #1ABC9C;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px;
+        min-width: 200px;
+        min-height: 60px;
+    }
+
+    QPushButton:hover {
+        background-color: #16A085;
+    }
+
+    QPushButton:pressed {
+        background-color: #13856E;
+    }
    </string>
   </property>
-
-  <layout class="QVBoxLayout" name="mainLayout" stretch="0,1,1,1,0">
-   <item>
-    <widget class="QLabel" name="lblTitle">
-     <property name="text">
-      <string>👋 Welcome! Please Choose Your Role</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnAdmin">
-     <property name="text">
-      <string>🛠️ Admin</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnTA">
-     <property name="text">
-      <string>📘 Teaching Assistant</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnInstructor">
-     <property name="text">
-      <string>👩‍🏫 Instructor</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnHOD">
-     <property name="text">
-      <string>🏫 Head of Department</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblTitle">
+      <property name="text">
+       <string>Welcome to LabTrack</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lblSubtitle">
+      <property name="text">
+       <string>Select Your Role</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnAdmin">
+        <property name="text">
+         <string>👑 Admin</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnInstructor">
+        <property name="text">
+         <string>👨‍🏫 Instructor</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnTA">
+        <property name="text">
+         <string>🎓 Teaching Assistant</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnHOD">
+        <property name="text">
+         <string>🏛️ Head of Department</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>

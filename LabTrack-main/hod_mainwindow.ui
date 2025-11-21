@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HODMainWindow</class>
+ <widget class="QMainWindow" name="HODMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="sidebarFrame">
+      <property name="styleSheet">
+       <string>
+        QFrame {
+          background-color: #2C3E50;
+          border-right: 2px solid #1ABC9C;
+        }
+        QPushButton {
+          font-family: "Segoe UI";
+          font-size: 14px;
+          font-weight: 600;
+          color: #ECF0F1;
+          background-color: #34495E;
+          border-radius: 6px;
+          padding: 10px;
+          margin: 4px 0;
+          text-align: left;
+        }
+        QPushButton:hover {
+          background-color: #1ABC9C;
+          color: white;
+        }
+        QPushButton:pressed {
+          background-color: #16A085;
+          color: #FDFEFE;
+        }
+       </string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutSidebar">
+       <item>
+        <widget class="QPushButton" name="btnDashboard">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string>📊 Dashboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnWeeklySchedule">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string>📅 Weekly Schedule</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnWeeklyTimesheets">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string>⏰ Weekly Timesheets</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnLabHistory">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string>📈 Lab History</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnMakeupRequests">
+         <property name="focusPolicy">
+          <enum>Qt::FocusPolicy::NoFocus</enum>
+         </property>
+         <property name="text">
+          <string>📝 Makeup Requests</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="dashboardPage">
+       <property name="styleSheet">
+        <string>background-color: #FFDDC1;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutDashboard">
+        <item>
+         <widget class="QLabel" name="lblDashboardTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📊 HOD Dashboard</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutCards">
+          <item>
+           <widget class="QFrame" name="frameTotalLabs">
+            <property name="styleSheet">
+             <string>background-color: white; border-radius: 8px; padding: 10px; border: 1px solid #ccc;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutTotalLabs">
+             <item>
+              <widget class="QLabel" name="lblTotalLabs">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:16px; font-weight:bold; color:#2C3E50;</string>
+               </property>
+               <property name="text">
+                <string>Total Labs</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblTotalLabsCount">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:24px; font-weight:bold; color:#1ABC9C;</string>
+               </property>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frameActiveLabs">
+            <property name="styleSheet">
+             <string>background-color: white; border-radius: 8px; padding: 10px; border: 1px solid #ccc;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutActiveLabs">
+             <item>
+              <widget class="QLabel" name="lblActiveLabs">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:16px; font-weight:bold; color:#2C3E50;</string>
+               </property>
+               <property name="text">
+                <string>Active Labs</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblActiveLabsCount">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:24px; font-weight:bold; color:#1ABC9C;</string>
+               </property>
+               <property name="text">
+                <string>20</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="framePendingRequests">
+            <property name="styleSheet">
+             <string>background-color: white; border-radius: 8px; padding: 10px; border: 1px solid #ccc;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutPendingRequests">
+             <item>
+              <widget class="QLabel" name="lblPendingRequests">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:16px; font-weight:bold; color:#2C3E50;</string>
+               </property>
+               <property name="text">
+                <string>Pending Makeup Requests</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblPendingRequestsCount">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:24px; font-weight:bold; color:#E74C3C;</string>
+               </property>
+               <property name="text">
+                <string>3</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="weeklySchedulePage">
+       <property name="styleSheet">
+        <string>background-color: #C1FFD7;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutWeeklySchedule">
+        <item>
+         <widget class="QLabel" name="lblWeeklyScheduleTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📅 Weekly Lab Schedule</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutFilters">
+          <item>
+           <widget class="QLabel" name="lblFilterWeek">
+            <property name="text">
+             <string>Week:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboWeek">
+            <property name="styleSheet">
+             <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExportSchedule">
+            <property name="text">
+             <string>Export to PDF</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWeeklySchedule">
+          <property name="styleSheet">
+           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="weeklyTimesheetsPage">
+       <property name="styleSheet">
+        <string>background-color: #C1E1FF;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutWeeklyTimesheets">
+        <item>
+         <widget class="QLabel" name="lblWeeklyTimesheetsTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>⏰ Weekly Timesheets</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutTimesheetFilters">
+          <item>
+           <widget class="QLabel" name="lblFilterTimesheetWeek">
+            <property name="text">
+             <string>Week:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboTimesheetWeek">
+            <property name="styleSheet">
+             <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExportTimesheets">
+            <property name="text">
+             <string>Export to PDF</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWeeklyTimesheets">
+          <property name="styleSheet">
+           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="labHistoryPage">
+       <property name="styleSheet">
+        <string>background-color: #FFD1DC;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutLabHistory">
+        <item>
+         <widget class="QLabel" name="lblLabHistoryTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📈 Lab History</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutLabHistoryFilters">
+          <item>
+           <widget class="QLabel" name="lblSelectLab">
+            <property name="text">
+             <string>Select Lab:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboSelectLab">
+            <property name="styleSheet">
+             <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExportHistory">
+            <property name="text">
+             <string>Export to PDF</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="formLayoutLabHistory">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblTotalContactHours">
+            <property name="text">
+             <string>Total Contact Hours:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lblTotalContactHoursValue">
+            <property name="text">
+             <string></string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblTotalLeaves">
+            <property name="text">
+             <string>Total Leaves:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lblTotalLeavesValue">
+            <property name="text">
+             <string></string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblTotalMakeupSessions">
+            <property name="text">
+             <string>Total Makeup Sessions:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lblTotalMakeupSessionsValue">
+            <property name="text">
+             <string></string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableLabHistory">
+          <property name="styleSheet">
+           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="makeupRequestsPage">
+       <property name="styleSheet">
+        <string>background-color: #FFFAC1;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutMakeupRequests">
+        <item>
+         <widget class="QLabel" name="lblMakeupRequestsTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📝 Makeup Lab Requests</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutMakeupFilters">
+          <item>
+           <widget class="QLabel" name="lblFilterStatus">
+            <property name="text">
+             <string>Status:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboFilterStatus">
+            <property name="styleSheet">
+             <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExportRequests">
+            <property name="text">
+             <string>Export to PDF</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableMakeupRequests">
+          <property name="styleSheet">
+           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
