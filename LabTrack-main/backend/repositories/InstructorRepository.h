@@ -1,0 +1,16 @@
+#pragma once
+#include <vector>
+#include <fstream>
+#include "../models/Instructor.h"
+
+class InstructorRepository {
+private:
+    std::string fileName;
+public:
+    InstructorRepository(const std::string &file = "instructors.bin");
+    void save(const std::vector<Instructor>& v);
+    std::vector<Instructor> load();
+    int getNextId();
+    void add(const Instructor &ins);
+    std::vector<Instructor> getAll();
+};

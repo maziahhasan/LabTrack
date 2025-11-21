@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>880</width><height>540</height></rect>
+  </property>
+
+  <!-- BEAUTIFIED THEME -->
+  <property name="styleSheet">
+   <string notr="true">
+    QWidget {
+        background: qlineargradient(
+            x1:0, y1:0, x2:1, y2:1,
+            stop:0 #138A7D,
+            stop:1 #1F2D3D
+        );
+        font-family: "Segoe UI";
+        color: white;
+    }
+
+    /* Decorative Glow Circles */
+    #circle1, #circle2 {
+        background-color: rgba(255,255,255,0.10);
+        border-radius: 70px;
+    }
+
+    /* PANELS */
+    #leftPanel, #rightPanel {
+        background-color: rgba(255,255,255,0.18);
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    /* Accent Glow Border for Right Login Panel */
+    #rightPanel {
+        border: 2px solid rgba(26,188,156,0.45);
+    }
+
+    QLabel#mainTitle {
+        font-size: 30px;
+        font-weight: 800;
+        color: white;
+    }
+
+    QLabel#tagline {
+        font-size: 15px;
+        color: #ECF0F1;
+    }
+
+    QLabel#loginTitle {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+    }
+
+    /* INPUTS */
+    QLineEdit {
+        background: rgba(255,255,255,0.85);
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid #d0d0d0;
+        color: #2C3E50;
+        font-size: 15px;
+    }
+
+    QLineEdit:focus {
+        border: 2px solid #1ABC9C;
+        background: white;
+    }
+
+    /* BUTTONS */
+    QPushButton {
+        background-color: #1ABC9C;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 10px;
+        font-weight: 600;
+    }
+    QPushButton:hover {
+        background-color: #16A085;
+    }
+    QPushButton:pressed {
+        background-color: #13856E;
+    }
+
+    /* Signup link */
+    QLabel#signupText {
+        color: #ECF0F1;
+        font-size: 13px;
+    }
+   </string>
+  </property>
+
+  <!-- MAIN HORIZONTAL LAYOUT -->
+  <layout class="QHBoxLayout" name="mainLayout">
+   <property name="margin"><number>40</number></property>
+   <property name="spacing"><number>30</number></property>
+
+   <!-- LEFT PANEL -->
+   <item>
+    <widget class="QFrame" name="leftPanel">
+     <layout class="QVBoxLayout" name="leftLayout">
+      <property name="spacing"><number>20</number></property>
+      <property name="alignment"><set>Qt::AlignCenter</set></property>
+
+      <!-- Decorative Circles -->
+      <item>
+       <widget class="QFrame" name="circle1">
+        <property name="minimumSize"><size><width>140</width><height>140</height></size></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="mainTitle">
+        <property name="text">
+         <string>Welcome Back 👋</string>
+        </property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="tagline">
+        <property name="text">
+         <string>Manage Labs, Schedules &amp; Attendance Seamlessly</string>
+        </property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QFrame" name="circle2">
+        <property name="minimumSize"><size><width>120</width><height>120</height></size></property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <!-- RIGHT LOGIN PANEL -->
+   <item>
+    <widget class="QFrame" name="rightPanel">
+     <layout class="QVBoxLayout" name="rightLayout">
+      <property name="spacing"><number>15</number></property>
+
+      <item>
+       <widget class="QLabel" name="loginTitle">
+        <property name="text"><string>Login</string></property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="txtEmail">
+        <property name="placeholderText"><string>Email</string></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLineEdit" name="txtPassword">
+        <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+        <property name="placeholderText"><string>Password</string></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QPushButton" name="btnSignIn">
+        <property name="text"><string>Sign In</string></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="signupText">
+        <property name="text">
+         <string>Don't have an account? &lt;a href="#" style="color:#1ABC9C"&gt;Sign Up&lt;/a&gt;</string>
+        </property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+        <property name="textFormat"><enum>Qt::RichText</enum></property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>

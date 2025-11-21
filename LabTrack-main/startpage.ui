@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RoleSelectionWindow</class>
+ <widget class="QDialog" name="RoleSelectionWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+
+  <!-- Gradient Background -->
+  <property name="styleSheet">
+   <string>
+    QWidget {
+        font-family: "Segoe UI";
+        background: qlineargradient(
+            x1:0, y1:0, x2:0, y2:1,
+            stop:0 #1ABC9C,
+            stop:1 #2C3E50
+        );
+    }
+
+    /* Buttons (Theme-Matched) */
+    QPushButton {
+        background-color: #34495E;
+        color: #ECF0F1;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 12px;
+    }
+    QPushButton:hover {
+        background-color: #1ABC9C;
+        color: white;
+    }
+    QPushButton:pressed {
+        background-color: #16A085;
+        color: #FDFEFE;
+    }
+
+    QLabel#lblTitle {
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+    }
+   </string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout" stretch="0,1,1,1,0">
+   <item>
+    <widget class="QLabel" name="lblTitle">
+     <property name="text">
+      <string>👋 Welcome! Please Choose Your Role</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnAdmin">
+     <property name="text">
+      <string>🛠️ Admin</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnTA">
+     <property name="text">
+      <string>📘 Teaching Assistant</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnInstructor">
+     <property name="text">
+      <string>👩‍🏫 Instructor</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnHOD">
+     <property name="text">
+      <string>🏫 Head of Department</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,8 @@
+C:/LabTrack/LabTrack-main/build/CMakeFiles/labtrack.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/edit_cache.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/rebuild_cache.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/list_install_components.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/install.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/install/local.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/install/strip.dir
+C:/LabTrack/LabTrack-main/build/CMakeFiles/labtrack_autogen.dir

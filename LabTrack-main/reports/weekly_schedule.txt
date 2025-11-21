@@ -1,0 +1,7 @@
+Weekly Lab Schedule
+Generated: Nov 15 2025
+
+ID    Course      Section Day       Start   End     TAs
+--------------------------------------------------------------------------------
+1     CS101       A       Monday    09:00   11:00   Alice, Bob
+2     CS101       A       Monday    09:00   11:00   Alice, Bob
