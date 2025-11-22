@@ -3,8 +3,9 @@
 
 class Instructor {
 private:
-    int id;
+    int id = -1;
     std::string name;
+    std::string email;
 
 public:
     Instructor() = default;
@@ -15,4 +16,7 @@ public:
 
     void setId(int i) { id = i; }
     void setName(const std::string& n) { name = n; }
+
+    void setEmail(const std::string& e) { email = e; }
+    std::string getEmail() const { return email; }
 };

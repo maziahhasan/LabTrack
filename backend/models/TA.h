@@ -3,7 +3,7 @@
 
 class TA {
 private:
-    int id;
+    int id = -1;
     std::string name;
 
 public:

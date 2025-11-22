@@ -13,4 +13,11 @@ public:
     int getNextId();
     void add(const Room &r);
     std::vector<Room> getAll();
+    // convenience lookup
+    // Return pointer (caller may assume ownership) to match UI usage
+    Room* getRoomById(int id) {
+        auto v = load();
+        for (const auto &r : v) if (r.getId() == id) return new Room(r);
+        return nullptr;
+    }
 };

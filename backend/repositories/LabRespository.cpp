@@ -38,10 +38,7 @@ LabRepository::LabRepository(const string &file) {
     fileName = file;
 }
 
-// Return all labs (wrapper)
-vector<Lab> LabRepository::getAll() {
-    return loadLabs();
-}
+
 
 // Find lab by id; if not found return a Lab with id = -1
 Lab LabRepository::getById(int id) {
@@ -136,8 +133,8 @@ void LabRepository::saveLabs(const vector<Lab> &labs) {
 
         for (const ActualTiming &t : times) {
             writeString(out, t.getDate());
-            writeString(out, t.getStart());
-            writeString(out, t.getEnd());
+            writeString(out, t.getStartTime());
+            writeString(out, t.getEndTime());
         }
     }
 
@@ -220,3 +217,14 @@ vector<Lab> LabRepository::loadLabs() {
     in.close();
     return labs;
 }
+
+std::vector<Lab> LabRepository::getLabsByInstructorId(int instructorId) {
+    std::vector<Lab> labs = loadLabs();
+    std::vector<Lab> result;
+    for (const auto& lab : labs) {
+        if (lab.getInstructorId() == instructorId)
+            result.push_back(lab);
+    }
+    return result;
+}
+

@@ -5,6 +5,12 @@
 
 ReportService::ReportService(LabRepository &repo) : labRepo(repo) {}
 
+ReportService::ReportService(LabRepository &repo, InstructorRepository &irepo, TARepository &trepo, RoomRepository &rrepo, BuildingRepository &brepo, ActualTimingRepository &atrepo)
+    : labRepo(repo) {
+    // currently we only need labRepo in implementations; other repositories are accepted for compatibility
+    (void)irepo; (void)trepo; (void)rrepo; (void)brepo; (void)atrepo;
+}
+
 std::vector<Lab> ReportService::weeklySchedule() {
     // return list of all labs with schedule info
     return labRepo.getAll();

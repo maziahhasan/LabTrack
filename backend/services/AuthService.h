@@ -4,6 +4,7 @@
 #include "../repositories/TARepository.h"
 #include "../repositories/HODRepository.h"
 #include "../repositories/AcademicOfficerRepository.h"
+#include "../repositories/BuildingRepository.h"
 #include <string>
 
 class AuthService {

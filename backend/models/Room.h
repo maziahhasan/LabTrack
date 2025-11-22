@@ -3,8 +3,8 @@
 
 class Room {
 private:
-    int id;
-    int buildingId;
+    int id = -1;
+    int buildingId = -1;
     std::string roomNumber;
 
 public:
@@ -15,4 +15,6 @@ public:
     int getId() const { return id; }
     int getBuildingId() const { return buildingId; }
     std::string getRoomNumber() const { return roomNumber; }
+    // convenience
+    std::string getName() const { return roomNumber; }
 };

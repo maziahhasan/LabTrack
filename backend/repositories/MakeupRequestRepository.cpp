@@ -7,9 +7,9 @@ void MakeupRequestRepository::save(const std::vector<MakeupRequest> &v) {
     std::ofstream out(fileName, std::ios::binary | std::ios::trunc);
     int size = v.size(); out.write((char*)&size, sizeof(size));
     for (const auto &m : v) {
-        out.write((char*)&m.getId(), sizeof(int));
-        out.write((char*)&m.getLabId(), sizeof(int));
-        out.write((char*)&m.getRequestedBy(), sizeof(int));
+        int id = m.getId(); out.write((char*)&id, sizeof(id));
+        int lid = m.getLabId(); out.write((char*)&lid, sizeof(lid));
+        int req = m.getRequestedBy(); out.write((char*)&req, sizeof(req));
         int len = m.getDate().size(); out.write((char*)&len, sizeof(len)); out.write(m.getDate().c_str(), len);
         len = m.getStart().size(); out.write((char*)&len, sizeof(len)); out.write(m.getStart().c_str(), len);
         len = m.getEnd().size(); out.write((char*)&len, sizeof(len)); out.write(m.getEnd().c_str(), len);

@@ -19,18 +19,26 @@ private:
 public:
     Lab() = default;
 
+   // Lab(int id, const std::string& code, const std::string& sec)
+        //: id(id), courseCode(code), section(sec) {}
+
     Lab(int id, const std::string& code, const std::string& sec)
-        : id(id), courseCode(code), section(sec) {}
-
+        : id(id), courseCode(code), section(sec), roomId(0), instructorId(0) {}
     Lab(int id, const std::string& code, const std::string& sec, int room)
-        : id(id), courseCode(code), section(sec), roomId(room) {}
-
+        : id(id), courseCode(code), section(sec), roomId(room), instructorId(0) {}
+    // If you need to construct with instructorId, schedule, status, add:
+    Lab(int id, const std::string& code, const std::string& sec, int room, int instructorId, const ScheduleTiming& schedule)
+        : id(id), courseCode(code), section(sec), roomId(room), instructorId(instructorId), schedule(schedule) {}
     int getId() const { return id; }
     std::string getCourseCode() const { return courseCode; }
     std::string getSection() const { return section; }
     int getInstructorId() const { return instructorId; }
     ScheduleTiming getSchedule() const { return schedule; }
     int getRoomId() const { return roomId; }
+
+    // compatibility helpers used by UI
+    std::string getName() const { return courseCode + (section.empty() ? "" : (" " + section)); }
+    std::string getStatus() const { return "Active"; }
 
     void setInstructorId(int id) { instructorId = id; }
     void setSchedule(const ScheduleTiming& s) { schedule = s; }

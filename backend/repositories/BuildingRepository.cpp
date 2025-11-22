@@ -16,7 +16,7 @@ void BuildingRepository::save(const std::vector<Building>& v) {
     for (auto &b : v) {
         int id = b.getId(); out.write((char*)&id, sizeof(id));
         writeString(out, b.getName());
-        out.write((char*)&b.getAttendantId(), sizeof(int));
+        int aid = b.getAttendantId(); out.write((char*)&aid, sizeof(aid));
         // write room ids
         auto rooms = b.getRooms(); int count = rooms.size(); out.write((char*)&count, sizeof(count));
         for (int r : rooms) out.write((char*)&r, sizeof(r));

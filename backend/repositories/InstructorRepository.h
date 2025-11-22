@@ -13,4 +13,13 @@ public:
     int getNextId();
     void add(const Instructor &ins);
     std::vector<Instructor> getAll();
+    // convenience lookup; returns heap-allocated pointer or nullptr
+    Instructor* getInstructorById(int id) {
+        auto v = load();
+        for (const auto &i : v) if (i.getId() == id) return new Instructor(i);
+        return nullptr;
+    }
+    // Add this method:
+bool update(const Instructor& ins);
+
 };

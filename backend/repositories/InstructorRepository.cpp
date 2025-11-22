@@ -46,3 +46,20 @@ int InstructorRepository::getNextId() {
 void InstructorRepository::add(const Instructor &ins) { auto v = load(); v.push_back(ins); save(v); }
 
 std::vector<Instructor> InstructorRepository::getAll() { return load(); }
+
+bool InstructorRepository::update(const Instructor& ins) {
+    std::vector<Instructor> instructors = load();
+    bool found = false;
+    for (auto& instructor : instructors) {
+        if (instructor.getId() == ins.getId()) {
+            instructor = ins;
+            found = true;
+            break;
+        }
+    }
+    if (found) {
+        save(instructors);
+    }
+    return found;
+}
+

@@ -13,7 +13,11 @@ RoomRepository::RoomRepository(const std::string &file) { fileName = file; }
 void RoomRepository::save(const std::vector<Room>& v) {
     std::ofstream out(fileName, std::ios::binary | std::ios::trunc);
     int size = v.size(); out.write((char*)&size, sizeof(size));
-    for (auto &r : v) { int id = r.getId(); out.write((char*)&id, sizeof(id)); out.write((char*)&r.getBuildingId(), sizeof(int)); writeString(out, r.getRoomNumber()); }
+    for (auto &r : v) {
+        int id = r.getId(); out.write((char*)&id, sizeof(id));
+        int bid = r.getBuildingId(); out.write((char*)&bid, sizeof(bid));
+        writeString(out, r.getRoomNumber());
+    }
 }
 
 std::vector<Room> RoomRepository::load() {

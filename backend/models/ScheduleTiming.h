@@ -19,6 +19,12 @@ public:
     string getStart() const { return expectedStart; }
     string getEnd() const { return expectedEnd; }
 
+    // Return a string representation like "Monday 09:00-11:00"
+    std::string toString() const { return dayOfWeek + " " + expectedStart + "-" + expectedEnd; }
+
+    // implicit conversion to std::string for compatibility
+    operator std::string() const { return toString(); }
+
     // setters
     void setDay(const string& d) { dayOfWeek = d; }
     void setStart(const string& s) { expectedStart = s; }
