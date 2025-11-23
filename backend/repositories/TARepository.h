@@ -12,8 +12,11 @@ public:
     std::vector<TA> load();
     int getNextId();
     void add(const TA &ta);
+    bool update(const TA &ta);
     std::vector<TA> getAll();
-    // convenience lookup
+    // New queries for new model fields
+    std::vector<TA> getTAsByStatus(const std::string& status);
+    std::vector<TA> getTAsByEmail(const std::string& email);
     // Return pointer (caller may assume ownership) to match UI usage patterns
     TA* getTAById(int id) {
         auto v = load();

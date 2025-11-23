@@ -4,28 +4,25 @@ using namespace std;
 
 class ScheduleTiming {
 private:
-    string dayOfWeek;
-    string expectedStart;
-    string expectedEnd;
+    string dayOfWeek;      // e.g., Monday
+    string expectedStart;  // e.g., 09:00
+    string expectedEnd;    // e.g., 11:00
 
 public:
     ScheduleTiming() = default;
-
     ScheduleTiming(const string& day, const string& start, const string& end)
         : dayOfWeek(day), expectedStart(start), expectedEnd(end) {}
 
-    // getters
+    // Getters
     string getDay() const { return dayOfWeek; }
     string getStart() const { return expectedStart; }
     string getEnd() const { return expectedEnd; }
 
-    // Return a string representation like "Monday 09:00-11:00"
+    // String representation for reporting
     std::string toString() const { return dayOfWeek + " " + expectedStart + "-" + expectedEnd; }
-
-    // implicit conversion to std::string for compatibility
     operator std::string() const { return toString(); }
 
-    // setters
+    // Setters
     void setDay(const string& d) { dayOfWeek = d; }
     void setStart(const string& s) { expectedStart = s; }
     void setEnd(const string& e) { expectedEnd = e; }

@@ -123,26 +123,11 @@ CMakeFiles/labtrack.dir/login.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/login.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\login.cpp -o CMakeFiles\labtrack.dir\login.cpp.s
 
-CMakeFiles/labtrack.dir/signup.cpp.obj: CMakeFiles/labtrack.dir/flags.make
-CMakeFiles/labtrack.dir/signup.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
-CMakeFiles/labtrack.dir/signup.cpp.obj: C:/Users/SMZ/Documents/labtrack/signup.cpp
-CMakeFiles/labtrack.dir/signup.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/labtrack.dir/signup.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/signup.cpp.obj -MF CMakeFiles\labtrack.dir\signup.cpp.obj.d -o CMakeFiles\labtrack.dir\signup.cpp.obj -c C:\Users\SMZ\Documents\labtrack\signup.cpp
-
-CMakeFiles/labtrack.dir/signup.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/labtrack.dir/signup.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\SMZ\Documents\labtrack\signup.cpp > CMakeFiles\labtrack.dir\signup.cpp.i
-
-CMakeFiles/labtrack.dir/signup.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/signup.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\signup.cpp -o CMakeFiles\labtrack.dir\signup.cpp.s
-
 CMakeFiles/labtrack.dir/startpage.cpp.obj: CMakeFiles/labtrack.dir/flags.make
 CMakeFiles/labtrack.dir/startpage.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/startpage.cpp.obj: C:/Users/SMZ/Documents/labtrack/startpage.cpp
 CMakeFiles/labtrack.dir/startpage.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/labtrack.dir/startpage.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/labtrack.dir/startpage.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/startpage.cpp.obj -MF CMakeFiles\labtrack.dir\startpage.cpp.obj.d -o CMakeFiles\labtrack.dir\startpage.cpp.obj -c C:\Users\SMZ\Documents\labtrack\startpage.cpp
 
 CMakeFiles/labtrack.dir/startpage.cpp.i: cmake_force
@@ -157,7 +142,7 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/flags.ma
 CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/hod_mainwindow.cpp
 CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj -MF CMakeFiles\labtrack.dir\hod_mainwindow.cpp.obj.d -o CMakeFiles\labtrack.dir\hod_mainwindow.cpp.obj -c C:\Users\SMZ\Documents\labtrack\hod_mainwindow.cpp
 
 CMakeFiles/labtrack.dir/hod_mainwindow.cpp.i: cmake_force
@@ -172,7 +157,7 @@ CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/flags.mak
 CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/ta_mainwindow.cpp
 CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj -MF CMakeFiles\labtrack.dir\ta_mainwindow.cpp.obj.d -o CMakeFiles\labtrack.dir\ta_mainwindow.cpp.obj -c C:\Users\SMZ\Documents\labtrack\ta_mainwindow.cpp
 
 CMakeFiles/labtrack.dir/ta_mainwindow.cpp.i: cmake_force
@@ -187,7 +172,7 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/flags.mak
 CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/ao_mainwindow.cpp
 CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj -MF CMakeFiles\labtrack.dir\ao_mainwindow.cpp.obj.d -o CMakeFiles\labtrack.dir\ao_mainwindow.cpp.obj -c C:\Users\SMZ\Documents\labtrack\ao_mainwindow.cpp
 
 CMakeFiles/labtrack.dir/ao_mainwindow.cpp.i: cmake_force
@@ -197,6 +182,21 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.i: cmake_force
 CMakeFiles/labtrack.dir/ao_mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/ao_mainwindow.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\ao_mainwindow.cpp -o CMakeFiles\labtrack.dir\ao_mainwindow.cpp.s
+
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: CMakeFiles/labtrack.dir/flags.make
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.cpp
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj -MF CMakeFiles\labtrack.dir\ao_create_user_dialog.cpp.obj.d -o CMakeFiles\labtrack.dir\ao_create_user_dialog.cpp.obj -c C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp
+
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp > CMakeFiles\labtrack.dir\ao_create_user_dialog.cpp.i
+
+CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp -o CMakeFiles\labtrack.dir\ao_create_user_dialog.cpp.s
 
 CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/flags.make
 CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
@@ -443,11 +443,11 @@ labtrack_OBJECTS = \
 "CMakeFiles/labtrack.dir/labtrack_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/labtrack.dir/main.cpp.obj" \
 "CMakeFiles/labtrack.dir/login.cpp.obj" \
-"CMakeFiles/labtrack.dir/signup.cpp.obj" \
 "CMakeFiles/labtrack.dir/startpage.cpp.obj" \
 "CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj" \
 "CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj" \
 "CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj" \
+"CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj" \
 "CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj" \
 "CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj" \
 "CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj" \
@@ -471,11 +471,11 @@ labtrack_EXTERNAL_OBJECTS =
 labtrack.exe: CMakeFiles/labtrack.dir/labtrack_autogen/mocs_compilation.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/main.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/login.cpp.obj
-labtrack.exe: CMakeFiles/labtrack.dir/signup.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/startpage.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj
+labtrack.exe: CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj

@@ -154,6 +154,30 @@ labtrack_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack_autogen.dir\build.make CMakeFiles/labtrack_autogen.dir/build
 .PHONY : labtrack_autogen/fast
 
+ao_create_user_dialog.obj: ao_create_user_dialog.cpp.obj
+.PHONY : ao_create_user_dialog.obj
+
+# target to build an object file
+ao_create_user_dialog.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj
+.PHONY : ao_create_user_dialog.cpp.obj
+
+ao_create_user_dialog.i: ao_create_user_dialog.cpp.i
+.PHONY : ao_create_user_dialog.i
+
+# target to preprocess a source file
+ao_create_user_dialog.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.i
+.PHONY : ao_create_user_dialog.cpp.i
+
+ao_create_user_dialog.s: ao_create_user_dialog.cpp.s
+.PHONY : ao_create_user_dialog.s
+
+# target to generate assembly for a file
+ao_create_user_dialog.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.s
+.PHONY : ao_create_user_dialog.cpp.s
+
 ao_mainwindow.obj: ao_mainwindow.cpp.obj
 .PHONY : ao_mainwindow.obj
 
@@ -658,30 +682,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-signup.obj: signup.cpp.obj
-.PHONY : signup.obj
-
-# target to build an object file
-signup.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/signup.cpp.obj
-.PHONY : signup.cpp.obj
-
-signup.i: signup.cpp.i
-.PHONY : signup.i
-
-# target to preprocess a source file
-signup.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/signup.cpp.i
-.PHONY : signup.cpp.i
-
-signup.s: signup.cpp.s
-.PHONY : signup.s
-
-# target to generate assembly for a file
-signup.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/signup.cpp.s
-.PHONY : signup.cpp.s
-
 startpage.obj: startpage.cpp.obj
 .PHONY : startpage.obj
 
@@ -741,6 +741,9 @@ help:
 	@echo ... labtrack_autogen
 	@echo ... labtrack_autogen_timestamp_deps
 	@echo ... labtrack
+	@echo ... ao_create_user_dialog.obj
+	@echo ... ao_create_user_dialog.i
+	@echo ... ao_create_user_dialog.s
 	@echo ... ao_mainwindow.obj
 	@echo ... ao_mainwindow.i
 	@echo ... ao_mainwindow.s
@@ -804,9 +807,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... signup.obj
-	@echo ... signup.i
-	@echo ... signup.s
 	@echo ... startpage.obj
 	@echo ... startpage.i
 	@echo ... startpage.s

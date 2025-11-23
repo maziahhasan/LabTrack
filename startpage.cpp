@@ -26,18 +26,20 @@ StartPage::~StartPage()
 
 void StartPage::on_btnTA_clicked()
 {
-    // For demo, assume TA ID 1
-    TAMainWindow *taWindow = new TAMainWindow(1, this);
-    taWindow->show();
-    this->hide();
+    // Require TA to log in instead of directly opening TA window
+    if (loginWindow) {
+        loginWindow->show();
+        this->hide();
+    }
 }
 
 void StartPage::on_btnHOD_clicked()
 {
-    // For demo, open HOD MainWindow
-    HODMainWindow *hodWindow = new HODMainWindow(this);
-    hodWindow->show();
-    this->hide();
+    // Require HOD to log in instead of directly opening HOD window
+    if (loginWindow) {
+        loginWindow->show();
+        this->hide();
+    }
 }
 
 void StartPage::on_btnAdmin_clicked()

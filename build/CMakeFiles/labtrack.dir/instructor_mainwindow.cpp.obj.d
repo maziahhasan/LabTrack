@@ -532,6 +532,9 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMenuBar \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenubar.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenu.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QInputDialog \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qinputdialog.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \

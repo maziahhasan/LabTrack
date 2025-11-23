@@ -10,10 +10,11 @@ int main() {
     AcademicOfficerRepository ar("academic_officers.bin");
     AuthService auth(ur, &ir, &tr, &hr, &ar);
 
-    // register a few users; TA and Instructor entries will be created automatically
-    auth.registerUser("alice", "password123", "TA");
-    auth.registerUser("bob", "secret", "Instructor");
-    auth.registerUser("officer", "adminpass", "AcademicOfficer");
+    // bootstrap an AcademicOfficer first (allowed when none exist)
+    auth.registerUser("officer", "adminpass", "AcademicOfficer", "");
+    // then AO creates TA and Instructor
+    auth.registerUser("alice", "password123", "TA", "AcademicOfficer");
+    auth.registerUser("bob", "secret", "Instructor", "AcademicOfficer");
 
     User u;
     if (auth.authenticate("alice", "password123", u)) std::cout << "alice logged in as " << u.getRole() << "\n";

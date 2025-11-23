@@ -15,6 +15,10 @@
 #include "backend/repositories/BuildingRepository.h"
 #include "backend/repositories/ActualTimingRepository.h"
 #include "backend/services/ReportService.h"
+#include "backend/repositories/UserRepository.h"
+#include "backend/services/AuthService.h"
+#include "backend/repositories/HODRepository.h"
+#include "backend/repositories/AcademicOfficerRepository.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class AOMainWindow; }
@@ -26,6 +30,7 @@ class AOMainWindow : public QMainWindow
 
 public:
     AOMainWindow(QWidget *parent = nullptr);
+    explicit AOMainWindow(int aoId, QWidget *parent = nullptr);
     ~AOMainWindow();
 
 private slots:
@@ -48,6 +53,8 @@ private slots:
     void on_btnEditTA_clicked();
     void on_btnDeleteTA_clicked();
 
+    void on_btnAddHOD_clicked();
+
     void on_btnSetSchedule_clicked();
 
     void on_btnGenerateWeeklySchedule_clicked();
@@ -59,10 +66,15 @@ private:
     LabRepository labRepo;
     InstructorRepository instructorRepo;
     TARepository taRepo;
+    HODRepository hodRepo;
     RoomRepository roomRepo;
     BuildingRepository buildingRepo;
     ActualTimingRepository actualTimingRepo;
+    UserRepository userRepo;
+    AcademicOfficerRepository aoRepo;
+    AuthService authService;
     ReportService reportService;
+    int aoId = -1;
 
     void loadDashboard();
     void loadManageLabs();

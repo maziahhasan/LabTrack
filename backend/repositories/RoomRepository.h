@@ -12,8 +12,12 @@ public:
     std::vector<Room> load();
     int getNextId();
     void add(const Room &r);
+    bool update(const Room &r);
     std::vector<Room> getAll();
-    // convenience lookup
+    // New queries for new model fields
+    std::vector<Room> getRoomsByBuildingId(int buildingId);
+    std::vector<Room> getRoomsByType(const std::string& type);
+    std::vector<Room> getRoomsByCapacity(int minCapacity);
     // Return pointer (caller may assume ownership) to match UI usage
     Room* getRoomById(int id) {
         auto v = load();

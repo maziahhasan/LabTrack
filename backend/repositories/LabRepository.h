@@ -8,24 +8,21 @@ using namespace std;
 
 class LabRepository {
 private:
-    string fileName;
+    std::string fileName;
 
-    void writeString(ofstream &out, const string &s);
-    string readString(ifstream &in);
+    void writeString(std::ofstream &out, const std::string &s);
+    std::string readString(std::ifstream &in);
 
 public:
-    LabRepository(const string &file = "labs.bin");
+    LabRepository(const std::string &file = "labs.bin");
 
-    void saveLabs(const vector<Lab> &labs);
-        vector<Lab> loadLabs();
+    void saveLabs(const std::vector<Lab> &labs);
+    std::vector<Lab> loadLabs();
 
-    // Convenience CRUD operations built on top of save/load
+    // CRUD operations
     Lab getById(int id);
-    // compatibility: simple getter name used by some services
     std::vector<Lab> getAll() { return loadLabs(); }
-    // backward-compatible names used by UI
-    vector<Lab> getAllLabs() { return loadLabs(); }
-    // return heap-allocated Lab pointer or nullptr (caller not owned by repo)
+    std::vector<Lab> getAllLabs() { return loadLabs(); }
     Lab* getLabById(int id) {
         auto v = loadLabs();
         for (const auto &l : v) if (l.getId() == id) return new Lab(l);
@@ -35,6 +32,16 @@ public:
     bool update(const Lab &lab);
     bool remove(int id);
     int getNextId();
-    std::vector<Lab> getLabsByInstructorId(int instructorId);
 
+    // New/updated queries for new model fields
+    std::vector<Lab> getLabsByInstructorId(int instructorId);
+    std::vector<Lab> getLabsByBuildingId(int buildingId);
+    std::vector<Lab> getLabsByRoomId(int roomId);
+    std::vector<Lab> getLabsByTAId(int taId);
+    std::vector<Lab> getLabsByStatus(const std::string& status);
+
+    // Update lab status
+    bool updateStatus(int labId, const std::string& status);
+    // Assign TAs
+    bool setTAs(int labId, const std::vector<int>& taIds);
 };

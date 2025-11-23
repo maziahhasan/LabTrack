@@ -1,5 +1,6 @@
 #include "ta_mainwindow.h"
 #include "ui_ta_mainwindow.h"  // Make sure this matches the generated header name
+#include <QMenuBar>
 
 TAMainWindow::TAMainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,6 +18,14 @@ TAMainWindow::TAMainWindow(QWidget *parent)
 
     // Optional: Set default page on startup
     ui->stackedWidget->setCurrentWidget(ui->dashboardPage);
+
+    // Add logout action to menu bar
+    QAction *logout = new QAction("Logout", this);
+    connect(logout, &QAction::triggered, this, [this]() {
+        if (this->parentWidget()) this->parentWidget()->show();
+        this->close();
+    });
+    menuBar()->addAction(logout);
 }
 
 TAMainWindow::TAMainWindow(int taId, QWidget *parent)

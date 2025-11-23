@@ -6,6 +6,9 @@
 #include <QPdfWriter>
 #include <QPainter>
 #include <QMessageBox>
+#include <QMenuBar>
+#include <QDate>
+#include "backend/utils/DateUtils.h"
 
 HODMainWindow::HODMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -44,8 +47,24 @@ HODMainWindow::HODMainWindow(QWidget *parent) :
     // construct reportService now that repos are initialized
     reportService = new ReportService(labRepo, instructorRepo, taRepo, roomRepo, buildingRepo, actualTimingRepo);
 
+
     // Set default page to Dashboard
     ui->stackedWidget->setCurrentWidget(ui->dashboardPage);
+
+    // Add Logout action to the menu bar
+    QAction *logout = new QAction("Logout", this);
+    connect(logout, &QAction::triggered, this, [this]() {
+        if (this->parentWidget()) this->parentWidget()->show();
+        this->close();
+    });
+    menuBar()->addAction(logout);
+}
+
+HODMainWindow::HODMainWindow(int hodId, QWidget *parent)
+    : HODMainWindow(parent)
+{
+    this->hodId = hodId;
+    // Now you can use hodId to filter data shown in the UI if needed
 }
 
 HODMainWindow::~HODMainWindow()
@@ -149,23 +168,49 @@ void HODMainWindow::loadWeeklySchedule()
 
 void HODMainWindow::loadWeeklyTimesheets()
 {
-    auto timings = actualTimingRepo.getAllActualTimings();
-    ui->tableWeeklyTimesheets->setRowCount(timings.size());
+    // Get current week's Monday date (simplified - in production, calculate actual Monday)
+    QDate today = QDate::currentDate();
+    int daysToMonday = (today.dayOfWeek() == Qt::Monday) ? 0 : (today.dayOfWeek() - Qt::Monday);
+    QDate monday = today.addDays(-daysToMonday);
+    std::string mondayDate = monday.toString("yyyy-MM-dd").toStdString();
+    
+    // Get labs with timesheets for this week using ReportService
+    auto labs = reportService->labsWithTimesheetsForWeek(mondayDate);
+    
+    // Collect all timings for these labs in the week
+    std::vector<std::pair<ActualTiming, Lab>> timingLabPairs;
+    long start = DateUtils::parseDate(mondayDate);
+    long end = start + 6*24*60*60;
+    
+    for (const auto& lab : labs) {
+        const auto& times = lab.getTimeSheets();
+        for (const auto& t : times) {
+            long d = DateUtils::parseDate(t.getDate());
+            if (d >= start && d <= end) {
+                timingLabPairs.push_back({t, lab});
+            }
+        }
+    }
+    
+    ui->tableWeeklyTimesheets->setRowCount(timingLabPairs.size());
     ui->tableWeeklyTimesheets->setColumnCount(7);
     ui->tableWeeklyTimesheets->setHorizontalHeaderLabels({"Date", "Lab", "TA", "Scheduled Start", "Actual Start", "Actual End", "Contact Hours"});
 
-    for (int i = 0; i < timings.size(); ++i) {
-        const auto& timing = timings[i];
-        auto lab = labRepo.getLabById(timing.getLabId());
+    for (int i = 0; i < timingLabPairs.size(); ++i) {
+        const auto& timing = timingLabPairs[i].first;
+        const auto& lab = timingLabPairs[i].second;
         auto ta = taRepo.getTAById(timing.getTaId());
+        
+        // Calculate contact hours
+        double hours = DateUtils::hoursBetween(timing.getStartTime(), timing.getEndTime());
 
         ui->tableWeeklyTimesheets->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(timing.getDate())));
-        ui->tableWeeklyTimesheets->setItem(i, 1, new QTableWidgetItem(lab ? QString::fromStdString(lab->getName()) : "Unknown"));
+        ui->tableWeeklyTimesheets->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(lab.getName())));
         ui->tableWeeklyTimesheets->setItem(i, 2, new QTableWidgetItem(ta ? QString::fromStdString(ta->getName()) : "Unknown"));
-        ui->tableWeeklyTimesheets->setItem(i, 3, new QTableWidgetItem("10:00")); // Placeholder
+        ui->tableWeeklyTimesheets->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(lab.getSchedule().getStart())));
         ui->tableWeeklyTimesheets->setItem(i, 4, new QTableWidgetItem(QString::fromStdString(timing.getStartTime())));
         ui->tableWeeklyTimesheets->setItem(i, 5, new QTableWidgetItem(QString::fromStdString(timing.getEndTime())));
-        ui->tableWeeklyTimesheets->setItem(i, 6, new QTableWidgetItem("2.0")); // Placeholder calculation
+        ui->tableWeeklyTimesheets->setItem(i, 6, new QTableWidgetItem(QString::number(hours, 'f', 2)));
     }
 
     // Populate week combo
@@ -183,21 +228,35 @@ void HODMainWindow::loadLabHistory()
     }
 
     if (!allLabs.empty()) {
-        const auto& selectedLab = allLabs[0]; // Default to first lab
-        auto timings = actualTimingRepo.getActualTimingsByLabId(selectedLab.getId());
-
-        double totalHours = 0;
-        int totalLeaves = 0;
-        int totalMakeup = 0;
-
-        for (const auto& timing : timings) {
-            // Calculate hours (placeholder)
-            totalHours += 2.0;
+        int selectedLabId = ui->comboSelectLab->currentData().toInt();
+        if (selectedLabId == 0 && !allLabs.empty()) {
+            selectedLabId = allLabs[0].getId();
         }
-
-        ui->lblTotalContactHoursValue->setText(QString::number(totalHours));
-        ui->lblTotalLeavesValue->setText(QString::number(totalLeaves));
-        ui->lblTotalMakeupSessionsValue->setText(QString::number(totalMakeup));
+        
+        // Get semester start and end dates (simplified - use current year)
+        QDate today = QDate::currentDate();
+        std::string startDate = QDate(today.year(), 1, 1).toString("yyyy-MM-dd").toStdString();
+        std::string endDate = QDate(today.year(), 12, 31).toString("yyyy-MM-dd").toStdString();
+        
+        // Use ReportService to compute summary
+        TimeSheetSummary summary = reportService->computeTimeSheetSummary(selectedLabId, startDate, endDate);
+        
+        ui->lblTotalContactHoursValue->setText(QString::number(summary.totalHours, 'f', 2));
+        ui->lblTotalLeavesValue->setText(QString::number(summary.leaves));
+        
+        // Count makeup sessions (sessions not on scheduled day)
+        Lab lab = labRepo.getById(selectedLabId);
+        auto timings = actualTimingRepo.getActualTimingsByLabId(selectedLabId);
+        std::string scheduledDay = DateUtils::normalizeDay(lab.getSchedule().getDay());
+        int makeupCount = 0;
+        for (const auto& timing : timings) {
+            long d = DateUtils::parseDate(timing.getDate());
+            std::string actualDay = DateUtils::dayOfWeek(d);
+            if (DateUtils::normalizeDay(actualDay) != scheduledDay) {
+                makeupCount++;
+            }
+        }
+        ui->lblTotalMakeupSessionsValue->setText(QString::number(makeupCount));
 
         ui->tableLabHistory->setRowCount(timings.size());
         ui->tableLabHistory->setColumnCount(5);
@@ -206,12 +265,17 @@ void HODMainWindow::loadLabHistory()
         for (int i = 0; i < timings.size(); ++i) {
             const auto& timing = timings[i];
             auto ta = taRepo.getTAById(timing.getTaId());
+            
+            // Determine if it's a makeup session
+            long d = DateUtils::parseDate(timing.getDate());
+            std::string actualDay = DateUtils::dayOfWeek(d);
+            QString status = (DateUtils::normalizeDay(actualDay) == scheduledDay) ? "Regular" : "Makeup";
 
             ui->tableLabHistory->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(timing.getDate())));
             ui->tableLabHistory->setItem(i, 1, new QTableWidgetItem(ta ? QString::fromStdString(ta->getName()) : "Unknown"));
             ui->tableLabHistory->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(timing.getStartTime())));
             ui->tableLabHistory->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(timing.getEndTime())));
-            ui->tableLabHistory->setItem(i, 4, new QTableWidgetItem("Completed")); // Placeholder
+            ui->tableLabHistory->setItem(i, 4, new QTableWidgetItem(status));
         }
     }
 }

@@ -660,6 +660,8 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/SMZ/Documents/labtrack/CMakeLists.txt \
+  C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.cpp \
+  C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.h \
   C:/Users/SMZ/Documents/labtrack/ao_mainwindow.cpp \
   C:/Users/SMZ/Documents/labtrack/ao_mainwindow.h \
   C:/Users/SMZ/Documents/labtrack/ao_mainwindow.ui \
@@ -717,8 +719,6 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Users/SMZ/Documents/labtrack/login.h \
   C:/Users/SMZ/Documents/labtrack/login.ui \
   C:/Users/SMZ/Documents/labtrack/main.cpp \
-  C:/Users/SMZ/Documents/labtrack/signup.cpp \
-  C:/Users/SMZ/Documents/labtrack/signup.h \
   C:/Users/SMZ/Documents/labtrack/startpage.cpp \
   C:/Users/SMZ/Documents/labtrack/startpage.h \
   C:/Users/SMZ/Documents/labtrack/startpage.ui \
@@ -1164,6 +1164,8 @@ C:/Qt/6.10.0/mingw_64/include/QtCore/qmalloc.h:
 C:/Qt/6.10.0/mingw_64/include/QtCore/qtnoop.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qmap.h:
+
+C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qmargins.h:
 
@@ -2089,8 +2091,6 @@ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
-C:/Users/SMZ/Documents/labtrack/signup.h:
-
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
@@ -2106,6 +2106,8 @@ C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h:
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h:
 
 C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h:
+
+C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.cpp:
 
 C:/Users/SMZ/Documents/labtrack/ao_mainwindow.h:
 
@@ -2168,8 +2170,6 @@ C:/Users/SMZ/Documents/labtrack/hod_mainwindow.cpp:
 C:/Users/SMZ/Documents/labtrack/hod_mainwindow.ui:
 
 C:/Users/SMZ/Documents/labtrack/main.cpp:
-
-C:/Users/SMZ/Documents/labtrack/signup.cpp:
 
 C:/Users/SMZ/Documents/labtrack/startpage.h:
 

@@ -23,12 +23,13 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/backend/services)
 set(SOURCES
     main.cpp
     login.cpp
-    signup.cpp
     startpage.cpp
     hod_mainwindow.cpp
     ta_mainwindow.cpp
     ao_mainwindow.cpp
+    ao_create_user_dialog.cpp
     instructor_mainwindow.cpp
+    attendant_mainwindow.cpp
 )
 
 # Backend repository/service sources (explicit list to avoid missing/typo issues)
@@ -63,6 +64,7 @@ set(UI_FILES
     ta_mainwindow.ui
     ao_mainwindow.ui
     instructor_mainwindow.ui
+    attendant_mainwindow.ui
 )
 
 # Create executable (include backend sources!)
@@ -82,3 +84,8 @@ target_link_libraries(labtrack PRIVATE Qt6::Widgets Qt6::Gui Qt6::Core)
 
 # Use C++17
 target_compile_features(labtrack PRIVATE cxx_std_17)
+
+# For MSVC, add /Zc:__cplusplus flag to properly report C++ standard version
+if(MSVC)
+    target_compile_options(labtrack PRIVATE /Zc:__cplusplus)
+endif()

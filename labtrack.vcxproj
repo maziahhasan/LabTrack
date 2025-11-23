@@ -87,7 +87,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug;C:\Users\SMZ\Documents\labtrack;C:\Users\SMZ\Documents\labtrack\backend\models;C:\Users\SMZ\Documents\labtrack\backend\repositories;C:\Users\SMZ\Documents\labtrack\backend\services;C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui" /Zc:__cplusplus</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -164,7 +164,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release;C:\Users\SMZ\Documents\labtrack;C:\Users\SMZ\Documents\labtrack\backend\models;C:\Users\SMZ\Documents\labtrack\backend\repositories;C:\Users\SMZ\Documents\labtrack\backend\services;C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui" /Zc:__cplusplus</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -242,7 +242,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel;C:\Users\SMZ\Documents\labtrack;C:\Users\SMZ\Documents\labtrack\backend\models;C:\Users\SMZ\Documents\labtrack\backend\repositories;C:\Users\SMZ\Documents\labtrack\backend\services;C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui" /Zc:__cplusplus</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -320,7 +320,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo;C:\Users\SMZ\Documents\labtrack;C:\Users\SMZ\Documents\labtrack\backend\models;C:\Users\SMZ\Documents\labtrack\backend\repositories;C:\Users\SMZ\Documents\labtrack\backend\services;C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui"</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Qt/6.10.0/mingw_64/include/QtWidgets" /external:I "C:/Qt/6.10.0/mingw_64/include" /external:I "C:/Qt/6.10.0/mingw_64/include/QtCore" /external:I "C:/Qt/6.10.0/mingw_64/mkspecs/win32-g++" /external:I "C:/Qt/6.10.0/mingw_64/include/QtGui" /Zc:__cplusplus</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -410,7 +410,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Debug.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
@@ -426,7 +426,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Release.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
@@ -442,7 +442,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_MinSizeRel.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
@@ -458,7 +458,7 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\SMZ\Documents\labtrack\login.ui;C:\Users\SMZ\Documents\labtrack\startpage.ui;C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui;C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui;C:\Qt\6.10.0\mingw_64\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_RelWithDebInfo.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
@@ -528,12 +528,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\main.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\login.cpp" />
-    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\signup.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\startpage.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\hod_mainwindow.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ta_mainwindow.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_mainwindow.cpp" />
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.cpp" />
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\BuildingRepository.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\TARepository.cpp" />
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\UserRepository.cpp" />
@@ -561,12 +562,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </None>
     <None Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui">
     </None>
+    <None Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui">
+    </None>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_login.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_startpage.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_hod_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_ta_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_ao_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_instructor_mainwindow.h" />
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_attendant_mainwindow.h" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Debug.stamp">
     </None>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\mocs_compilation_Release.cpp">
@@ -580,6 +584,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_ta_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_ao_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_instructor_mainwindow.h" />
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_attendant_mainwindow.h" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Release.stamp">
     </None>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\mocs_compilation_MinSizeRel.cpp">
@@ -593,6 +598,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_ta_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_ao_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_instructor_mainwindow.h" />
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_attendant_mainwindow.h" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_MinSizeRel.stamp">
     </None>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\mocs_compilation_RelWithDebInfo.cpp">
@@ -606,6 +612,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_ta_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_ao_mainwindow.h" />
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_instructor_mainwindow.h" />
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_attendant_mainwindow.h" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_RelWithDebInfo.stamp">
     </None>
   </ItemGroup>

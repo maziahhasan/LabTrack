@@ -5,6 +5,8 @@
 #include "instructor_mainwindow.h"
 #include "hod_mainwindow.h"
 #include "ao_mainwindow.h"
+#include "attendant_mainwindow.h"
+#include "backend/repositories/BuildingRepository.h"
 #include <QMessageBox>
 
 Login::Login(QWidget *parent) :
@@ -20,8 +22,8 @@ Login::Login(QWidget *parent) :
 
     // Connect sign in button
     connect(ui->btnSignIn, &QPushButton::clicked, this, &Login::on_btnSignIn_clicked);
-    // Connect signup link (label) to open signup dialog
-    connect(ui->signupText, &QLabel::linkActivated, this, &Login::on_signupText_linkActivated);
+    // Connect back button to return to start page
+    if (ui->btnBack) connect(ui->btnBack, &QPushButton::clicked, this, &Login::on_btnBack_clicked);
 }
 
 Login::~Login()
@@ -33,18 +35,36 @@ Login::~Login()
 
 void Login::on_btnSignIn_clicked()
 {
-    QString email = ui->txtEmail->text();
-    QString password = ui->txtPassword->text();
+    QString email = ui->txtEmail->text().trimmed();
+    QString password = ui->txtPassword->text().trimmed();  // Trim password input here
 
     if (email.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Login", "Please enter email and password.");
         return;
     }
+    // First check whether the username exists (give clear feedback)
+    User found = userRepo->findByUsername(email.toStdString());
+    if (found.getUsername().empty()) {
+        QMessageBox::critical(this, "Login Failed", "Username not found. Please check your username/email.");
+        return;
+    }
 
+    // Check password against stored hash and give clear feedback
+    std::string attemptedHash = AuthService::computeHash(password.toStdString());
+    if (attemptedHash != found.getPasswordHash()) {
+        // debug output for password hash mismatch
+        QString debugInfo = QString("Attempted Hash: %1\nStored Hash: %2")
+                                .arg(QString::fromStdString(attemptedHash))
+                                .arg(QString::fromStdString(found.getPasswordHash()));
+        QMessageBox::critical(this, "Login Failed", "Incorrect password. Please try again.\n" + debugInfo);
+        return;
+    }
+
+    // Password matches — perform authentication and continue
     User u;
     bool ok = authService->authenticate(email.toStdString(), password.toStdString(), u);
     if (!ok) {
-        QMessageBox::critical(this, "Login Failed", "Invalid username or password.");
+        QMessageBox::critical(this, "Login Failed", "Authentication failed. Please try again.");
         return;
     }
 
@@ -57,24 +77,43 @@ void Login::on_btnSignIn_clicked()
         InstructorMainWindow *inst = new InstructorMainWindow(u.getId(), this->parentWidget());
         inst->show();
     } else if (role == "HOD") {
-        HODMainWindow *hod = new HODMainWindow(this->parentWidget());
+        HODMainWindow *hod = new HODMainWindow(u.getId(), this->parentWidget());
         hod->show();
     } else if (role == "AcademicOfficer") {
-        AOMainWindow *ao = new AOMainWindow(this->parentWidget());
+        AOMainWindow *ao = new AOMainWindow(u.getId(), this->parentWidget());
         ao->show();
+    } else if (role == "Attendant") {
+        AttendantMainWindow *attendant = new AttendantMainWindow(u.getId(), this->parentWidget());
+        attendant->show();
     } else {
-        // default: show TA window
-        TAMainWindow *taWindow = new TAMainWindow(u.getId(), this->parentWidget());
-        taWindow->show();
+        // Check if user is assigned as attendant to any building
+        BuildingRepository buildingRepo("test_buildings.bin");
+        auto buildings = buildingRepo.getAll();
+        bool isAttendant = false;
+        for (const auto& b : buildings) {
+            if (b.getAttendantId() == u.getId()) {
+                isAttendant = true;
+                break;
+            }
+        }
+        if (isAttendant) {
+            AttendantMainWindow *attendant = new AttendantMainWindow(u.getId(), this->parentWidget());
+            attendant->show();
+        } else {
+            // default: show TA window
+            TAMainWindow *taWindow = new TAMainWindow(u.getId(), this->parentWidget());
+            taWindow->show();
+        }
     }
 
     this->accept(); // Close login dialog
 }
 
-void Login::on_signupText_linkActivated(const QString &link)
+void Login::on_btnBack_clicked()
 {
-    if (!signupDialog) {
-        signupDialog = new Signup(authService, this);
-    }
-    signupDialog->exec();
+    // Show parent (StartPage) and close this dialog
+    if (this->parentWidget()) this->parentWidget()->show();
+    this->reject();
 }
+
+// signup removed — AO-only creation enforced via AO UI

@@ -3,7 +3,7 @@
 
 MakeupService::MakeupService(MakeupRequestRepository &m, LabRepository &l) : mrRepo(m), labRepo(l) {}
 
-int MakeupService::requestMakeup(const User &actor, int labId, const std::string &date, const std::string &start, const std::string &end) {
+int MakeupService::requestMakeup(const User &actor, int labId, const std::string &date, const std::string &start, const std::string &end, const std::string& reason) {
     if (actor.getRole() != "Instructor") return -1;
     int id = mrRepo.getNextId();
     MakeupRequest m(id, labId, actor.getId(), date, start, end, "pending");
@@ -20,7 +20,8 @@ bool MakeupService::approveMakeup(const User &actor, int requestId) {
             // add actual timing to lab
             Lab lab = labRepo.getById(r.getLabId());
             if (lab.getId() == -1) return false;
-            lab.addActualTiming(ActualTiming(r.getDate(), r.getStart(), r.getEnd()));
+            ActualTiming timing(r.getLabId(), -1, r.getDate(), r.getStart(), r.getEnd());
+            lab.addActualTiming(timing);
             labRepo.update(lab);
             r.setStatus("approved");
             mrRepo.update(r);

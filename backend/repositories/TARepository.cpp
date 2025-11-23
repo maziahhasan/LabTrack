@@ -33,3 +33,13 @@ int TARepository::getNextId() { auto v = load(); int maxId = 0; for (auto &t : v
 void TARepository::add(const TA &ta) { auto v = load(); v.push_back(ta); save(v); }
 
 std::vector<TA> TARepository::getAll() { return load(); }
+
+bool TARepository::update(const TA &ta) {
+    auto v = load();
+    bool found = false;
+    for (auto &t : v) {
+        if (t.getId() == ta.getId()) { t = ta; found = true; break; }
+    }
+    if (found) save(v);
+    return found;
+}

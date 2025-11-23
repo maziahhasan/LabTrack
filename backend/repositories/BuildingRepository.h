@@ -12,6 +12,10 @@ public:
     std::vector<Building> load();
     int getNextId();
     void add(const Building &b);
+    bool update(const Building &b);
     std::vector<Building> getAll();
     bool setAttendant(int buildingId, int userId);
+    // New queries for new model fields
+    std::vector<Building> getBuildingsByAttendantId(int userId);
+    std::vector<Building> getBuildingsByLocation(const std::string& location);
 };

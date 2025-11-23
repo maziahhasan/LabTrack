@@ -13,11 +13,33 @@ std::string AuthService::hashPassword(const std::string &pw) {
     return ss.str();
 }
 
-bool AuthService::registerUser(const std::string &username, const std::string &password, const std::string &role) {
+std::string AuthService::computeHash(const std::string &pw) {
+    return hashPassword(pw);
+}
+
+bool AuthService::registerUser(const std::string &username, const std::string &password, const std::string &role, const std::string &email, const std::string &performedByRole) {
     User existing = userRepo.findByUsername(username);
     if (existing.getUsername().size() > 0) return false; // already exists
+
+    // Only AcademicOfficer can create accounts. Allow a one-time bootstrap to create
+    // the very first AcademicOfficer if none exist yet (performedByRole empty).
+    bool isPrivilegedRole = (role == "TA" || role == "Instructor" || role == "HOD" || role == "AcademicOfficer");
+
+    if (performedByRole != "AcademicOfficer") {
+        // check for bootstrap: allow creating the first AcademicOfficer if none exists
+        if (!(role == "AcademicOfficer")) {
+            // non-AO attempted creation without AO privileges -> disallow
+            return false;
+        }
+        // role == AcademicOfficer but performedByRole not AO: allow only if no AO exists yet
+        auto users = userRepo.loadAll();
+        bool aoExists = false;
+        for (const auto &u : users) if (u.getRole() == "AcademicOfficer") { aoExists = true; break; }
+        if (aoExists) return false; // cannot create AO without AO privileges
+    }
+
     int id = userRepo.getNextId();
-    User u(id, username, hashPassword(password), role);
+    User u(id, username, hashPassword(password), role, email);
     userRepo.add(u);
     // create corresponding domain object when applicable
     if (role == "TA" && taRepo != nullptr) {

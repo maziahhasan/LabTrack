@@ -45,12 +45,7 @@ void Signup::on_btnSignUp_clicked()
         return;
     }
 
-    bool ok = authService->registerUser(email.toStdString(), pw.toStdString(), role.toStdString());
-    if (!ok) {
-        QMessageBox::critical(this, "Sign Up Failed", "User already exists or registration failed.");
-        return;
-    }
-
-    QMessageBox::information(this, "Sign Up", "Registration successful. You can now sign in.");
-    accept();
+    // Self-signup is disabled. Only an Academic Officer may create accounts.
+    QMessageBox::warning(this, "Sign Up Disabled", "Self-signup is disabled. Only an Academic Officer can create accounts.");
+    return;
 }

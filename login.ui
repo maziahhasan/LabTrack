@@ -155,7 +155,7 @@
 
       <item>
        <widget class="QLineEdit" name="txtEmail">
-        <property name="placeholderText"><string>Email</string></property>
+                <property name="placeholderText"><string>Username / Email</string></property>
        </widget>
       </item>
 
@@ -172,15 +172,13 @@
        </widget>
       </item>
 
-      <item>
-       <widget class="QLabel" name="signupText">
-        <property name="text">
-         <string>Don't have an account? &lt;a href="#" style="color:#1ABC9C"&gt;Sign Up&lt;/a&gt;</string>
-        </property>
-        <property name="alignment"><set>Qt::AlignCenter</set></property>
-        <property name="textFormat"><enum>Qt::RichText</enum></property>
-       </widget>
-      </item>
+    <item>
+     <widget class="QPushButton" name="btnBack">
+      <property name="text"><string>Back</string></property>
+     </widget>
+    </item>
+
+    <!-- Signup removed: only Academic Officer can create accounts -->
 
      </layout>
     </widget>

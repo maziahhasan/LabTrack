@@ -481,6 +481,13 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/ActualTimingRepository.h \
  C:\Users\SMZ\Documents\labtrack\backend/services/ReportService.h \
+ C:\Users\SMZ\Documents\labtrack\backend/repositories/UserRepository.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
+ C:\Users\SMZ\Documents\labtrack\backend/services/AuthService.h \
+ C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
+ C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/AcademicOfficer.h \
  C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/include/ui_ao_mainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h \
@@ -525,8 +532,19 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
+ C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcombobox.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLineEdit \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QInputDialog \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qinputdialog.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QDateTime \
- C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h
+ C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMenuBar \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenubar.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenu.h

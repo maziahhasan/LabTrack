@@ -54,7 +54,7 @@ TimeSheetSummary ReportService::computeTimeSheetSummary(int labId, const std::st
         long d = DateUtils::parseDate(t.getDate());
         if (d >= start && d <= end) {
             actualCount++;
-            s.totalHours += DateUtils::hoursBetween(t.getStart(), t.getEnd());
+            s.totalHours += DateUtils::hoursBetween(t.getStartTime(), t.getEndTime());
         }
     }
 

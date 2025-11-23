@@ -457,4 +457,7 @@ CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtableview.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMenuBar \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenubar.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenu.h

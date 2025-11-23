@@ -7,45 +7,54 @@
 
 class Lab {
 private:
-    int id;
-    std::string courseCode;
-    std::string section;
-    int roomId{0};
-    int instructorId;
-    ScheduleTiming schedule;
-    std::vector<TA> tas;
-    std::vector<ActualTiming> timeSheets;
+    int id; // Unique lab ID
+    std::string courseCode; // e.g., CS101
+    std::string section;    // e.g., A, B, C
+    int roomId{0};          // Venue (Room) ID
+    int buildingId{0};      // Venue (Building) ID
+    int instructorId{0};    // Instructor assigned
+    ScheduleTiming schedule; // Scheduled timing (day, start, end)
+    std::vector<int> taIds; // TA IDs assigned to this lab
+    std::vector<ActualTiming> timeSheets; // Attendance/timesheet records
+    std::string status = "Active"; // Lab status (Active/Inactive)
 
 public:
     Lab() = default;
 
-   // Lab(int id, const std::string& code, const std::string& sec)
-        //: id(id), courseCode(code), section(sec) {}
-
     Lab(int id, const std::string& code, const std::string& sec)
-        : id(id), courseCode(code), section(sec), roomId(0), instructorId(0) {}
-    Lab(int id, const std::string& code, const std::string& sec, int room)
-        : id(id), courseCode(code), section(sec), roomId(room), instructorId(0) {}
-    // If you need to construct with instructorId, schedule, status, add:
-    Lab(int id, const std::string& code, const std::string& sec, int room, int instructorId, const ScheduleTiming& schedule)
-        : id(id), courseCode(code), section(sec), roomId(room), instructorId(instructorId), schedule(schedule) {}
+        : id(id), courseCode(code), section(sec) {}
+    Lab(int id, const std::string& code, const std::string& sec, int room, int building)
+        : id(id), courseCode(code), section(sec), roomId(room), buildingId(building) {}
+    Lab(int id, const std::string& code, const std::string& sec, int room, int building, int instructorId, const ScheduleTiming& schedule)
+        : id(id), courseCode(code), section(sec), roomId(room), buildingId(building), instructorId(instructorId), schedule(schedule) {}
+
+    // Getters
     int getId() const { return id; }
     std::string getCourseCode() const { return courseCode; }
     std::string getSection() const { return section; }
+    int getRoomId() const { return roomId; }
+    int getBuildingId() const { return buildingId; }
     int getInstructorId() const { return instructorId; }
     ScheduleTiming getSchedule() const { return schedule; }
-    int getRoomId() const { return roomId; }
+    std::string getStatus() const { return status; }
 
-    // compatibility helpers used by UI
-    std::string getName() const { return courseCode + (section.empty() ? "" : (" " + section)); }
-    std::string getStatus() const { return "Active"; }
-
+    // Setters
+    void setRoomId(int r) { roomId = r; }
+    void setBuildingId(int b) { buildingId = b; }
     void setInstructorId(int id) { instructorId = id; }
     void setSchedule(const ScheduleTiming& s) { schedule = s; }
-    void setRoomId(int r) { roomId = r; }
-    void addTA(const TA& ta) { tas.push_back(ta); }
-    void addActualTiming(const ActualTiming& ts) { timeSheets.push_back(ts); }
+    void setStatus(const std::string& s) { status = s; }
 
-    const std::vector<TA>& getTAs() const { return tas; }
+    // TA management
+    void addTA(int taId) { taIds.push_back(taId); }
+    void setTAs(const std::vector<int>& ids) { taIds = ids; }
+    const std::vector<int>& getTAs() const { return taIds; }
+
+    // Timesheet management
+    void addActualTiming(const ActualTiming& ts) { timeSheets.push_back(ts); }
+    void setTimeSheets(const std::vector<ActualTiming>& ts) { timeSheets = ts; }
     const std::vector<ActualTiming>& getTimeSheets() const { return timeSheets; }
+
+    // UI/compatibility helpers
+    std::string getName() const { return courseCode + (section.empty() ? "" : (" " + section)); }
 };

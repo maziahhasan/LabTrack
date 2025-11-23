@@ -116,14 +116,12 @@ void LabRepository::saveLabs(const vector<Lab> &labs) {
         writeString(out, sch.getEnd());
 
         // TAs
-        const vector<TA> &tas = lab.getTAs();
-        int taCount = tas.size();
+        const vector<int> &taIds = lab.getTAs();
+        int taCount = taIds.size();
         out.write((char*)&taCount, sizeof(int));
 
-        for (const TA &ta : tas) {
-            int tid = ta.getId();
-            out.write((char*)&tid, sizeof(int));
-            writeString(out, ta.getName());
+        for (int taId : taIds) {
+            out.write((char*)&taId, sizeof(int));
         }
 
         // Actual timings
@@ -191,9 +189,7 @@ vector<Lab> LabRepository::loadLabs() {
             int tid;
             in.read((char*)&tid, sizeof(int));
             if (!in) break;
-            string tname = readString(in);
-            if (!in) break;
-            lab.addTA(TA(tid, tname));
+            lab.addTA(tid);
         }
 
         // Actual timings
@@ -223,6 +219,16 @@ std::vector<Lab> LabRepository::getLabsByInstructorId(int instructorId) {
     std::vector<Lab> result;
     for (const auto& lab : labs) {
         if (lab.getInstructorId() == instructorId)
+            result.push_back(lab);
+    }
+    return result;
+}
+
+std::vector<Lab> LabRepository::getLabsByBuildingId(int buildingId) {
+    std::vector<Lab> labs = loadLabs();
+    std::vector<Lab> result;
+    for (const auto& lab : labs) {
+        if (lab.getBuildingId() == buildingId)
             result.push_back(lab);
     }
     return result;

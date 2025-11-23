@@ -271,6 +271,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.h",
+			"MU",
+			"EWIEGA46WW/moc_ao_create_user_dialog.cpp",
+			null
+		],
+		[
 			"C:/Users/SMZ/Documents/labtrack/ao_mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_ao_mainwindow.cpp",
@@ -379,12 +385,6 @@
 			null
 		],
 		[
-			"C:/Users/SMZ/Documents/labtrack/signup.h",
-			"MU",
-			"EWIEGA46WW/moc_signup.cpp",
-			null
-		],
-		[
 			"C:/Users/SMZ/Documents/labtrack/startpage.h",
 			"MU",
 			"EWIEGA46WW/moc_startpage.cpp",
@@ -473,6 +473,11 @@
 	"SETTINGS_FILE" : "C:/Users/SMZ/Documents/labtrack/build/CMakeFiles/labtrack_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/SMZ/Documents/labtrack/ao_create_user_dialog.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/SMZ/Documents/labtrack/ao_mainwindow.cpp", "MU", null ],
 		[
 			"C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.cpp",
@@ -557,7 +562,6 @@
 		],
 		[ "C:/Users/SMZ/Documents/labtrack/login.cpp", "MU", null ],
 		[ "C:/Users/SMZ/Documents/labtrack/main.cpp", "MU", null ],
-		[ "C:/Users/SMZ/Documents/labtrack/signup.cpp", "MU", null ],
 		[ "C:/Users/SMZ/Documents/labtrack/startpage.cpp", "MU", null ],
 		[ "C:/Users/SMZ/Documents/labtrack/ta_mainwindow.cpp", "MU", null ]
 	],

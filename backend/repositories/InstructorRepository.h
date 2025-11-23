@@ -12,14 +12,15 @@ public:
     std::vector<Instructor> load();
     int getNextId();
     void add(const Instructor &ins);
+    bool update(const Instructor& ins);
     std::vector<Instructor> getAll();
-    // convenience lookup; returns heap-allocated pointer or nullptr
+    // New queries for new model fields
+    std::vector<Instructor> getInstructorsByStatus(const std::string& status);
+    std::vector<Instructor> getInstructorsByEmail(const std::string& email);
+    // Return pointer (caller may assume ownership) to match UI usage patterns
     Instructor* getInstructorById(int id) {
         auto v = load();
         for (const auto &i : v) if (i.getId() == id) return new Instructor(i);
         return nullptr;
     }
-    // Add this method:
-bool update(const Instructor& ins);
-
 };

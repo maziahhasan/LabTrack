@@ -37,7 +37,7 @@ public:
     QLineEdit *txtEmail;
     QLineEdit *txtPassword;
     QPushButton *btnSignIn;
-    QLabel *signupText;
+    QPushButton *btnBack;
 
     void setupUi(QWidget *LoginWindow)
     {
@@ -192,12 +192,10 @@ public:
 
         rightLayout->addWidget(btnSignIn);
 
-        signupText = new QLabel(rightPanel);
-        signupText->setObjectName("signupText");
-        signupText->setAlignment(Qt::AlignCenter);
-        signupText->setTextFormat(Qt::RichText);
+        btnBack = new QPushButton(rightPanel);
+        btnBack->setObjectName("btnBack");
 
-        rightLayout->addWidget(signupText);
+        rightLayout->addWidget(btnBack);
 
 
         mainLayout->addWidget(rightPanel);
@@ -213,10 +211,10 @@ public:
         mainTitle->setText(QCoreApplication::translate("LoginWindow", "Welcome Back \360\237\221\213", nullptr));
         tagline->setText(QCoreApplication::translate("LoginWindow", "Manage Labs, Schedules & Attendance Seamlessly", nullptr));
         loginTitle->setText(QCoreApplication::translate("LoginWindow", "Login", nullptr));
-        txtEmail->setPlaceholderText(QCoreApplication::translate("LoginWindow", "Email", nullptr));
+        txtEmail->setPlaceholderText(QCoreApplication::translate("LoginWindow", "Username / Email", nullptr));
         txtPassword->setPlaceholderText(QCoreApplication::translate("LoginWindow", "Password", nullptr));
         btnSignIn->setText(QCoreApplication::translate("LoginWindow", "Sign In", nullptr));
-        signupText->setText(QCoreApplication::translate("LoginWindow", "Don't have an account? <a href=\"#\" style=\"color:#1ABC9C\">Sign Up</a>", nullptr));
+        btnBack->setText(QCoreApplication::translate("LoginWindow", "Back", nullptr));
         (void)LoginWindow;
     } // retranslateUi
 

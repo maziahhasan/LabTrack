@@ -17,10 +17,10 @@ bool ReportGenerator::generateWeeklyScheduleReport(const std::string &outPath) {
 
     for (const Lab &l : labs) {
         std::string taNames;
-        const auto &tas = l.getTAs();
-        for (size_t i = 0; i < tas.size(); ++i) {
-            taNames += tas[i].getName();
-            if (i + 1 < tas.size()) taNames += ", ";
+        const auto &taIds = l.getTAs();
+        for (size_t i = 0; i < taIds.size(); ++i) {
+            taNames += std::to_string(taIds[i]);
+            if (i + 1 < taIds.size()) taNames += ", ";
         }
         out << std::left << std::setw(6) << l.getId()
             << std::setw(12) << l.getCourseCode()
@@ -50,8 +50,8 @@ bool ReportGenerator::generateWeeklyTimeSheetReport(const std::string &mondayDat
         out << std::setw(12) << "Date" << std::setw(8) << "Start" << std::setw(8) << "End" << std::setw(12) << "Duration(h)" << "\n";
         out << std::string(48, '-') << "\n";
         for (const auto &t : l.getTimeSheets()) {
-            double hrs = DateUtils::hoursBetween(t.getStart(), t.getEnd());
-            out << std::setw(12) << t.getDate() << std::setw(8) << t.getStart() << std::setw(8) << t.getEnd() << std::setw(12) << std::fixed << std::setprecision(2) << hrs << "\n";
+            double hrs = DateUtils::hoursBetween(t.getStartTime(), t.getEndTime());
+            out << std::setw(12) << t.getDate() << std::setw(8) << t.getStartTime() << std::setw(8) << t.getEndTime() << std::setw(12) << std::fixed << std::setprecision(2) << hrs << "\n";
         }
         out << "\n";
     }
@@ -87,8 +87,8 @@ bool ReportGenerator::generateLabSessionSummary(int labId, const std::string &st
         long s = DateUtils::parseDate(startDate);
         long e = DateUtils::parseDate(endDate);
         if (d >= s && d <= e) {
-            double hrs = DateUtils::hoursBetween(t.getStart(), t.getEnd());
-            out << std::setw(12) << t.getDate() << std::setw(8) << t.getStart() << std::setw(8) << t.getEnd() << std::setw(12) << std::fixed << std::setprecision(2) << hrs << "\n";
+            double hrs = DateUtils::hoursBetween(t.getStartTime(), t.getEndTime());
+            out << std::setw(12) << t.getDate() << std::setw(8) << t.getStartTime() << std::setw(8) << t.getEndTime() << std::setw(12) << std::fixed << std::setprecision(2) << hrs << "\n";
         }
     }
 

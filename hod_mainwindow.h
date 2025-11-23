@@ -15,6 +15,7 @@
 #include "backend/repositories/BuildingRepository.h"
 #include "backend/repositories/ActualTimingRepository.h"
 #include "backend/services/ReportService.h"
+#include "backend/utils/DateUtils.h"
 
 namespace Ui { class HODMainWindow; }
 
@@ -22,6 +23,8 @@ class HODMainWindow : public QMainWindow {
     Q_OBJECT
 public:
     explicit HODMainWindow(QWidget *parent = nullptr);
+    // overload to accept authenticated HOD id
+    explicit HODMainWindow(int hodId, QWidget *parent = nullptr);
     ~HODMainWindow();
 
 private slots:
@@ -46,6 +49,7 @@ private:
     TARepository taRepo;
     ActualTimingRepository actualTimingRepo;
     ReportService *reportService;
+    int hodId = -1;
 
     void loadDashboard();
     void loadWeeklySchedule();

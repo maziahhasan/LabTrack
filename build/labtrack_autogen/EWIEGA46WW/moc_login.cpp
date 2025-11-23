@@ -39,19 +39,16 @@ template <> constexpr inline auto Login::qt_create_metaobjectdata<qt_meta_tag_ZN
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "Login",
-        "on_signupText_linkActivated",
+        "on_btnSignIn_clicked",
         "",
-        "link",
-        "on_btnSignIn_clicked"
+        "on_btnBack_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_signupText_linkActivated'
-        QtMocHelpers::SlotData<void(const QString &)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 3 },
-        }}),
         // Slot 'on_btnSignIn_clicked'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnBack_clicked'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -75,11 +72,12 @@ void Login::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
     auto *_t = static_cast<Login *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_signupText_linkActivated((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: _t->on_btnSignIn_clicked(); break;
+        case 0: _t->on_btnSignIn_clicked(); break;
+        case 1: _t->on_btnBack_clicked(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *Login::metaObject() const

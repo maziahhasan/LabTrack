@@ -1,5 +1,6 @@
 #include "ao_mainwindow.h"
 #include "ui_ao_mainwindow.h"
+#include "ao_create_user_dialog.h"
 #include <QTableWidgetItem>
 #include <QListWidgetItem>
 #include <QFileDialog>
@@ -8,6 +9,7 @@
 #include <QMessageBox>
 #include <QInputDialog>
 #include <QDateTime>
+#include <QMenuBar>
 
 // Constructor: initialize repositories and view
 AOMainWindow::AOMainWindow(QWidget *parent)
@@ -15,10 +17,14 @@ AOMainWindow::AOMainWindow(QWidget *parent)
     , ui(new Ui::AOMainWindow)
     , labRepo("labs.bin")
     , instructorRepo("instructors.bin")
+    , taRepo("tas.bin")
+    , hodRepo("hods.bin")
     , roomRepo("rooms.bin")
     , buildingRepo("buildings.bin")
-    , taRepo("tas.bin")
     , actualTimingRepo("timings.bin")
+    , userRepo("users.txt")
+    , aoRepo("academic_officers.bin")
+    , authService(userRepo, &instructorRepo, &taRepo, &hodRepo, &aoRepo, &buildingRepo)
     , reportService(labRepo, instructorRepo, taRepo, roomRepo, buildingRepo, actualTimingRepo)
 {
     ui->setupUi(this);
@@ -41,6 +47,20 @@ AOMainWindow::AOMainWindow(QWidget *parent)
     loadManageLabs();
     loadManageInstructors();
     loadManageTAs();
+
+    // add logout action
+    QAction *logout = new QAction("Logout", this);
+    connect(logout, &QAction::triggered, this, [this]() {
+        if (this->parentWidget()) this->parentWidget()->show();
+        this->close();
+    });
+    menuBar()->addAction(logout);
+}
+
+AOMainWindow::AOMainWindow(int aoId, QWidget *parent)
+    : AOMainWindow(parent)
+{
+    this->aoId = aoId;
 }
 
 // Dashboard
@@ -95,13 +115,10 @@ void AOMainWindow::on_btnManageInstructors_clicked() {
     loadManageInstructors();
 }
 void AOMainWindow::on_btnAddInstructor_clicked() {
-    bool ok;
-    QString name = QInputDialog::getText(this, "Add Instructor", "Instructor Name:", QLineEdit::Normal, "", &ok);
-    if (ok && !name.isEmpty()) {
-        Instructor instructor(0, name.toStdString());
-        instructorRepo.add(instructor);
-        loadManageInstructors();
-    }
+    AOCreateUserDialog dlg(&authService, &instructorRepo, &taRepo, &hodRepo, this);
+    dlg.comboRole->setCurrentText("Instructor");
+    dlg.comboRole->setEnabled(false);
+    if (dlg.exec() == QDialog::Accepted) loadManageInstructors();
 }
 void AOMainWindow::loadManageInstructors() {
     auto allInstructors = instructorRepo.getAll();
@@ -121,13 +138,17 @@ void AOMainWindow::on_btnManageTAs_clicked() {
     loadManageTAs();
 }
 void AOMainWindow::on_btnAddTA_clicked() {
-    bool ok;
-    QString name = QInputDialog::getText(this, "Add TA", "TA Name:", QLineEdit::Normal, "", &ok);
-    if (ok && !name.isEmpty()) {
-        TA ta(0, name.toStdString());
-        taRepo.add(ta);
-        loadManageTAs();
-    }
+    AOCreateUserDialog dlg(&authService, &instructorRepo, &taRepo, &hodRepo, this);
+    dlg.comboRole->setCurrentText("TA");
+    dlg.comboRole->setEnabled(false);
+    if (dlg.exec() == QDialog::Accepted) loadManageTAs();
+}
+
+void AOMainWindow::on_btnAddHOD_clicked() {
+    AOCreateUserDialog dlg(&authService, &instructorRepo, &taRepo, &hodRepo, this);
+    dlg.comboRole->setCurrentText("HOD");
+    dlg.comboRole->setEnabled(false);
+    if (dlg.exec() == QDialog::Accepted) loadManageInstructors();
 }
 void AOMainWindow::loadManageTAs() {
     auto allTAs = taRepo.getAll();

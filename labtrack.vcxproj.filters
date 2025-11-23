@@ -10,9 +10,6 @@
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\signup.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\startpage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -25,7 +22,13 @@
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\BuildingRepository.cpp">
@@ -102,6 +105,9 @@
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_instructor_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Debug\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -118,6 +124,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_instructor_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_Release\ui_attendant_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_login.h">
@@ -138,6 +147,9 @@
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_instructor_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_MinSizeRel\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -156,6 +168,9 @@
     <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_instructor_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\include_RelWithDebInfo\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\SMZ\Documents\labtrack\CMakeFiles\6fd8cfa81122acb68a3bea52696147c2\autouic_(CONFIG).stamp.rule">
@@ -170,6 +185,7 @@
     <None Include="C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui" />
     <None Include="C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui" />
     <None Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Debug.stamp" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_Release.stamp" />
     <None Include="C:\Users\SMZ\Documents\labtrack\labtrack_autogen\autouic_MinSizeRel.stamp" />

@@ -15,6 +15,9 @@
 #include "backend/repositories/BuildingRepository.h"
 #include "backend/repositories/ActualTimingRepository.h"
 #include "backend/services/ReportService.h"
+#include "backend/services/MakeupService.h"
+#include "backend/repositories/MakeupRequestRepository.h"
+#include "backend/models/User.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class InstructorMainWindow; }
@@ -39,6 +42,7 @@ private slots:
     void on_comboSelectLab_currentIndexChanged(int index);
     void on_comboSelectLabTimesheet_currentIndexChanged(int index);
     void on_btnUpdateProfile_clicked();
+    void on_btnRequestMakeup_clicked();
 
 private:
     Ui::InstructorMainWindow *ui;
@@ -50,6 +54,9 @@ private:
     BuildingRepository buildingRepo;
     ActualTimingRepository actualTimingRepo;
     ReportService reportService;
+    MakeupRequestRepository makeupRequestRepo;
+    MakeupService *makeupService;
+    User currentUser;
 
     void loadDashboard();
     void loadMyLabs();
