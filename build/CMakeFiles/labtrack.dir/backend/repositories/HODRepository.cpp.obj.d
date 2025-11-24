@@ -1,6 +1,6 @@
 CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: \
- C:\Users\SMZ\Documents\labtrack\backend\repositories\HODRepository.cpp \
- C:\Users\SMZ\Documents\labtrack\backend\repositories\HODRepository.h \
+ C:\LabTrack\backend\repositories\HODRepository.cpp \
+ C:\LabTrack\backend\repositories\HODRepository.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -103,7 +103,7 @@ CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cerrno \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/charconv.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
+ C:/LabTrack/backend/models/HOD.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \

@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "labtrack_autogen/include/ui_startpage.h"
   "labtrack_autogen/include/ui_ta_mainwindow.h"
   "labtrack_autogen/mocs_compilation.cpp"
-  "labtrack_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

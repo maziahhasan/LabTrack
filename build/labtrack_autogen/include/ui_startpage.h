@@ -39,6 +39,7 @@ public:
     QSpacerItem *horizontalSpacer_3;
     QPushButton *btnTA;
     QPushButton *btnHOD;
+    QPushButton *btnAttendant;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *verticalSpacer_3;
 
@@ -147,6 +148,11 @@ public:
 
         horizontalLayout_2->addWidget(btnHOD);
 
+        btnAttendant = new QPushButton(centralWidget);
+        btnAttendant->setObjectName("btnAttendant");
+
+        horizontalLayout_2->addWidget(btnAttendant);
+
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_4);
@@ -174,6 +180,7 @@ public:
         btnInstructor->setText(QCoreApplication::translate("RoleSelectionWindow", "\360\237\221\250\342\200\215\360\237\217\253 Instructor", nullptr));
         btnTA->setText(QCoreApplication::translate("RoleSelectionWindow", "\360\237\216\223 Teaching Assistant", nullptr));
         btnHOD->setText(QCoreApplication::translate("RoleSelectionWindow", "\360\237\217\233\357\270\217 Head of Department", nullptr));
+        btnAttendant->setText(QCoreApplication::translate("RoleSelectionWindow", "\360\237\247\221\342\200\215\360\237\222\274 Attendant", nullptr));
     } // retranslateUi
 
 };

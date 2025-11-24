@@ -55,8 +55,6 @@ file(REMOVE_RECURSE
   "labtrack.exe"
   "labtrack.exe.manifest"
   "labtrack.pdb"
-  "labtrack_autogen/mocs_compilation.cpp"
-  "labtrack_autogen/timestamp"
   "liblabtrack.dll.a"
 )
 

@@ -35,8 +35,20 @@ Login::~Login()
 
 void Login::on_btnSignIn_clicked()
 {
-    QString email = ui->txtEmail->text().trimmed();
-    QString password = ui->txtPassword->text().trimmed();  // Trim password input here
+    QString email = ui->txtEmail->text();
+    QString password = ui->txtPassword->text();
+
+    // Debug: Show input values and their hex representation
+    QString debugMessage = QString("Input Email: [%1]\nHex: %2\nInput Password: [%3]\nHex: %4")
+        .arg(email)
+        .arg(email.toUtf8().toHex())
+        .arg(password)
+        .arg(password.toUtf8().toHex());
+
+    QMessageBox::information(this, "Debug Login Input", debugMessage);
+
+    email = email.trimmed();
+    password = password.trimmed();
 
     if (email.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Login", "Please enter email and password.");

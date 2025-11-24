@@ -1,6 +1,5 @@
-CMakeFiles/labtrack.dir/startpage.cpp.obj: \
- C:\Users\SMZ\Documents\labtrack\startpage.cpp \
- C:\Users\SMZ\Documents\labtrack\startpage.h \
+CMakeFiles/labtrack.dir/startpage.cpp.obj: C:\LabTrack\startpage.cpp \
+ C:\LabTrack\startpage.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -384,14 +383,13 @@ CMakeFiles/labtrack.dir/startpage.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qsizepolicy.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qbitmap.h \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtabwidget.h \
- C:\Users\SMZ\Documents\labtrack\login.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtabwidget.h C:\LabTrack\login.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
- C:\Users\SMZ\Documents\labtrack\backend/repositories/UserRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
- C:\Users\SMZ\Documents\labtrack\backend/services/AuthService.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
+ C:\LabTrack\backend/repositories/UserRepository.h \
+ C:/LabTrack/backend/models/User.h \
+ C:\LabTrack\backend/services/AuthService.h \
+ C:/LabTrack/backend/repositories/InstructorRepository.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -410,16 +408,16 @@ CMakeFiles/labtrack.dir/startpage.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/AcademicOfficer.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
- C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/include/ui_startpage.h \
+ C:/LabTrack/backend/models/Instructor.h \
+ C:/LabTrack/backend/repositories/TARepository.h \
+ C:/LabTrack/backend/models/TA.h \
+ C:/LabTrack/backend/repositories/HODRepository.h \
+ C:/LabTrack/backend/models/HOD.h \
+ C:/LabTrack/backend/repositories/AcademicOfficerRepository.h \
+ C:/LabTrack/backend/models/AcademicOfficer.h \
+ C:/LabTrack/backend/repositories/BuildingRepository.h \
+ C:/LabTrack/backend/models/Building.h \
+ C:/LabTrack/build/labtrack_autogen/include/ui_startpage.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QApplication \
@@ -458,8 +456,7 @@ CMakeFiles/labtrack.dir/startpage.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
- C:\Users\SMZ\Documents\labtrack\ta_mainwindow.h \
- C:\Users\SMZ\Documents\labtrack\hod_mainwindow.h \
+ C:\LabTrack\ta_mainwindow.h C:\LabTrack\hod_mainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidgetItem \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtablewidget.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtableview.h \
@@ -520,12 +517,16 @@ CMakeFiles/labtrack.dir/startpage.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
- C:\Users\SMZ\Documents\labtrack\backend/repositories/LabRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
- C:\Users\SMZ\Documents\labtrack\backend/repositories/RoomRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
- C:\Users\SMZ\Documents\labtrack\backend/repositories/ActualTimingRepository.h \
- C:\Users\SMZ\Documents\labtrack\backend/services/ReportService.h \
- C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.h
+ C:\LabTrack\backend/repositories/LabRepository.h \
+ C:/LabTrack/backend/models/Lab.h \
+ C:/LabTrack/backend/models/ScheduleTiming.h \
+ C:/LabTrack/backend/models/ActualTiming.h \
+ C:\LabTrack\backend/repositories/RoomRepository.h \
+ C:/LabTrack/backend/models/Room.h \
+ C:\LabTrack\backend/repositories/ActualTimingRepository.h \
+ C:\LabTrack\backend/services/ReportService.h \
+ C:\LabTrack\backend/utils/DateUtils.h \
+ C:\LabTrack\instructor_mainwindow.h \
+ C:\LabTrack\backend/services/MakeupService.h \
+ C:/LabTrack/backend/repositories/MakeupRequestRepository.h \
+ C:/LabTrack/backend/models/MakeupRequest.h

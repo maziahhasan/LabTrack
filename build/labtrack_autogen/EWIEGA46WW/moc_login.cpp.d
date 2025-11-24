@@ -1,5 +1,18 @@
-C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/EWIEGA46WW/moc_login.cpp: C:/Users/SMZ/Documents/labtrack/login.h \
-  C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/moc_predefs.h \
+C:/LabTrack/build/labtrack_autogen/EWIEGA46WW/moc_login.cpp: C:/LabTrack/login.h \
+  C:/LabTrack/build/labtrack_autogen/moc_predefs.h \
+  C:/LabTrack/backend/models/AcademicOfficer.h \
+  C:/LabTrack/backend/models/Building.h \
+  C:/LabTrack/backend/models/HOD.h \
+  C:/LabTrack/backend/models/Instructor.h \
+  C:/LabTrack/backend/models/TA.h \
+  C:/LabTrack/backend/models/User.h \
+  C:/LabTrack/backend/repositories/AcademicOfficerRepository.h \
+  C:/LabTrack/backend/repositories/BuildingRepository.h \
+  C:/LabTrack/backend/repositories/HODRepository.h \
+  C:/LabTrack/backend/repositories/InstructorRepository.h \
+  C:/LabTrack/backend/repositories/TARepository.h \
+  C:/LabTrack/backend/repositories/UserRepository.h \
+  C:/LabTrack/backend/services/AuthService.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
@@ -390,17 +403,4 @@ C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/EWIEGA46WW/moc_login.cpp:
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/AcademicOfficer.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
-  C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h \
-  C:/Users/SMZ/Documents/labtrack/backend/services/AuthService.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h

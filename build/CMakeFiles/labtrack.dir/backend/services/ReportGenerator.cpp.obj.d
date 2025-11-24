@@ -1,6 +1,6 @@
 CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: \
- C:\Users\SMZ\Documents\labtrack\backend\services\ReportGenerator.cpp \
- C:\Users\SMZ\Documents\labtrack\backend\services\ReportGenerator.h \
+ C:\LabTrack\backend\services\ReportGenerator.cpp \
+ C:\LabTrack\backend\services\ReportGenerator.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -98,17 +98,17 @@ CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tuple \
- C:\Users\SMZ\Documents\labtrack\backend\services\ReportService.h \
+ C:\LabTrack\backend\services\ReportService.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/LabRepository.h \
+ C:/LabTrack/backend/models/Lab.h \
+ C:/LabTrack/backend/models/ScheduleTiming.h \
+ C:/LabTrack/backend/models/ActualTiming.h \
+ C:/LabTrack/backend/models/TA.h C:/LabTrack/backend/models/User.h \
+ C:/LabTrack/backend/repositories/LabRepository.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -158,14 +158,14 @@ CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/ActualTimingRepository.h \
+ C:/LabTrack/backend/repositories/InstructorRepository.h \
+ C:/LabTrack/backend/models/Instructor.h \
+ C:/LabTrack/backend/repositories/TARepository.h \
+ C:/LabTrack/backend/repositories/RoomRepository.h \
+ C:/LabTrack/backend/models/Room.h \
+ C:/LabTrack/backend/repositories/BuildingRepository.h \
+ C:/LabTrack/backend/models/Building.h \
+ C:/LabTrack/backend/repositories/ActualTimingRepository.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
@@ -177,7 +177,7 @@ CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/utils/DateUtils.h \
+ C:/LabTrack/backend/utils/DateUtils.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \

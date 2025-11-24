@@ -1,6 +1,5 @@
 CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: \
- C:\Users\SMZ\Documents\labtrack\ta_mainwindow.cpp \
- C:\Users\SMZ\Documents\labtrack\ta_mainwindow.h \
+ C:\LabTrack\ta_mainwindow.cpp C:\LabTrack\ta_mainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -385,7 +384,7 @@ CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtabwidget.h \
- C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/include/ui_ta_mainwindow.h \
+ C:/LabTrack/build/labtrack_autogen/include/ui_ta_mainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qvariant.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QApplication \

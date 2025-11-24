@@ -1,6 +1,6 @@
 CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: \
- C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp \
- C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.h \
+ C:\LabTrack\ao_create_user_dialog.cpp \
+ C:\LabTrack\ao_create_user_dialog.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -411,10 +411,10 @@ CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
- C:\Users\SMZ\Documents\labtrack\backend/services/AuthService.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
+ C:\LabTrack\backend/services/AuthService.h \
+ C:/LabTrack/backend/repositories/UserRepository.h \
+ C:/LabTrack/backend/models/User.h \
+ C:/LabTrack/backend/repositories/InstructorRepository.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -433,15 +433,15 @@ CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/AcademicOfficer.h \
- C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
+ C:/LabTrack/backend/models/Instructor.h \
+ C:/LabTrack/backend/repositories/TARepository.h \
+ C:/LabTrack/backend/models/TA.h \
+ C:/LabTrack/backend/repositories/HODRepository.h \
+ C:/LabTrack/backend/models/HOD.h \
+ C:/LabTrack/backend/repositories/AcademicOfficerRepository.h \
+ C:/LabTrack/backend/models/AcademicOfficer.h \
+ C:/LabTrack/backend/repositories/BuildingRepository.h \
+ C:/LabTrack/backend/models/Building.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayout.h \

@@ -1,5 +1,5 @@
-C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/EWIEGA46WW/moc_ta_mainwindow.cpp: C:/Users/SMZ/Documents/labtrack/ta_mainwindow.h \
-  C:/Users/SMZ/Documents/labtrack/build/labtrack_autogen/moc_predefs.h \
+C:/LabTrack/build/labtrack_autogen/EWIEGA46WW/moc_ta_mainwindow.cpp: C:/LabTrack/ta_mainwindow.h \
+  C:/LabTrack/build/labtrack_autogen/moc_predefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
