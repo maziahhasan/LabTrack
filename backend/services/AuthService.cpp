@@ -5,16 +5,14 @@
 AuthService::AuthService(UserRepository &repo, InstructorRepository *irepo, TARepository *trepo, HODRepository *hrepo, AcademicOfficerRepository *aorepo, BuildingRepository *brepo)
     : userRepo(repo), instrRepo(irepo), taRepo(trepo), hodRepo(hrepo), aoRepo(aorepo), buildingRepo(brepo) {}
 
+// For this build we store plaintext passwords (insecure). These helpers
+// kept for API compatibility; they return the input unchanged.
 std::string AuthService::hashPassword(const std::string &pw) {
-    // Not secure: use std::hash for simplicity in this assignment
-    std::hash<std::string> h;
-    std::stringstream ss;
-    ss << h(pw);
-    return ss.str();
+    return pw;
 }
 
 std::string AuthService::computeHash(const std::string &pw) {
-    return hashPassword(pw);
+    return pw;
 }
 
 bool AuthService::registerUser(const std::string &username, const std::string &password, const std::string &role, const std::string &email, const std::string &performedByRole) {
@@ -39,7 +37,7 @@ bool AuthService::registerUser(const std::string &username, const std::string &p
     }
 
     int id = userRepo.getNextId();
-    User u(id, username, hashPassword(password), role, email);
+    User u(id, username, password, role, email);
     userRepo.add(u);
     // create corresponding domain object when applicable
     if (role == "TA" && taRepo != nullptr) {
@@ -70,6 +68,6 @@ bool AuthService::assignAttendantToBuilding(int userId, int buildingId) {
 bool AuthService::authenticate(const std::string &username, const std::string &password, User &outUser) {
     User u = userRepo.findByUsername(username);
     if (u.getUsername().empty()) return false;
-    if (u.getPasswordHash() == hashPassword(password)) { outUser = u; return true; }
+    if (u.getPassword() == password) { outUser = u; return true; }
     return false;
 }

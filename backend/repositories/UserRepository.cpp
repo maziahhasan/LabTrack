@@ -1,52 +1,56 @@
 #include "UserRepository.h"
 #include <fstream>
-#include <sstream>
 #include <algorithm>
-#include <cctype>
 
-// Helper function to trim whitespace from both ends of a string
-static std::string trim(const std::string &str) {
-    size_t first = str.find_first_not_of(" \t\n\r");
-    if (first == std::string::npos) return "";
-    size_t last = str.find_last_not_of(" \t\n\r");
-    return str.substr(first, (last - first + 1));
+static void writeString(std::ofstream &out, const std::string &s) {
+    int len = (int)s.size();
+    out.write((char*)&len, sizeof(len));
+    out.write(s.c_str(), len);
+}
+
+static std::string readString(std::ifstream &in) {
+    int len = 0;
+    in.read((char*)&len, sizeof(len));
+    if (!in || len < 0) return std::string();
+    char *buf = new char[len+1];
+    in.read(buf, len);
+    buf[len] = '\0';
+    std::string s(buf);
+    delete[] buf;
+    return s;
 }
 
 UserRepository::UserRepository(const std::string &file) : fileName(file) {}
 
 std::vector<User> UserRepository::loadAll() {
     std::vector<User> out;
-    std::ifstream in(fileName);
+    std::ifstream in(fileName, std::ios::binary);
     if (!in.is_open()) return out;
-    std::string line;
-    while (std::getline(in, line)) {
-        if (line.empty()) continue;
-        std::stringstream ss(line);
-        std::string idS, user, hash, role;
-        if (!std::getline(ss, idS, '|')) continue;
-        if (!std::getline(ss, user, '|')) continue;
-        if (!std::getline(ss, hash, '|')) continue;
-        if (!std::getline(ss, role, '|')) {
-            // If no pipe found, read rest of line (might have newline)
-            role = "";
-            std::getline(ss, role);
-        }
-        // Trim all fields to remove any whitespace issues
-        idS = trim(idS);
-        user = trim(user);
-        hash = trim(hash);
-        role = trim(role);
-        if (idS.empty() || user.empty() || hash.empty()) continue;
-        int id = std::stoi(idS);
-        out.push_back(User(id, user, hash, role));
+    int count = 0; in.read((char*)&count, sizeof(count));
+    if (!in) return out;
+    for (int i = 0; i < count; ++i) {
+        int id = -1; in.read((char*)&id, sizeof(id));
+        std::string user = readString(in);
+        std::string pw = readString(in);
+        std::string role = readString(in);
+        std::string email = readString(in);
+        std::string status = readString(in);
+        out.emplace_back(id, user, pw, role, email);
+        out.back().setStatus(status);
     }
     return out;
 }
 
 void UserRepository::saveAll(const std::vector<User> &users) {
-    std::ofstream out(fileName, std::ios::trunc);
+    std::ofstream out(fileName, std::ios::binary | std::ios::trunc);
+    int count = (int)users.size(); out.write((char*)&count, sizeof(count));
     for (const auto &u : users) {
-        out << u.getId() << "|" << u.getUsername() << "|" << u.getPasswordHash() << "|" << u.getRole() << "\n";
+        int id = u.getId(); out.write((char*)&id, sizeof(id));
+        writeString(out, u.getUsername());
+        writeString(out, u.getPassword());
+        writeString(out, u.getRole());
+        writeString(out, u.getEmail());
+        writeString(out, u.getStatus());
     }
 }
 
@@ -56,22 +60,43 @@ void UserRepository::add(const User &u) {
     saveAll(v);
 }
 
-int UserRepository::getNextId() {
+bool UserRepository::update(const User &u) {
     auto v = loadAll();
-    int maxId = 0;
-    for (const auto &u : v) if (u.getId() > maxId) maxId = u.getId();
-    return maxId + 1;
+    bool found = false;
+    for (auto &it : v) {
+        if (it.getId() == u.getId()) { it = u; found = true; break; }
+    }
+    if (found) saveAll(v);
+    return found;
+}
+
+int UserRepository::getNextId() {
+    auto v = loadAll(); int maxId = 0; for (const auto &u : v) if (u.getId() > maxId) maxId = u.getId(); return maxId + 1;
 }
 
 User UserRepository::findByUsername(const std::string &username) {
     auto v = loadAll();
-    // Case-insensitive lookup: normalize to lowercase for comparison
-    std::string lookup = username;
-    std::transform(lookup.begin(), lookup.end(), lookup.begin(), [](unsigned char c){ return std::tolower(c); });
+    std::string lookup = username; std::transform(lookup.begin(), lookup.end(), lookup.begin(), [](unsigned char c){ return std::tolower(c); });
     for (const auto &u : v) {
-        std::string stored = u.getUsername();
-        std::transform(stored.begin(), stored.end(), stored.begin(), [](unsigned char c){ return std::tolower(c); });
+        // check username
+        std::string stored = u.getUsername(); std::transform(stored.begin(), stored.end(), stored.begin(), [](unsigned char c){ return std::tolower(c); });
         if (stored == lookup) return u;
+        // check email as alternative login identifier
+        std::string em = u.getEmail(); std::transform(em.begin(), em.end(), em.begin(), [](unsigned char c){ return std::tolower(c); });
+        if (em == lookup) return u;
     }
     return User();
 }
+
+std::vector<User> UserRepository::getUsersByRole(const std::string &role) {
+    auto v = loadAll(); std::vector<User> res; for (const auto &u : v) if (u.getRole() == role) res.push_back(u); return res;
+}
+
+std::vector<User> UserRepository::getUsersByStatus(const std::string &status) {
+    auto v = loadAll(); std::vector<User> res; for (const auto &u : v) if (u.getStatus() == status) res.push_back(u); return res;
+}
+
+std::vector<User> UserRepository::getUsersByEmail(const std::string &email) {
+    auto v = loadAll(); std::vector<User> res; for (const auto &u : v) if (u.getEmail() == email) res.push_back(u); return res;
+}
+#include "UserRepository.h"

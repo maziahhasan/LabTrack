@@ -1,0 +1,5 @@
+C:/Users/SMZ/Documents/labtrack/build-mingw/CMakeFiles/labtrack.dir
+C:/Users/SMZ/Documents/labtrack/build-mingw/CMakeFiles/edit_cache.dir
+C:/Users/SMZ/Documents/labtrack/build-mingw/CMakeFiles/rebuild_cache.dir
+C:/Users/SMZ/Documents/labtrack/build-mingw/CMakeFiles/labtrack_autogen_timestamp_deps.dir
+C:/Users/SMZ/Documents/labtrack/build-mingw/CMakeFiles/labtrack_autogen.dir

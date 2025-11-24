@@ -1,0 +1,10 @@
+^C:\USERS\SMZ\DOCUMENTS\LABTRACK\BUILD\CMAKEFILES\C78B15F8E7CA575A3BDF1323D3D79CBD\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/SMZ/Documents/labtrack -BC:/Users/SMZ/Documents/labtrack/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/SMZ/Documents/labtrack/build/LabTrack.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

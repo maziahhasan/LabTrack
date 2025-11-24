@@ -63,5 +63,6 @@
         "sstream": "cpp",
         "unordered_map": "cpp",
         "xhash": "cpp"
-    }
+    },
+    "chat.tools.terminal.ignoreDefaultAutoApproveRules": true
 }

@@ -5,9 +5,9 @@
 
 class UserRepository {
 private:
-    std::string fileName; // text file storing users: id|username|passwordHash|role|email|status
+    std::string fileName; // binary file storing users
 public:
-    UserRepository(const std::string &file = "users.txt");
+    UserRepository(const std::string &file = "users.bin");
     std::vector<User> loadAll();
     void saveAll(const std::vector<User> &users);
     void add(const User &u);

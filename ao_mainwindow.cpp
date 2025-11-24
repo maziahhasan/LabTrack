@@ -10,6 +10,7 @@
 #include <QInputDialog>
 #include <QDateTime>
 #include <QMenuBar>
+#include "ao_add_lab_dialog.h"
 
 // Constructor: initialize repositories and view
 AOMainWindow::AOMainWindow(QWidget *parent)
@@ -85,30 +86,41 @@ void AOMainWindow::on_btnManageLabs_clicked() {
     loadManageLabs();
 }
 void AOMainWindow::on_btnAddLab_clicked() {
-    bool ok;
-    QString name = QInputDialog::getText(this, "Add Lab", "Lab Name:", QLineEdit::Normal, "", &ok);
-    if (ok && !name.isEmpty()) {
-        // Parse course code and section (e.g., "CS101 A" or just "CS101")
-        QStringList parts = name.split(" ");
-        QString courseCode = parts[0];
-        QString section = parts.size() > 1 ? parts[1] : "";
-        Lab lab(0, courseCode.toStdString(), section.toStdString());
-        labRepo.add(lab);
-        loadManageLabs();
-    }
+    // Use a dedicated dialog to collect complete lab and schedule data
+    AOAddLabDialog dlg(instructorRepo, roomRepo, this);
+    if (dlg.exec() != QDialog::Accepted) return;
+
+    QString course = dlg.courseCode();
+    QString section = dlg.section();
+    int instructorId = dlg.selectedInstructorId();
+    int roomId = dlg.selectedRoomId();
+    QString day = dlg.dayOfWeek();
+    QString start = dlg.startTime().toString("HH:mm");
+    QString end = dlg.endTime().toString("HH:mm");
+
+    int id = labRepo.getNextId();
+    Lab lab(id, course.toStdString(), section.toStdString());
+    lab.setInstructorId(instructorId);
+    lab.setRoomId(roomId);
+    ScheduleTiming sch(day.toStdString(), start.toStdString(), end.toStdString());
+    lab.setSchedule(sch);
+    labRepo.add(lab);
+    loadManageLabs();
 }
 void AOMainWindow::loadManageLabs() {
     auto allLabs = labRepo.getAllLabs();
     ui->tableLabs->setRowCount(allLabs.size());
-    ui->tableLabs->setColumnCount(4);
-    ui->tableLabs->setHorizontalHeaderLabels({"ID", "Name", "Instructor", "Status"});
+    ui->tableLabs->setColumnCount(5);
+    ui->tableLabs->setHorizontalHeaderLabels({"ID", "Name", "Schedule", "Instructor", "Status"});
     for (int i = 0; i < allLabs.size(); ++i) {
         const auto& lab = allLabs[i];
         auto instructor = instructorRepo.getInstructorById(lab.getInstructorId());
         ui->tableLabs->setItem(i, 0, new QTableWidgetItem(QString::number(lab.getId())));
         ui->tableLabs->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(lab.getName())));
-        ui->tableLabs->setItem(i, 2, new QTableWidgetItem(instructor ? QString::fromStdString(instructor->getName()) : "Unknown"));
-        ui->tableLabs->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(lab.getStatus())));
+        // schedule column
+        ui->tableLabs->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(lab.getSchedule().toString())));
+        ui->tableLabs->setItem(i, 3, new QTableWidgetItem(instructor ? QString::fromStdString(instructor->getName()) : "Unknown"));
+        ui->tableLabs->setItem(i, 4, new QTableWidgetItem(QString::fromStdString(lab.getStatus())));
     }
 }
 

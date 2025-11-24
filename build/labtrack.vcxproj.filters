@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\startpage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\hod_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ta_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\ao_create_user_dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\BuildingRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\TARepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\UserRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\RoomRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\MakeupRequestRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\LabRespository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\InstructorRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\HODRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\ActualTimingRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\repositories\AcademicOfficerRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\services\MakeupService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\services\ReportGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\services\LabService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\services\AuthService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\backend\services\ReportService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_startpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_hod_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_ta_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_ao_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_instructor_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Debug\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_startpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_hod_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_ta_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_ao_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_instructor_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_Release\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_startpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_hod_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_ta_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_ao_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_instructor_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_MinSizeRel\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_startpage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_hod_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_ta_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_ao_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_instructor_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\include_RelWithDebInfo\ui_attendant_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\SMZ\Documents\labtrack\build\CMakeFiles\105f36c5c0037eed1fa95c0d83785d77\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\SMZ\Documents\labtrack\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\SMZ\Documents\labtrack\login.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\startpage.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\hod_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\ta_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\ao_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.ui" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\autouic_Debug.stamp" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\autouic_Release.stamp" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="C:\Users\SMZ\Documents\labtrack\build\labtrack_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{EC8DEB6A-CCCD-3251-8ED5-46BE165722C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A38050C2-464B-3A3F-9929-5E3C4D34D2A5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B3BD1C7F-C15F-3310-AFFB-7114B4DF8382}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

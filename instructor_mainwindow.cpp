@@ -33,7 +33,7 @@ InstructorMainWindow::InstructorMainWindow(int instructorId, QWidget *parent) :
     makeupService = new MakeupService(makeupRequestRepo, labRepo);
     
     // Load current user
-    UserRepository userRepo("users.txt");
+    UserRepository userRepo; // uses users.bin by default
     auto users = userRepo.loadAll();
     for (const auto& u : users) {
         if (u.getId() == instructorId) {

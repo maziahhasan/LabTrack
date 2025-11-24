@@ -1,0 +1,91 @@
+@startuml
+' LabTrack class diagram (simplified)
+skinparam classAttributeIconSize 0
+
+class Lab {
+  - int id
+  - string courseCode
+  - string section
+  - int roomId
+  - int buildingId
+  - int instructorId
+  - ScheduleTiming schedule
+  - vector<int> taIds
+  - vector<ActualTiming> timeSheets
+  - string status
+  + getId(): int
+  + getName(): string
+}
+
+class ScheduleTiming {
+  - string dayOfWeek
+  - string expectedStart
+  - string expectedEnd
+  + toString(): string
+}
+
+class ActualTiming {
+  - int labId
+  - int taId
+  - string date
+  - string startTime
+  - string endTime
+  - double durationHours
+  - string notes
+}
+
+class User {
+  - int id
+  - string name
+  - string role
+}
+
+class Instructor
+class TA
+class Attendant
+class AcademicOfficer
+class HOD
+
+class Building {
+  - int id
+  - string name
+}
+
+class Room {
+  - int id
+  - string name
+  - int buildingId
+}
+
+class MakeupRequest {
+  - int id
+  - int labId
+  - string requestedDate
+  - string startTime
+  - string endTime
+  - string status
+}
+
+' Repositories / Services
+class LabRepository
+class ActualTimingRepository
+class ReportService
+class MakeupService
+
+' Relationships
+Lab "1" *-- "*" ActualTiming : has
+Lab "1" o-- "*" TA : hasAssigned
+Lab "1" --> "1" Instructor
+Lab "1" --> "1" Room
+Room "1" --> "1" Building
+User <|-- Instructor
+User <|-- TA
+User <|-- Attendant
+User <|-- AcademicOfficer
+User <|-- HOD
+MakeupRequest --> Lab
+LabRepository ..> Lab
+ReportService ..> LabRepository
+MakeupService ..> MakeupRequest
+
+@enduml

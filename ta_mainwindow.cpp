@@ -19,13 +19,15 @@ TAMainWindow::TAMainWindow(QWidget *parent)
     // Optional: Set default page on startup
     ui->stackedWidget->setCurrentWidget(ui->dashboardPage);
 
-    // Add logout action to menu bar
+    // Add logout action to menu bar (for this constructor)
     QAction *logout = new QAction("Logout", this);
     connect(logout, &QAction::triggered, this, [this]() {
         if (this->parentWidget()) this->parentWidget()->show();
         this->close();
     });
     menuBar()->addAction(logout);
+
+    // (logout action already added above)
 }
 
 TAMainWindow::TAMainWindow(int taId, QWidget *parent)

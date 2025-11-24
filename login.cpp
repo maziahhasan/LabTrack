@@ -15,8 +15,8 @@ Login::Login(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Initialize repositories and auth service (uses default users.txt)
-    userRepo = new UserRepository("users.txt");
+    // Initialize repositories and auth service (uses binary users.bin by default)
+    userRepo = new UserRepository();
     // pass nullptr for other repos for now
     authService = new AuthService(*userRepo, nullptr, nullptr, nullptr, nullptr, nullptr);
 
@@ -38,15 +38,7 @@ void Login::on_btnSignIn_clicked()
     QString email = ui->txtEmail->text();
     QString password = ui->txtPassword->text();
 
-    // Debug: Show input values and their hex representation
-    QString debugMessage = QString("Input Email: [%1]\nHex: %2\nInput Password: [%3]\nHex: %4")
-        .arg(email)
-        .arg(email.toUtf8().toHex())
-        .arg(password)
-        .arg(password.toUtf8().toHex());
-
-    QMessageBox::information(this, "Debug Login Input", debugMessage);
-
+    // Trim inputs and validate
     email = email.trimmed();
     password = password.trimmed();
 
@@ -60,23 +52,13 @@ void Login::on_btnSignIn_clicked()
         QMessageBox::critical(this, "Login Failed", "Username not found. Please check your username/email.");
         return;
     }
-
-    // Check password against stored hash and give clear feedback
-    std::string attemptedHash = AuthService::computeHash(password.toStdString());
-    if (attemptedHash != found.getPasswordHash()) {
-        // debug output for password hash mismatch
-        QString debugInfo = QString("Attempted Hash: %1\nStored Hash: %2")
-                                .arg(QString::fromStdString(attemptedHash))
-                                .arg(QString::fromStdString(found.getPasswordHash()));
-        QMessageBox::critical(this, "Login Failed", "Incorrect password. Please try again.\n" + debugInfo);
-        return;
-    }
-
-    // Password matches — perform authentication and continue
+    // Perform authentication (use UTF-8 conversion to preserve characters)
     User u;
-    bool ok = authService->authenticate(email.toStdString(), password.toStdString(), u);
+    std::string emailStr = email.toStdString();
+    std::string passwordStr = password.toUtf8().constData();
+    bool ok = authService->authenticate(emailStr, passwordStr, u);
     if (!ok) {
-        QMessageBox::critical(this, "Login Failed", "Authentication failed. Please try again.");
+        QMessageBox::critical(this, "Login Failed", "Incorrect password. Please try again.");
         return;
     }
 

@@ -28,6 +28,7 @@ set(SOURCES
     ta_mainwindow.cpp
     ao_mainwindow.cpp
     ao_create_user_dialog.cpp
+    ao_add_lab_dialog.cpp
     instructor_mainwindow.cpp
     attendant_mainwindow.cpp
 )
