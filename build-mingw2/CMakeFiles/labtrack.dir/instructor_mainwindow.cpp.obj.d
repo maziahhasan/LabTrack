@@ -501,8 +501,6 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qguiapplication_platform.h \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcombobox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFormLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qformlayout.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLayout \
@@ -525,11 +523,12 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qtextformat.h \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QStackedWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qstackedwidget.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
@@ -546,4 +545,6 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QDate \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QTime \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/QMap \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/qmap.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/UserRepository.h

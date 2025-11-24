@@ -43,7 +43,8 @@ template <> constexpr inline auto StartPage::qt_create_metaobjectdata<qt_meta_ta
         "",
         "on_btnInstructor_clicked",
         "on_btnTA_clicked",
-        "on_btnHOD_clicked"
+        "on_btnHOD_clicked",
+        "on_btnAttendant_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -55,6 +56,8 @@ template <> constexpr inline auto StartPage::qt_create_metaobjectdata<qt_meta_ta
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnHOD_clicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnAttendant_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -82,6 +85,7 @@ void StartPage::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 1: _t->on_btnInstructor_clicked(); break;
         case 2: _t->on_btnTA_clicked(); break;
         case 3: _t->on_btnHOD_clicked(); break;
+        case 4: _t->on_btnAttendant_clicked(); break;
         default: ;
         }
     }
@@ -107,14 +111,14 @@ int StartPage::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

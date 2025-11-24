@@ -12,10 +12,10 @@
 AttendantMainWindow::AttendantMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AttendantMainWindow),
-    labRepo("test_labs.bin"),
-    roomRepo("test_rooms.bin"),
-    buildingRepo("test_buildings.bin"),
-    actualTimingRepo("test_timings.bin"),
+    labRepo("labs.bin"),
+    roomRepo("rooms.bin"),
+    buildingRepo("buildings.bin"),
+    actualTimingRepo("actual_timings.bin"),
     labService(nullptr)
 {
     ui->setupUi(this);
@@ -46,7 +46,7 @@ AttendantMainWindow::AttendantMainWindow(int attendantId, QWidget *parent) :
     AttendantMainWindow(parent)
 {
     this->attendantId = attendantId;
-    UserRepository userRepo("users.txt");
+    UserRepository userRepo("users.bin");
     auto users = userRepo.loadAll();
     for (const auto& u : users) {
         if (u.getId() == attendantId) {
@@ -115,20 +115,39 @@ void AttendantMainWindow::on_btnSubmitTimesheet_clicked()
     QString startStr = ui->timeStart->time().toString("hh:mm");
     QString endStr = ui->timeEnd->time().toString("hh:mm");
     
-    if (startStr >= endStr) {
-        QMessageBox::warning(this, "Error", "Start time must be before end time.");
+    // Check if this is a leave (00:00 - 00:00)
+    bool isLeave = (startStr == "00:00" && endStr == "00:00");
+    
+    if (!isLeave && startStr >= endStr) {
+        QMessageBox::warning(this, "Error", "Start time must be before end time (or use 00:00 - 00:00 to mark as leave).");
         return;
     }
     
-    ActualTiming timing(labId, -1, dateStr.toStdString(), startStr.toStdString(), endStr.toStdString());
+    // Calculate duration in hours (0 for leaves)
+    QTime start = QTime::fromString(startStr, "hh:mm");
+    QTime end = QTime::fromString(endStr, "hh:mm");
+    double duration = isLeave ? 0.0 : start.secsTo(end) / 3600.0;
     
-    if (labService->addActualTiming(currentUser, labId, timing)) {
-        QMessageBox::information(this, "Success", "Timesheet entry added successfully.");
-        loadTimesheets();
-        loadFillTimesheet();
-    } else {
-        QMessageBox::critical(this, "Error", "Failed to add timesheet entry. Make sure you are assigned to this building.");
+    // Verify attendant is assigned to this building
+    auto lab = labRepo.getLabById(labId);
+    if (!lab) {
+        QMessageBox::critical(this, "Error", "Lab not found.");
+        return;
     }
+    
+    int buildingId = getBuildingIdForAttendant();
+    if (buildingId == -1 || lab->getBuildingId() != buildingId) {
+        QMessageBox::critical(this, "Error", "You can only fill timesheets for labs in your assigned building.");
+        return;
+    }
+    
+    // Create and save timing record
+    ActualTiming timing(labId, attendantId, dateStr.toStdString(), startStr.toStdString(), endStr.toStdString(), duration, "Submitted");
+    actualTimingRepo.add(timing);
+    
+    QMessageBox::information(this, "Success", "Timesheet entry added successfully.");
+    loadTimesheets();
+    loadFillTimesheet();
 }
 
 void AttendantMainWindow::loadDashboard()
@@ -160,20 +179,19 @@ void AttendantMainWindow::loadTimesheets()
     auto labs = labRepo.getLabsByBuildingId(buildingId);
     ui->tableTimesheets->setRowCount(0);
     ui->tableTimesheets->setColumnCount(5);
-    ui->tableTimesheets->setHorizontalHeaderLabels({"Date", "Lab", "Start Time", "End Time", "Duration"});
+    ui->tableTimesheets->setHorizontalHeaderLabels({"Date", "Lab", "Start Time", "End Time", "Duration (hrs)"});
     
     int row = 0;
     for (const auto& lab : labs) {
-        const auto& timings = lab.getTimeSheets();
+        auto timings = actualTimingRepo.getTimingsByLabId(lab.getId());
         for (const auto& timing : timings) {
             ui->tableTimesheets->insertRow(row);
-            double hours = DateUtils::hoursBetween(timing.getStartTime(), timing.getEndTime());
             
             ui->tableTimesheets->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(timing.getDate())));
             ui->tableTimesheets->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(lab.getName())));
             ui->tableTimesheets->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(timing.getStartTime())));
             ui->tableTimesheets->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(timing.getEndTime())));
-            ui->tableTimesheets->setItem(row, 4, new QTableWidgetItem(QString::number(hours, 'f', 2)));
+            ui->tableTimesheets->setItem(row, 4, new QTableWidgetItem(QString::number(timing.getDuration(), 'f', 2)));
             row++;
         }
     }

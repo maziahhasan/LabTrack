@@ -16,6 +16,7 @@ StartPage::StartPage(QWidget *parent) :
     connect(ui->btnInstructor, &QPushButton::clicked, loginWindow, &QDialog::show);
     connect(ui->btnTA, &QPushButton::clicked, this, &StartPage::on_btnTA_clicked);
     connect(ui->btnHOD, &QPushButton::clicked, loginWindow, &QDialog::show);
+    connect(ui->btnAttendant, &QPushButton::clicked, this, &StartPage::on_btnAttendant_clicked);
 }
 
 StartPage::~StartPage()
@@ -54,6 +55,15 @@ void StartPage::on_btnAdmin_clicked()
 void StartPage::on_btnInstructor_clicked()
 {
     // open login for instructor
+    if (loginWindow) {
+        loginWindow->show();
+        this->hide();
+    }
+}
+
+void StartPage::on_btnAttendant_clicked()
+{
+    // open login for attendant
     if (loginWindow) {
         loginWindow->show();
         this->hide();

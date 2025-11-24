@@ -106,6 +106,9 @@ void LabRepository::saveLabs(const vector<Lab> &labs) {
         int room = lab.getRoomId();
         out.write((char*)&room, sizeof(int));
 
+        int building = lab.getBuildingId();
+        out.write((char*)&building, sizeof(int));
+
         int inst = lab.getInstructorId();
         out.write((char*)&inst, sizeof(int));
 
@@ -165,6 +168,11 @@ vector<Lab> LabRepository::loadLabs() {
         in.read((char*)&roomId, sizeof(int));
         if (!in) break;
         lab.setRoomId(roomId);
+
+        int buildingId;
+        in.read((char*)&buildingId, sizeof(int));
+        if (!in) break;
+        lab.setBuildingId(buildingId);
 
         int inst;
         in.read((char*)&inst, sizeof(int));

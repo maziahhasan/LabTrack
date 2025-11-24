@@ -6,6 +6,7 @@
 #include <QDialogButtonBox>
 #include "backend/repositories/InstructorRepository.h"
 #include "backend/repositories/RoomRepository.h"
+#include "backend/models/Lab.h"
 
 class AOAddLabDialog : public QDialog {
     Q_OBJECT

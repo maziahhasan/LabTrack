@@ -437,6 +437,10 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: \
  C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/RoomRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
+ C:\Users\SMZ\Documents\labtrack\backend/models/Lab.h \
+ C:\Users\SMZ\Documents\labtrack\backend/models/ScheduleTiming.h \
+ C:\Users\SMZ\Documents\labtrack\backend/models/ActualTiming.h \
+ C:\Users\SMZ\Documents\labtrack\backend/models/TA.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayout.h \

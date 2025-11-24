@@ -422,7 +422,11 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_ao_
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h

@@ -25,7 +25,8 @@ int main() {
     InstructorRepository instrRepo("instructors.bin");
     instrRepo.save({});
     int iid = instrRepo.getNextId();
-    instrRepo.add(Instructor(iid++, "instr1", "instr1@uni.edu"));
+    // Link to user ID 3 (instr_a)
+    instrRepo.add(Instructor(iid++, "instr_a", "instr_a@uni.edu"));
     instrRepo.add(Instructor(iid++, "instr2", "instr2@uni.edu"));
 
     // TAs
@@ -43,7 +44,8 @@ int main() {
     rRepo.save({});
     int bid = bRepo.getNextId();
     int rid = rRepo.getNextId();
-    Building b1(bid++, "Engineering Block", -1, "North Campus");
+    // Assign attendant user ID 5 (att_a) to building 1
+    Building b1(bid++, "Engineering Block", 5, "North Campus");
     Building b2(bid++, "Science Block", -1, "East Campus");
     bRepo.add(b1); bRepo.add(b2);
 
@@ -68,21 +70,24 @@ int main() {
     labRepo.saveLabs({});
     int lid = labRepo.getNextId();
     ScheduleTiming s1("Monday", "09:00", "11:00");
-    Lab lab1(lid++, "CS1001", "A", r1.getId(), b1.getId(), 1, s1);
+    // Assign to instructor user ID 3 (instr_a)
+    Lab lab1(lid++, "CS1001", "A", r1.getId(), b1.getId(), 3, s1);
     ScheduleTiming s2("Wednesday", "14:00", "16:00");
-    Lab lab2(lid++, "CS2001", "B", r2.getId(), b1.getId(), 2, s2);
-    labRepo.add(lab1); labRepo.add(lab2);
+    Lab lab2(lid++, "CS2001", "B", r2.getId(), b1.getId(), 3, s2);
+    ScheduleTiming s3("Friday", "10:00", "12:00");
+    Lab lab3(lid++, "CS3001", "C", r3.getId(), b2.getId(), 3, s3);
+    labRepo.add(lab1); labRepo.add(lab2); labRepo.add(lab3);
 
     // Actual timings
     ActualTimingRepository tRepo("actual_timings.bin");
     // add a few sample timings
-    tRepo.add(ActualTiming(lab1.getId(), 1, "2025-11-01", "09:05", "11:00", 1.92, "OK"));
-    tRepo.add(ActualTiming(lab2.getId(), 2, "2025-11-03", "14:00", "16:10", 2.17, "Late finish"));
+    tRepo.add(ActualTiming(lab1.getId(), 3, "2025-11-01", "09:05", "11:00", 1.92, "OK"));
+    tRepo.add(ActualTiming(lab2.getId(), 3, "2025-11-03", "14:00", "16:10", 2.17, "Late finish"));
 
     // Makeup requests
     MakeupRequestRepository mRepo("makeup_requests.bin");
     int mid = mRepo.getNextId();
-    mRepo.add(MakeupRequest(mid++, lab1.getId(), 1, "2025-12-01", "09:00", "11:00", "pending"));
+    mRepo.add(MakeupRequest(mid++, lab1.getId(), 3, "2025-12-01", "09:00", "11:00", "pending"));
 
     std::cout << "Seeded users, instructors, TAs, buildings, rooms, labs, timings, and makeup requests.\n";
     return 0;

@@ -438,6 +438,10 @@ CMakeFiles/labtrack.dir/labtrack_autogen/mocs_compilation.cpp.obj: \
  C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qtmochelpers.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qtmocconstants.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/q20algorithm.h \
@@ -451,7 +455,6 @@ CMakeFiles/labtrack.dir/labtrack_autogen/mocs_compilation.cpp.obj: \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h \
@@ -508,9 +511,6 @@ CMakeFiles/labtrack.dir/labtrack_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/LabRepository.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
- C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/ActualTimingRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/services/ReportService.h \
  C:\Users\SMZ\Documents\labtrack\build-mingw2\labtrack_autogen\EWIEGA46WW/moc_attendant_mainwindow.cpp \

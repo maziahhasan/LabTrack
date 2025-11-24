@@ -21,6 +21,7 @@ private slots:
     void on_btnInstructor_clicked();
     void on_btnTA_clicked();
     void on_btnHOD_clicked();
+    void on_btnAttendant_clicked();
 
 private:
     Ui::RoleSelectionWindow *ui;

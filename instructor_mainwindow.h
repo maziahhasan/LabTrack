@@ -32,15 +32,9 @@ public:
     ~InstructorMainWindow();
 
 private slots:
-    void on_btnDashboard_clicked();
     void on_btnMyLabs_clicked();
-    void on_btnLabDetails_clicked();
-    void on_btnTimesheet_clicked();
-    void on_btnNotifications_clicked();
     void on_btnProfile_clicked();
 
-    void on_comboSelectLab_currentIndexChanged(int index);
-    void on_comboSelectLabTimesheet_currentIndexChanged(int index);
     void on_btnUpdateProfile_clicked();
     void on_btnRequestMakeup_clicked();
 
@@ -58,11 +52,7 @@ private:
     MakeupService *makeupService;
     User currentUser;
 
-    void loadDashboard();
     void loadMyLabs();
-    void loadLabDetails();
-    void loadTimesheet();
-    void loadNotifications();
     void loadProfile();
 
     void exportToPDF(const QString& title, QTableWidget* table);

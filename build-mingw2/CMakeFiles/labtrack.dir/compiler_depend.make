@@ -913,6 +913,7 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: C:/Users/SMZ/Documents/labtra
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLayout \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLineEdit \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTimeEdit \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -930,6 +931,7 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: C:/Users/SMZ/Documents/labtra
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qslider.h \
@@ -1185,6 +1187,10 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: C:/Users/SMZ/Documents/labtra
   C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
   C:/Users/SMZ/Documents/labtrack/ao_add_lab_dialog.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/ActualTiming.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h
 
@@ -5731,6 +5737,7 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/
 CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/instructor_mainwindow.cpp \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDate \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QDateTime \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QMap \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QTime \
   C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
@@ -5927,7 +5934,6 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: C:/Users/SMZ/Documents/la
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QApplication \
-  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFormLayout \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFrame \
@@ -5937,12 +5943,12 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: C:/Users/SMZ/Documents/la
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLayout \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLineEdit \
-  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidget \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMenuBar \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QStackedWidget \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidgetItem \
@@ -5956,7 +5962,6 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj: C:/Users/SMZ/Documents/la
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qapplication.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qboxlayout.h \
-  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcombobox.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qfiledialog.h \
@@ -10367,7 +10372,9 @@ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget:
 
 C:/Qt/6.10.0/mingw_64/include/QtWidgets/qstackedwidget.h:
 
-C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidget:
+C:/Qt/6.10.0/mingw_64/include/QtCore/QMap:
+
+C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qtmocconstants.h:
 
@@ -10377,8 +10384,8 @@ labtrack_autogen/EWIEGA46WW/moc_instructor_mainwindow.cpp:
 
 labtrack_autogen/include/ui_login.h:
 
-C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem:
-
 labtrack_autogen/include/ui_startpage.h:
+
+C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidget:
 
 labtrack_autogen/include/ui_ta_mainwindow.h:
