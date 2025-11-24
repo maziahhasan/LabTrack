@@ -213,11 +213,26 @@ CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\instructor_mainwindow.cpp -o CMakeFiles\labtrack.dir\instructor_mainwindow.cpp.s
 
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/flags.make
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj: C:/Users/SMZ/Documents/labtrack/attendant_mainwindow.cpp
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj -MF CMakeFiles\labtrack.dir\attendant_mainwindow.cpp.obj.d -o CMakeFiles\labtrack.dir\attendant_mainwindow.cpp.obj -c C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp
+
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp > CMakeFiles\labtrack.dir\attendant_mainwindow.cpp.i
+
+CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.cpp -o CMakeFiles\labtrack.dir\attendant_mainwindow.cpp.s
+
 CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj: CMakeFiles/labtrack.dir/flags.make
 CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\BuildingRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\BuildingRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\BuildingRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.i: cmake_force
@@ -232,7 +247,7 @@ CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj: CMakeFiles/la
 CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\TARepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\TARepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\TARepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.i: cmake_force
@@ -247,7 +262,7 @@ CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj: CMakeFiles/
 CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\UserRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\UserRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\UserRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.i: cmake_force
@@ -262,7 +277,7 @@ CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj: CMakeFiles/
 CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\RoomRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\RoomRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\RoomRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/RoomRepository.cpp.i: cmake_force
@@ -277,7 +292,7 @@ CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj: CM
 CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/MakeupRequestRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\MakeupRequestRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\MakeupRequestRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\MakeupRequestRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/MakeupRequestRepository.cpp.i: cmake_force
@@ -292,7 +307,7 @@ CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj: CMakeFiles/
 CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/LabRespository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\LabRespository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\LabRespository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\LabRespository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/LabRespository.cpp.i: cmake_force
@@ -307,7 +322,7 @@ CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj: CMake
 CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\InstructorRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\InstructorRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\InstructorRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/InstructorRepository.cpp.i: cmake_force
@@ -322,7 +337,7 @@ CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: CMakeFiles/l
 CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\HODRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\HODRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\HODRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/HODRepository.cpp.i: cmake_force
@@ -337,7 +352,7 @@ CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj: CMa
 CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/ActualTimingRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\ActualTimingRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\ActualTimingRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\ActualTimingRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.i: cmake_force
@@ -352,7 +367,7 @@ CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj: 
 CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.cpp
 CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj -MF CMakeFiles\labtrack.dir\backend\repositories\AcademicOfficerRepository.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\repositories\AcademicOfficerRepository.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\repositories\AcademicOfficerRepository.cpp
 
 CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.i: cmake_force
@@ -367,7 +382,7 @@ CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj: CMakeFiles/labtr
 CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/services/MakeupService.cpp
 CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj -MF CMakeFiles\labtrack.dir\backend\services\MakeupService.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\services\MakeupService.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\services\MakeupService.cpp
 
 CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.i: cmake_force
@@ -382,7 +397,7 @@ CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: CMakeFiles/lab
 CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/services/ReportGenerator.cpp
 CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.obj -MF CMakeFiles\labtrack.dir\backend\services\ReportGenerator.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\services\ReportGenerator.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\services\ReportGenerator.cpp
 
 CMakeFiles/labtrack.dir/backend/services/ReportGenerator.cpp.i: cmake_force
@@ -397,7 +412,7 @@ CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj: CMakeFiles/labtrack
 CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/services/LabService.cpp
 CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj -MF CMakeFiles\labtrack.dir\backend\services\LabService.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\services\LabService.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\services\LabService.cpp
 
 CMakeFiles/labtrack.dir/backend/services/LabService.cpp.i: cmake_force
@@ -412,7 +427,7 @@ CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj: CMakeFiles/labtrac
 CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/services/AuthService.cpp
 CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj -MF CMakeFiles\labtrack.dir\backend\services\AuthService.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\services\AuthService.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\services\AuthService.cpp
 
 CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.i: cmake_force
@@ -427,7 +442,7 @@ CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj: CMakeFiles/labtr
 CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj: CMakeFiles/labtrack.dir/includes_CXX.rsp
 CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj: C:/Users/SMZ/Documents/labtrack/backend/services/ReportService.cpp
 CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj: CMakeFiles/labtrack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.obj -MF CMakeFiles\labtrack.dir\backend\services\ReportService.cpp.obj.d -o CMakeFiles\labtrack.dir\backend\services\ReportService.cpp.obj -c C:\Users\SMZ\Documents\labtrack\backend\services\ReportService.cpp
 
 CMakeFiles/labtrack.dir/backend/services/ReportService.cpp.i: cmake_force
@@ -449,6 +464,7 @@ labtrack_OBJECTS = \
 "CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj" \
 "CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj" \
 "CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj" \
+"CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj" \
 "CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj" \
 "CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj" \
 "CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj" \
@@ -477,6 +493,7 @@ labtrack.exe: CMakeFiles/labtrack.dir/ta_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/instructor_mainwindow.cpp.obj
+labtrack.exe: CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/backend/repositories/TARepository.cpp.obj
 labtrack.exe: CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj
@@ -500,7 +517,7 @@ labtrack.exe: C:/Qt/6.10.0/mingw_64/lib/libQt6EntryPoint.a
 labtrack.exe: CMakeFiles/labtrack.dir/linkLibs.rsp
 labtrack.exe: CMakeFiles/labtrack.dir/objects1.rsp
 labtrack.exe: CMakeFiles/labtrack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable labtrack.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\SMZ\Documents\labtrack\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable labtrack.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\labtrack.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

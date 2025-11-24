@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/labtrack_autogen"
   "labtrack_autogen/include/ui_ao_mainwindow.h"
+  "labtrack_autogen/include/ui_attendant_mainwindow.h"
   "labtrack_autogen/include/ui_hod_mainwindow.h"
   "labtrack_autogen/include/ui_instructor_mainwindow.h"
   "labtrack_autogen/include/ui_login.h"

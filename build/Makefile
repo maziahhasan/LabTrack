@@ -202,6 +202,30 @@ ao_mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/ao_mainwindow.cpp.s
 .PHONY : ao_mainwindow.cpp.s
 
+attendant_mainwindow.obj: attendant_mainwindow.cpp.obj
+.PHONY : attendant_mainwindow.obj
+
+# target to build an object file
+attendant_mainwindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj
+.PHONY : attendant_mainwindow.cpp.obj
+
+attendant_mainwindow.i: attendant_mainwindow.cpp.i
+.PHONY : attendant_mainwindow.i
+
+# target to preprocess a source file
+attendant_mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.i
+.PHONY : attendant_mainwindow.cpp.i
+
+attendant_mainwindow.s: attendant_mainwindow.cpp.s
+.PHONY : attendant_mainwindow.s
+
+# target to generate assembly for a file
+attendant_mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.s
+.PHONY : attendant_mainwindow.cpp.s
+
 backend/repositories/AcademicOfficerRepository.obj: backend/repositories/AcademicOfficerRepository.cpp.obj
 .PHONY : backend/repositories/AcademicOfficerRepository.obj
 
@@ -747,6 +771,9 @@ help:
 	@echo ... ao_mainwindow.obj
 	@echo ... ao_mainwindow.i
 	@echo ... ao_mainwindow.s
+	@echo ... attendant_mainwindow.obj
+	@echo ... attendant_mainwindow.i
+	@echo ... attendant_mainwindow.s
 	@echo ... backend/repositories/AcademicOfficerRepository.obj
 	@echo ... backend/repositories/AcademicOfficerRepository.i
 	@echo ... backend/repositories/AcademicOfficerRepository.s

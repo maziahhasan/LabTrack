@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AttendantMainWindow</class>
+ <widget class="QMainWindow" name="AttendantMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="sidebarFrame">
+      <property name="styleSheet">
+       <string>
+        QFrame {
+          background-color: #2C3E50;
+          border-right: 2px solid #1ABC9C;
+        }
+        QPushButton {
+          font-family: "Segoe UI";
+          font-size: 14px;
+          font-weight: 600;
+          color: #ECF0F1;
+          background-color: #34495E;
+          border-radius: 6px;
+          padding: 10px;
+          margin: 4px 0;
+          text-align: left;
+        }
+        QPushButton:hover {
+          background-color: #1ABC9C;
+          color: white;
+        }
+        QPushButton:pressed {
+          background-color: #16A085;
+          color: #FDFEFE;
+        }
+       </string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayoutSidebar">
+       <item>
+        <widget class="QPushButton" name="btnDashboard">
+         <property name="text">
+          <string>📊 Dashboard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnTimesheets">
+         <property name="text">
+          <string>⏰ Timesheets</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnFillTimesheet">
+         <property name="text">
+          <string>✏️ Fill Timesheet</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="dashboardPage">
+       <layout class="QVBoxLayout" name="verticalLayoutDashboard">
+        <item>
+         <widget class="QLabel" name="lblDashboardTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📊 Attendant Dashboard</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutCards">
+          <item>
+           <widget class="QFrame" name="frameBuilding">
+            <property name="styleSheet">
+             <string>background-color: white; border-radius: 8px; padding: 10px; border: 1px solid #ccc;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutBuilding">
+             <item>
+              <widget class="QLabel">
+               <property name="text">
+                <string>Building</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblBuildingName">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:18px; font-weight:bold; color:#1ABC9C;</string>
+               </property>
+               <property name="text">
+                <string>Not assigned</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frameTotalLabs">
+            <property name="styleSheet">
+             <string>background-color: white; border-radius: 8px; padding: 10px; border: 1px solid #ccc;</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutTotalLabs">
+             <item>
+              <widget class="QLabel">
+               <property name="text">
+                <string>Total Labs</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblTotalLabsCount">
+               <property name="styleSheet">
+                <string>font-family:"Segoe UI"; font-size:24px; font-weight:bold; color:#1ABC9C;</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="timesheetsPage">
+       <layout class="QVBoxLayout" name="verticalLayoutTimesheets">
+        <item>
+         <widget class="QLabel">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>⏰ Timesheets</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableTimesheets">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="fillTimesheetPage">
+       <layout class="QVBoxLayout" name="verticalLayoutFillTimesheet">
+        <item>
+         <widget class="QLabel">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>✏️ Fill Timesheet</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel">
+            <property name="text">
+             <string>Lab:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="comboSelectLab"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel">
+            <property name="text">
+             <string>Date:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QDateEdit" name="dateEdit">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel">
+            <property name="text">
+             <string>Start Time:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QTimeEdit" name="timeStart"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel">
+            <property name="text">
+             <string>End Time:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QTimeEdit" name="timeEnd"/>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QPushButton" name="btnSubmitTimesheet">
+            <property name="text">
+             <string>Submit Timesheet</string>
+            </property>
+            <property name="styleSheet">
+             <string>background-color: #1ABC9C; color: white; padding: 10px; border-radius: 5px;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+

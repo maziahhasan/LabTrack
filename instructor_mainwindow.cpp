@@ -57,10 +57,7 @@ InstructorMainWindow::InstructorMainWindow(int instructorId, QWidget *parent) :
     // Connect update profile button
     connect(ui->btnUpdateProfile, &QPushButton::clicked, this, &InstructorMainWindow::on_btnUpdateProfile_clicked);
     
-    // Connect makeup request button if it exists
-    if (ui->btnRequestMakeup) {
-        connect(ui->btnRequestMakeup, &QPushButton::clicked, this, &InstructorMainWindow::on_btnRequestMakeup_clicked);
-    }
+    // Note: btnRequestMakeup will be added to UI later, for now the function can be called programmatically
 
     // Load initial data
     loadDashboard();

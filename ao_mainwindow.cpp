@@ -88,8 +88,11 @@ void AOMainWindow::on_btnAddLab_clicked() {
     bool ok;
     QString name = QInputDialog::getText(this, "Add Lab", "Lab Name:", QLineEdit::Normal, "", &ok);
     if (ok && !name.isEmpty()) {
-        // Adjust arguments and properties as needed!
-        Lab lab(0, name.toStdString(), "", 0); // Minimal constructor
+        // Parse course code and section (e.g., "CS101 A" or just "CS101")
+        QStringList parts = name.split(" ");
+        QString courseCode = parts[0];
+        QString section = parts.size() > 1 ? parts[1] : "";
+        Lab lab(0, courseCode.toStdString(), section.toStdString());
         labRepo.add(lab);
         loadManageLabs();
     }

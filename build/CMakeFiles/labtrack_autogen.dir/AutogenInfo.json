@@ -283,6 +283,12 @@
 			null
 		],
 		[
+			"C:/Users/SMZ/Documents/labtrack/attendant_mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_attendant_mainwindow.cpp",
+			null
+		],
+		[
 			"C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.h",
 			"MU",
 			"6KW4EHGT7S/moc_AcademicOfficerRepository.cpp",
@@ -479,6 +485,11 @@
 			null
 		],
 		[ "C:/Users/SMZ/Documents/labtrack/ao_mainwindow.cpp", "MU", null ],
+		[
+			"C:/Users/SMZ/Documents/labtrack/attendant_mainwindow.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/SMZ/Documents/labtrack/backend/repositories/AcademicOfficerRepository.cpp",
 			"MU",

@@ -55,6 +55,12 @@
 },
 {
   "directory": "C:/Users/SMZ/Documents/labtrack/build",
+  "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/labtrack.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\labtrack.dir\\attendant_mainwindow.cpp.obj -c C:\\Users\\SMZ\\Documents\\labtrack\\attendant_mainwindow.cpp",
+  "file": "C:/Users/SMZ/Documents/labtrack/attendant_mainwindow.cpp",
+  "output": "CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/SMZ/Documents/labtrack/build",
   "command": "C:\\Qt\\Tools\\mingw1310_64\\bin\\g++.exe -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64 @CMakeFiles/labtrack.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\labtrack.dir\\backend\\repositories\\BuildingRepository.cpp.obj -c C:\\Users\\SMZ\\Documents\\labtrack\\backend\\repositories\\BuildingRepository.cpp",
   "file": "C:/Users/SMZ/Documents/labtrack/backend/repositories/BuildingRepository.cpp",
   "output": "CMakeFiles/labtrack.dir/backend/repositories/BuildingRepository.cpp.obj"

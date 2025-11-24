@@ -85,7 +85,7 @@ target_link_libraries(labtrack PRIVATE Qt6::Widgets Qt6::Gui Qt6::Core)
 # Use C++17
 target_compile_features(labtrack PRIVATE cxx_std_17)
 
-# For MSVC, add /Zc:__cplusplus flag to properly report C++ standard version
+# For MSVC, add required flags for Qt compatibility
 if(MSVC)
-    target_compile_options(labtrack PRIVATE /Zc:__cplusplus)
+    target_compile_options(labtrack PRIVATE /Zc:__cplusplus /permissive-)
 endif()

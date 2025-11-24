@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/labtrack.dir/ao_create_user_dialog.cpp.obj.d"
   "CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj"
   "CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj.d"
+  "CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj"
+  "CMakeFiles/labtrack.dir/attendant_mainwindow.cpp.obj.d"
   "CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj"
   "CMakeFiles/labtrack.dir/backend/repositories/AcademicOfficerRepository.cpp.obj.d"
   "CMakeFiles/labtrack.dir/backend/repositories/ActualTimingRepository.cpp.obj"
