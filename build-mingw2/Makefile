@@ -514,6 +514,30 @@ backend/services/AuthService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.s
 .PHONY : backend/services/AuthService.cpp.s
 
+backend/services/ExportService.obj: backend/services/ExportService.cpp.obj
+.PHONY : backend/services/ExportService.obj
+
+# target to build an object file
+backend/services/ExportService.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/backend/services/ExportService.cpp.obj
+.PHONY : backend/services/ExportService.cpp.obj
+
+backend/services/ExportService.i: backend/services/ExportService.cpp.i
+.PHONY : backend/services/ExportService.i
+
+# target to preprocess a source file
+backend/services/ExportService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/backend/services/ExportService.cpp.i
+.PHONY : backend/services/ExportService.cpp.i
+
+backend/services/ExportService.s: backend/services/ExportService.cpp.s
+.PHONY : backend/services/ExportService.s
+
+# target to generate assembly for a file
+backend/services/ExportService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\labtrack.dir\build.make CMakeFiles/labtrack.dir/backend/services/ExportService.cpp.s
+.PHONY : backend/services/ExportService.cpp.s
+
 backend/services/LabService.obj: backend/services/LabService.cpp.obj
 .PHONY : backend/services/LabService.obj
 
@@ -834,6 +858,9 @@ help:
 	@echo ... backend/services/AuthService.obj
 	@echo ... backend/services/AuthService.i
 	@echo ... backend/services/AuthService.s
+	@echo ... backend/services/ExportService.obj
+	@echo ... backend/services/ExportService.i
+	@echo ... backend/services/ExportService.s
 	@echo ... backend/services/LabService.obj
 	@echo ... backend/services/LabService.i
 	@echo ... backend/services/LabService.s

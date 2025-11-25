@@ -14,6 +14,7 @@
 #include "backend/repositories/RoomRepository.h"
 #include "backend/repositories/BuildingRepository.h"
 #include "backend/repositories/ActualTimingRepository.h"
+#include "backend/repositories/MakeupRequestRepository.h"
 #include "backend/services/ReportService.h"
 #include "backend/repositories/UserRepository.h"
 #include "backend/services/AuthService.h"
@@ -38,8 +39,7 @@ private slots:
     void on_btnManageLabs_clicked();
     void on_btnManageInstructors_clicked();
     void on_btnManageTAs_clicked();
-    void on_btnScheduleLabs_clicked();
-    void on_btnReports_clicked();
+    void on_btnMakeupRequests_clicked();
 
     void on_btnAddLab_clicked();
     void on_btnEditLab_clicked();
@@ -55,11 +55,8 @@ private slots:
 
     void on_btnAddHOD_clicked();
 
-    void on_btnSetSchedule_clicked();
-
-    void on_btnGenerateWeeklySchedule_clicked();
-    void on_btnGenerateTimesheets_clicked();
-    void on_btnGenerateMakeupSchedule_clicked();
+    void on_btnAcceptMakeup_clicked();
+    void on_btnRejectMakeup_clicked();
 
 private:
     Ui::AOMainWindow *ui;
@@ -70,6 +67,7 @@ private:
     RoomRepository roomRepo;
     BuildingRepository buildingRepo;
     ActualTimingRepository actualTimingRepo;
+    MakeupRequestRepository makeupRequestRepo;
     UserRepository userRepo;
     AcademicOfficerRepository aoRepo;
     AuthService authService;
@@ -80,8 +78,7 @@ private:
     void loadManageLabs();
     void loadManageInstructors();
     void loadManageTAs();
-    void loadScheduleLabs();
-    void loadReports();
+    void loadMakeupRequests();
 
     void exportToPDF(const QString& title, QTableWidget* table);
 };

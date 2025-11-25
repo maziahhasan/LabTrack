@@ -13,6 +13,7 @@ public:
     int getNextId();
     void add(const TA &ta);
     bool update(const TA &ta);
+    bool remove(int id);
     std::vector<TA> getAll();
     // New queries for new model fields
     std::vector<TA> getTAsByStatus(const std::string& status);

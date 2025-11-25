@@ -51,6 +51,7 @@ set(BACKEND_SOURCES
     backend/services/LabService.cpp
     backend/services/AuthService.cpp
     backend/services/ReportService.cpp
+    backend/services/ExportService.cpp
 )
 
 # Combine all sources

@@ -48,6 +48,18 @@ void BuildingRepository::add(const Building &b) { auto v = load(); v.push_back(b
 
 std::vector<Building> BuildingRepository::getAll() { return load(); }
 
+Building* BuildingRepository::getBuildingById(int id) {
+    static Building temp;
+    auto v = load();
+    for (auto &b : v) {
+        if (b.getId() == id) {
+            temp = b;
+            return &temp;
+        }
+    }
+    return nullptr;
+}
+
 bool BuildingRepository::setAttendant(int buildingId, int userId) {
     auto v = load();
     bool found = false;

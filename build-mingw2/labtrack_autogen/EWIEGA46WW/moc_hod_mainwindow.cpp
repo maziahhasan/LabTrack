@@ -47,6 +47,8 @@ template <> constexpr inline auto HODMainWindow::qt_create_metaobjectdata<qt_met
         "on_btnMakeupRequests_clicked",
         "on_comboSelectLab_currentIndexChanged",
         "index",
+        "on_calendarWeekSchedule_selectionChanged",
+        "on_calendarWeekTimesheets_selectionChanged",
         "on_btnExportSchedule_clicked",
         "on_btnExportTimesheets_clicked",
         "on_btnExportHistory_clicked",
@@ -68,14 +70,18 @@ template <> constexpr inline auto HODMainWindow::qt_create_metaobjectdata<qt_met
         QtMocHelpers::SlotData<void(int)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Int, 8 },
         }}),
-        // Slot 'on_btnExportSchedule_clicked'
+        // Slot 'on_calendarWeekSchedule_selectionChanged'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnExportTimesheets_clicked'
+        // Slot 'on_calendarWeekTimesheets_selectionChanged'
         QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnExportHistory_clicked'
+        // Slot 'on_btnExportSchedule_clicked'
         QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnExportRequests_clicked'
+        // Slot 'on_btnExportTimesheets_clicked'
         QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnExportHistory_clicked'
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnExportRequests_clicked'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -105,10 +111,12 @@ void HODMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 3: _t->on_btnLabHistory_clicked(); break;
         case 4: _t->on_btnMakeupRequests_clicked(); break;
         case 5: _t->on_comboSelectLab_currentIndexChanged((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 6: _t->on_btnExportSchedule_clicked(); break;
-        case 7: _t->on_btnExportTimesheets_clicked(); break;
-        case 8: _t->on_btnExportHistory_clicked(); break;
-        case 9: _t->on_btnExportRequests_clicked(); break;
+        case 6: _t->on_calendarWeekSchedule_selectionChanged(); break;
+        case 7: _t->on_calendarWeekTimesheets_selectionChanged(); break;
+        case 8: _t->on_btnExportSchedule_clicked(); break;
+        case 9: _t->on_btnExportTimesheets_clicked(); break;
+        case 10: _t->on_btnExportHistory_clicked(); break;
+        case 11: _t->on_btnExportRequests_clicked(); break;
         default: ;
         }
     }
@@ -133,14 +141,14 @@ int HODMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 12;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 12;
     }
     return _id;
 }

@@ -1,5 +1,6 @@
 C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_hod_mainwindow.cpp: C:/Users/SMZ/Documents/labtrack/hod_mainwindow.h \
   C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/moc_predefs.h \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
@@ -141,8 +142,6 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_hod
   C:/Qt/6.10.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/qyieldcpu.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/QPainter \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/QPdfWriter \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qbrush.h \
@@ -155,22 +154,14 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_hod
   C:/Qt/6.10.0/mingw_64/include/QtGui/qicon.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qimage.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qkeysequence.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpagedpaintdevice.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpagelayout.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpageranges.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpagesize.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qpaintdevice.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpainter.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qpalette.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpdfwriter.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qpixmap.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qpolygon.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qrgba64.h \
-  C:/Qt/6.10.0/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qtguiglobal.h \
@@ -182,6 +173,7 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_hod
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidgetItem \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractitemview.h \
@@ -470,5 +462,6 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_hod
   C:/Users/SMZ/Documents/labtrack/backend/repositories/LabRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
+  C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.h \
   C:/Users/SMZ/Documents/labtrack/backend/services/ReportService.h \
   C:/Users/SMZ/Documents/labtrack/backend/utils/DateUtils.h

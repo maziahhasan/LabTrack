@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <fstream>
+#include <optional>
 #include "../models/Lab.h"
 using namespace std;
 
@@ -23,10 +24,10 @@ public:
     Lab getById(int id);
     std::vector<Lab> getAll() { return loadLabs(); }
     std::vector<Lab> getAllLabs() { return loadLabs(); }
-    Lab* getLabById(int id) {
+    std::optional<Lab> getLabById(int id) {
         auto v = loadLabs();
-        for (const auto &l : v) if (l.getId() == id) return new Lab(l);
-        return nullptr;
+        for (const auto &l : v) if (l.getId() == id) return l;
+        return std::nullopt;
     }
     void add(const Lab &lab);
     bool update(const Lab &lab);

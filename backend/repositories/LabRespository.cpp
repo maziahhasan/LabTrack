@@ -117,6 +117,8 @@ void LabRepository::saveLabs(const vector<Lab> &labs) {
         writeString(out, sch.getDay());
         writeString(out, sch.getStart());
         writeString(out, sch.getEnd());
+        writeString(out, sch.getSemesterStart());
+        writeString(out, sch.getSemesterEnd());
 
         // TAs
         const vector<int> &taIds = lab.getTAs();
@@ -186,7 +188,11 @@ vector<Lab> LabRepository::loadLabs() {
         if (!in) break;
         string end = readString(in);
         if (!in) break;
-        lab.setSchedule(ScheduleTiming(day, start, end));
+        string semStart = readString(in);
+        if (!in) break;
+        string semEnd = readString(in);
+        if (!in) break;
+        lab.setSchedule(ScheduleTiming(day, start, end, semStart, semEnd));
 
         // TAs
         int taCount;

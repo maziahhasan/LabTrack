@@ -228,16 +228,29 @@
           <item>
            <widget class="QLabel" name="lblFilterWeek">
             <property name="text">
-             <string>Week:</string>
+             <string>Select Week:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboWeek">
+           <widget class="QCalendarWidget" name="calendarWeekSchedule">
             <property name="styleSheet">
              <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="btnExportSchedule">
@@ -277,16 +290,29 @@
           <item>
            <widget class="QLabel" name="lblFilterTimesheetWeek">
             <property name="text">
-             <string>Week:</string>
+             <string>Select Week:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboTimesheetWeek">
+           <widget class="QCalendarWidget" name="calendarWeekTimesheets">
             <property name="styleSheet">
              <string>background:white; border-radius:4px; padding:4px; border:1px solid #ccc;</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacerTimesheets">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="btnExportTimesheets">

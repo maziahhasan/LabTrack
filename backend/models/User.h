@@ -5,7 +5,7 @@ class User {
 private:
     int id = -1;                    // User ID
     std::string username;           // Username (unique)
-    std::string password;           // Stored password (plaintext) -- insecure
+    std::string password;           // Stored password (hashed for security)
     std::string role;               // TA, Instructor, AcademicOfficer, HOD, etc.
     std::string email;              // Email address
     std::string status = "Active"; // Status (Active/Inactive)

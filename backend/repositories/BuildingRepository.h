@@ -14,6 +14,7 @@ public:
     void add(const Building &b);
     bool update(const Building &b);
     std::vector<Building> getAll();
+    Building* getBuildingById(int id);
     bool setAttendant(int buildingId, int userId);
     // New queries for new model fields
     std::vector<Building> getBuildingsByAttendantId(int userId);

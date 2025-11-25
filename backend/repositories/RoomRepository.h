@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <fstream>
+#include <optional>
 #include "../models/Room.h"
 
 class RoomRepository {
@@ -18,10 +19,10 @@ public:
     std::vector<Room> getRoomsByBuildingId(int buildingId);
     std::vector<Room> getRoomsByType(const std::string& type);
     std::vector<Room> getRoomsByCapacity(int minCapacity);
-    // Return pointer (caller may assume ownership) to match UI usage
-    Room* getRoomById(int id) {
+    // Return optional to avoid memory leaks
+    std::optional<Room> getRoomById(int id) {
         auto v = load();
-        for (const auto &r : v) if (r.getId() == id) return new Room(r);
-        return nullptr;
+        for (const auto &r : v) if (r.getId() == id) return r;
+        return std::nullopt;
     }
 };

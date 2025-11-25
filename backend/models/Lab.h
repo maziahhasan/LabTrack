@@ -39,6 +39,8 @@ public:
     std::string getStatus() const { return status; }
 
     // Setters
+    void setCourseCode(const std::string& code) { courseCode = code; }
+    void setSection(const std::string& sec) { section = sec; }
     void setRoomId(int r) { roomId = r; }
     void setBuildingId(int b) { buildingId = b; }
     void setInstructorId(int id) { instructorId = id; }

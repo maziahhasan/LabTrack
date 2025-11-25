@@ -44,8 +44,7 @@ template <> constexpr inline auto AOMainWindow::qt_create_metaobjectdata<qt_meta
         "on_btnManageLabs_clicked",
         "on_btnManageInstructors_clicked",
         "on_btnManageTAs_clicked",
-        "on_btnScheduleLabs_clicked",
-        "on_btnReports_clicked",
+        "on_btnMakeupRequests_clicked",
         "on_btnAddLab_clicked",
         "on_btnEditLab_clicked",
         "on_btnDeleteLab_clicked",
@@ -56,10 +55,8 @@ template <> constexpr inline auto AOMainWindow::qt_create_metaobjectdata<qt_meta
         "on_btnEditTA_clicked",
         "on_btnDeleteTA_clicked",
         "on_btnAddHOD_clicked",
-        "on_btnSetSchedule_clicked",
-        "on_btnGenerateWeeklySchedule_clicked",
-        "on_btnGenerateTimesheets_clicked",
-        "on_btnGenerateMakeupSchedule_clicked"
+        "on_btnAcceptMakeup_clicked",
+        "on_btnRejectMakeup_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -71,38 +68,32 @@ template <> constexpr inline auto AOMainWindow::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnManageTAs_clicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnScheduleLabs_clicked'
+        // Slot 'on_btnMakeupRequests_clicked'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnReports_clicked'
-        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnAddLab_clicked'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnEditLab_clicked'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnDeleteLab_clicked'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnAddInstructor_clicked'
-        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnEditInstructor_clicked'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnDeleteInstructor_clicked'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnAddTA_clicked'
-        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnEditTA_clicked'
-        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnDeleteTA_clicked'
-        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnAddHOD_clicked'
+        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnAcceptMakeup_clicked'
         QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnSetSchedule_clicked'
+        // Slot 'on_btnRejectMakeup_clicked'
         QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnGenerateWeeklySchedule_clicked'
-        QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnGenerateTimesheets_clicked'
-        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_btnGenerateMakeupSchedule_clicked'
-        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -130,22 +121,19 @@ void AOMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->on_btnManageLabs_clicked(); break;
         case 2: _t->on_btnManageInstructors_clicked(); break;
         case 3: _t->on_btnManageTAs_clicked(); break;
-        case 4: _t->on_btnScheduleLabs_clicked(); break;
-        case 5: _t->on_btnReports_clicked(); break;
-        case 6: _t->on_btnAddLab_clicked(); break;
-        case 7: _t->on_btnEditLab_clicked(); break;
-        case 8: _t->on_btnDeleteLab_clicked(); break;
-        case 9: _t->on_btnAddInstructor_clicked(); break;
-        case 10: _t->on_btnEditInstructor_clicked(); break;
-        case 11: _t->on_btnDeleteInstructor_clicked(); break;
-        case 12: _t->on_btnAddTA_clicked(); break;
-        case 13: _t->on_btnEditTA_clicked(); break;
-        case 14: _t->on_btnDeleteTA_clicked(); break;
-        case 15: _t->on_btnAddHOD_clicked(); break;
-        case 16: _t->on_btnSetSchedule_clicked(); break;
-        case 17: _t->on_btnGenerateWeeklySchedule_clicked(); break;
-        case 18: _t->on_btnGenerateTimesheets_clicked(); break;
-        case 19: _t->on_btnGenerateMakeupSchedule_clicked(); break;
+        case 4: _t->on_btnMakeupRequests_clicked(); break;
+        case 5: _t->on_btnAddLab_clicked(); break;
+        case 6: _t->on_btnEditLab_clicked(); break;
+        case 7: _t->on_btnDeleteLab_clicked(); break;
+        case 8: _t->on_btnAddInstructor_clicked(); break;
+        case 9: _t->on_btnEditInstructor_clicked(); break;
+        case 10: _t->on_btnDeleteInstructor_clicked(); break;
+        case 11: _t->on_btnAddTA_clicked(); break;
+        case 12: _t->on_btnEditTA_clicked(); break;
+        case 13: _t->on_btnDeleteTA_clicked(); break;
+        case 14: _t->on_btnAddHOD_clicked(); break;
+        case 15: _t->on_btnAcceptMakeup_clicked(); break;
+        case 16: _t->on_btnRejectMakeup_clicked(); break;
         default: ;
         }
     }
@@ -171,14 +159,14 @@ int AOMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 17;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 17)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 20;
+        _id -= 17;
     }
     return _id;
 }

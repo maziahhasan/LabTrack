@@ -17,9 +17,9 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -36,8 +36,7 @@ public:
     QPushButton *btnManageLabs;
     QPushButton *btnManageInstructors;
     QPushButton *btnManageTAs;
-    QPushButton *btnScheduleLabs;
-    QPushButton *btnReports;
+    QPushButton *btnMakeupRequests;
     QStackedWidget *stackedWidget;
     QWidget *dashboardPage;
     QVBoxLayout *verticalLayoutDashboard;
@@ -79,20 +78,14 @@ public:
     QPushButton *btnEditTA;
     QPushButton *btnDeleteTA;
     QTableWidget *tableTAs;
-    QWidget *scheduleLabsPage;
-    QVBoxLayout *verticalLayoutScheduleLabs;
-    QLabel *lblScheduleLabsTitle;
-    QHBoxLayout *horizontalLayoutScheduleButtons;
-    QPushButton *btnSetSchedule;
-    QTableWidget *tableSchedule;
-    QWidget *reportsPage;
-    QVBoxLayout *verticalLayoutReports;
-    QLabel *lblReportsTitle;
-    QHBoxLayout *horizontalLayoutReportsButtons;
-    QPushButton *btnGenerateWeeklySchedule;
-    QPushButton *btnGenerateTimesheets;
-    QPushButton *btnGenerateMakeupSchedule;
-    QTextEdit *textEditReports;
+    QWidget *makeupRequestsPage;
+    QVBoxLayout *verticalLayoutMakeupRequests;
+    QLabel *lblMakeupRequestsTitle;
+    QHBoxLayout *horizontalLayoutMakeupButtons;
+    QPushButton *btnAcceptMakeup;
+    QPushButton *btnRejectMakeup;
+    QSpacerItem *horizontalSpacerMakeup;
+    QTableWidget *tableMakeupRequests;
 
     void setupUi(QMainWindow *AOMainWindow)
     {
@@ -132,17 +125,11 @@ public:
 
         verticalLayoutSidebar->addWidget(btnManageTAs);
 
-        btnScheduleLabs = new QPushButton(sidebarFrame);
-        btnScheduleLabs->setObjectName("btnScheduleLabs");
-        btnScheduleLabs->setFocusPolicy(Qt::FocusPolicy::NoFocus);
+        btnMakeupRequests = new QPushButton(sidebarFrame);
+        btnMakeupRequests->setObjectName("btnMakeupRequests");
+        btnMakeupRequests->setFocusPolicy(Qt::FocusPolicy::NoFocus);
 
-        verticalLayoutSidebar->addWidget(btnScheduleLabs);
-
-        btnReports = new QPushButton(sidebarFrame);
-        btnReports->setObjectName("btnReports");
-        btnReports->setFocusPolicy(Qt::FocusPolicy::NoFocus);
-
-        verticalLayoutSidebar->addWidget(btnReports);
+        verticalLayoutSidebar->addWidget(btnMakeupRequests);
 
 
         horizontalLayout->addWidget(sidebarFrame);
@@ -320,66 +307,40 @@ public:
         verticalLayoutManageTAs->addWidget(tableTAs);
 
         stackedWidget->addWidget(manageTAsPage);
-        scheduleLabsPage = new QWidget();
-        scheduleLabsPage->setObjectName("scheduleLabsPage");
-        verticalLayoutScheduleLabs = new QVBoxLayout(scheduleLabsPage);
-        verticalLayoutScheduleLabs->setObjectName("verticalLayoutScheduleLabs");
-        lblScheduleLabsTitle = new QLabel(scheduleLabsPage);
-        lblScheduleLabsTitle->setObjectName("lblScheduleLabsTitle");
+        makeupRequestsPage = new QWidget();
+        makeupRequestsPage->setObjectName("makeupRequestsPage");
+        verticalLayoutMakeupRequests = new QVBoxLayout(makeupRequestsPage);
+        verticalLayoutMakeupRequests->setObjectName("verticalLayoutMakeupRequests");
+        lblMakeupRequestsTitle = new QLabel(makeupRequestsPage);
+        lblMakeupRequestsTitle->setObjectName("lblMakeupRequestsTitle");
 
-        verticalLayoutScheduleLabs->addWidget(lblScheduleLabsTitle);
+        verticalLayoutMakeupRequests->addWidget(lblMakeupRequestsTitle);
 
-        horizontalLayoutScheduleButtons = new QHBoxLayout();
-        horizontalLayoutScheduleButtons->setObjectName("horizontalLayoutScheduleButtons");
-        btnSetSchedule = new QPushButton(scheduleLabsPage);
-        btnSetSchedule->setObjectName("btnSetSchedule");
+        horizontalLayoutMakeupButtons = new QHBoxLayout();
+        horizontalLayoutMakeupButtons->setObjectName("horizontalLayoutMakeupButtons");
+        btnAcceptMakeup = new QPushButton(makeupRequestsPage);
+        btnAcceptMakeup->setObjectName("btnAcceptMakeup");
 
-        horizontalLayoutScheduleButtons->addWidget(btnSetSchedule);
+        horizontalLayoutMakeupButtons->addWidget(btnAcceptMakeup);
 
+        btnRejectMakeup = new QPushButton(makeupRequestsPage);
+        btnRejectMakeup->setObjectName("btnRejectMakeup");
 
-        verticalLayoutScheduleLabs->addLayout(horizontalLayoutScheduleButtons);
+        horizontalLayoutMakeupButtons->addWidget(btnRejectMakeup);
 
-        tableSchedule = new QTableWidget(scheduleLabsPage);
-        tableSchedule->setObjectName("tableSchedule");
+        horizontalSpacerMakeup = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        verticalLayoutScheduleLabs->addWidget(tableSchedule);
-
-        stackedWidget->addWidget(scheduleLabsPage);
-        reportsPage = new QWidget();
-        reportsPage->setObjectName("reportsPage");
-        verticalLayoutReports = new QVBoxLayout(reportsPage);
-        verticalLayoutReports->setObjectName("verticalLayoutReports");
-        lblReportsTitle = new QLabel(reportsPage);
-        lblReportsTitle->setObjectName("lblReportsTitle");
-
-        verticalLayoutReports->addWidget(lblReportsTitle);
-
-        horizontalLayoutReportsButtons = new QHBoxLayout();
-        horizontalLayoutReportsButtons->setObjectName("horizontalLayoutReportsButtons");
-        btnGenerateWeeklySchedule = new QPushButton(reportsPage);
-        btnGenerateWeeklySchedule->setObjectName("btnGenerateWeeklySchedule");
-
-        horizontalLayoutReportsButtons->addWidget(btnGenerateWeeklySchedule);
-
-        btnGenerateTimesheets = new QPushButton(reportsPage);
-        btnGenerateTimesheets->setObjectName("btnGenerateTimesheets");
-
-        horizontalLayoutReportsButtons->addWidget(btnGenerateTimesheets);
-
-        btnGenerateMakeupSchedule = new QPushButton(reportsPage);
-        btnGenerateMakeupSchedule->setObjectName("btnGenerateMakeupSchedule");
-
-        horizontalLayoutReportsButtons->addWidget(btnGenerateMakeupSchedule);
+        horizontalLayoutMakeupButtons->addItem(horizontalSpacerMakeup);
 
 
-        verticalLayoutReports->addLayout(horizontalLayoutReportsButtons);
+        verticalLayoutMakeupRequests->addLayout(horizontalLayoutMakeupButtons);
 
-        textEditReports = new QTextEdit(reportsPage);
-        textEditReports->setObjectName("textEditReports");
+        tableMakeupRequests = new QTableWidget(makeupRequestsPage);
+        tableMakeupRequests->setObjectName("tableMakeupRequests");
 
-        verticalLayoutReports->addWidget(textEditReports);
+        verticalLayoutMakeupRequests->addWidget(tableMakeupRequests);
 
-        stackedWidget->addWidget(reportsPage);
+        stackedWidget->addWidget(makeupRequestsPage);
 
         horizontalLayout->addWidget(stackedWidget);
 
@@ -421,8 +382,7 @@ public:
         btnManageLabs->setText(QCoreApplication::translate("AOMainWindow", "\360\237\217\253 Manage Labs", nullptr));
         btnManageInstructors->setText(QCoreApplication::translate("AOMainWindow", "\360\237\221\250\342\200\215\360\237\217\253 Manage Instructors", nullptr));
         btnManageTAs->setText(QCoreApplication::translate("AOMainWindow", "\360\237\221\250\342\200\215\360\237\216\223 Manage TAs", nullptr));
-        btnScheduleLabs->setText(QCoreApplication::translate("AOMainWindow", "\360\237\223\205 Schedule Labs", nullptr));
-        btnReports->setText(QCoreApplication::translate("AOMainWindow", "\360\237\223\213 Reports", nullptr));
+        btnMakeupRequests->setText(QCoreApplication::translate("AOMainWindow", "\360\237\224\204 Makeup Requests", nullptr));
         dashboardPage->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #FFDDC1;", nullptr));
         lblDashboardTitle->setStyleSheet(QCoreApplication::translate("AOMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
         lblDashboardTitle->setText(QCoreApplication::translate("AOMainWindow", "\360\237\223\212 AO Dashboard", nullptr));
@@ -462,18 +422,14 @@ public:
         btnEditTA->setText(QCoreApplication::translate("AOMainWindow", "Edit TA", nullptr));
         btnDeleteTA->setText(QCoreApplication::translate("AOMainWindow", "Delete TA", nullptr));
         tableTAs->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
-        scheduleLabsPage->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #FFFAC1;", nullptr));
-        lblScheduleLabsTitle->setStyleSheet(QCoreApplication::translate("AOMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
-        lblScheduleLabsTitle->setText(QCoreApplication::translate("AOMainWindow", "\360\237\223\205 Schedule Labs", nullptr));
-        btnSetSchedule->setText(QCoreApplication::translate("AOMainWindow", "Set Schedule", nullptr));
-        tableSchedule->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
-        reportsPage->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #E1FFC1;", nullptr));
-        lblReportsTitle->setStyleSheet(QCoreApplication::translate("AOMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
-        lblReportsTitle->setText(QCoreApplication::translate("AOMainWindow", "\360\237\223\213 Reports", nullptr));
-        btnGenerateWeeklySchedule->setText(QCoreApplication::translate("AOMainWindow", "Generate Weekly Schedule", nullptr));
-        btnGenerateTimesheets->setText(QCoreApplication::translate("AOMainWindow", "Generate Timesheets", nullptr));
-        btnGenerateMakeupSchedule->setText(QCoreApplication::translate("AOMainWindow", "Generate Makeup Schedule", nullptr));
-        textEditReports->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
+        makeupRequestsPage->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #FFE5CC;", nullptr));
+        lblMakeupRequestsTitle->setStyleSheet(QCoreApplication::translate("AOMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
+        lblMakeupRequestsTitle->setText(QCoreApplication::translate("AOMainWindow", "\360\237\224\204 Makeup Lab Requests", nullptr));
+        btnAcceptMakeup->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #27AE60; color: white; font-weight: bold; padding: 8px;", nullptr));
+        btnAcceptMakeup->setText(QCoreApplication::translate("AOMainWindow", "\342\234\223 Accept Request", nullptr));
+        btnRejectMakeup->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background-color: #E74C3C; color: white; font-weight: bold; padding: 8px;", nullptr));
+        btnRejectMakeup->setText(QCoreApplication::translate("AOMainWindow", "\342\234\227 Reject Request", nullptr));
+        tableMakeupRequests->setStyleSheet(QCoreApplication::translate("AOMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
         (void)AOMainWindow;
     } // retranslateUi
 

@@ -22,6 +22,8 @@ public:
     // Add/update a timing record
     void add(const ActualTiming& timing);
     bool update(const ActualTiming& timing);
+    bool remove(int labId, const std::string& date);
+    bool removeByLabId(int labId);
 
     // alias used in UI
     std::vector<ActualTiming> getTimingsByLabId(int labId) { return getActualTimingsByLabId(labId); }

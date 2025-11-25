@@ -5,9 +5,8 @@
 #include <QTableWidgetItem>
 #include <QListWidgetItem>
 #include <QFileDialog>
-#include <QPdfWriter>
-#include <QPainter>
 #include <QMessageBox>
+#include <memory>
 #include "backend/repositories/LabRepository.h"
 #include "backend/repositories/InstructorRepository.h"
 #include "backend/repositories/TARepository.h"
@@ -15,6 +14,7 @@
 #include "backend/repositories/BuildingRepository.h"
 #include "backend/repositories/ActualTimingRepository.h"
 #include "backend/services/ReportService.h"
+#include "backend/services/ExportService.h"
 #include "backend/utils/DateUtils.h"
 
 namespace Ui { class HODMainWindow; }
@@ -35,6 +35,8 @@ private slots:
     void on_btnMakeupRequests_clicked();
 
     void on_comboSelectLab_currentIndexChanged(int index);
+    void on_calendarWeekSchedule_selectionChanged();
+    void on_calendarWeekTimesheets_selectionChanged();
     void on_btnExportSchedule_clicked();
     void on_btnExportTimesheets_clicked();
     void on_btnExportHistory_clicked();
@@ -48,15 +50,16 @@ private:
     BuildingRepository buildingRepo;
     TARepository taRepo;
     ActualTimingRepository actualTimingRepo;
-    ReportService *reportService;
+    std::unique_ptr<ReportService> reportService;
     int hodId = -1;
 
     void loadDashboard();
     void loadWeeklySchedule();
     void loadWeeklyTimesheets();
     void loadLabHistory();
+    void loadLabHistoryDetails();
     void loadMakeupRequests();
-    void exportToPDF(const QString &title, QTableWidget *table);
+    void exportToExcel(const QString &title, QTableWidget *table, const QString &summary = "");
 };
 
 #endif // HOD_MAINWINDOW_H

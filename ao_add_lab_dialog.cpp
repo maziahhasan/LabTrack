@@ -3,6 +3,7 @@
 #include <QFormLayout>
 #include <QLabel>
 #include <QTime>
+#include <QDate>
 #include <QMessageBox>
 
 AOAddLabDialog::AOAddLabDialog(InstructorRepository &instrRepo, RoomRepository &roomRepo, QWidget *parent)
@@ -33,6 +34,15 @@ AOAddLabDialog::AOAddLabDialog(InstructorRepository &instrRepo, RoomRepository &
     timeStart->setDisplayFormat("HH:mm");
     timeEnd = new QTimeEdit(QTime(11,0), this);
     timeEnd->setDisplayFormat("HH:mm");
+    
+    // Semester date range
+    dateSemesterStart = new QDateEdit(QDate::currentDate(), this);
+    dateSemesterStart->setCalendarPopup(true);
+    dateSemesterStart->setDisplayFormat("yyyy-MM-dd");
+    
+    dateSemesterEnd = new QDateEdit(QDate::currentDate().addMonths(4), this);
+    dateSemesterEnd->setCalendarPopup(true);
+    dateSemesterEnd->setDisplayFormat("yyyy-MM-dd");
 
     buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
 
@@ -41,9 +51,11 @@ AOAddLabDialog::AOAddLabDialog(InstructorRepository &instrRepo, RoomRepository &
     form->addRow("Section:", editSection);
     form->addRow("Instructor:", comboInstructor);
     form->addRow("Room:", comboRoom);
-    form->addRow("Day:", comboDay);
+    form->addRow("Day of Week:", comboDay);
     form->addRow("Start Time:", timeStart);
     form->addRow("End Time:", timeEnd);
+    form->addRow("Semester Start:", dateSemesterStart);
+    form->addRow("Semester End:", dateSemesterEnd);
 
     QVBoxLayout *l = new QVBoxLayout;
     l->addLayout(form);
@@ -58,6 +70,18 @@ AOAddLabDialog::AOAddLabDialog(InstructorRepository &instrRepo, RoomRepository &
         }
         if (editCourse->text().trimmed().isEmpty()) {
             QMessageBox::warning(this, "Missing Course", "Please enter a course code.");
+            return;
+        }
+        if (comboRoom->currentData().toInt() == 0) {
+            QMessageBox::warning(this, "Missing Room", "Please select a room for the lab.");
+            return;
+        }
+        if (comboInstructor->currentData().toInt() == 0) {
+            QMessageBox::warning(this, "Missing Instructor", "Please select an instructor for the lab.");
+            return;
+        }
+        if (dateSemesterStart->date() >= dateSemesterEnd->date()) {
+            QMessageBox::warning(this, "Invalid Dates", "Semester start must be before semester end.");
             return;
         }
         accept();
@@ -96,3 +120,5 @@ int AOAddLabDialog::selectedRoomId() const { return comboRoom->currentData().toI
 QString AOAddLabDialog::dayOfWeek() const { return comboDay->currentText(); }
 QTime AOAddLabDialog::startTime() const { return timeStart->time(); }
 QTime AOAddLabDialog::endTime() const { return timeEnd->time(); }
+QDate AOAddLabDialog::semesterStart() const { return dateSemesterStart->date(); }
+QDate AOAddLabDialog::semesterEnd() const { return dateSemesterEnd->date(); }

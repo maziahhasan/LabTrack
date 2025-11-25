@@ -43,6 +43,13 @@ public:
     QVBoxLayout *verticalLayoutMyLabs;
     QLabel *lblMyLabsTitle;
     QTableWidget *tableMyLabs;
+    QWidget *requestMakeupPage;
+    QVBoxLayout *verticalLayoutRequestMakeup;
+    QLabel *lblRequestMakeupTitle;
+    QHBoxLayout *horizontalLayoutMakeupButtons;
+    QPushButton *btnSubmitMakeupRequest;
+    QSpacerItem *horizontalSpacerMakeup;
+    QTableWidget *tableMakeupRequests;
     QWidget *profilePage;
     QVBoxLayout *verticalLayoutProfile;
     QLabel *lblProfileTitle;
@@ -111,6 +118,35 @@ public:
         verticalLayoutMyLabs->addWidget(tableMyLabs);
 
         stackedWidget->addWidget(myLabsPage);
+        requestMakeupPage = new QWidget();
+        requestMakeupPage->setObjectName("requestMakeupPage");
+        verticalLayoutRequestMakeup = new QVBoxLayout(requestMakeupPage);
+        verticalLayoutRequestMakeup->setObjectName("verticalLayoutRequestMakeup");
+        lblRequestMakeupTitle = new QLabel(requestMakeupPage);
+        lblRequestMakeupTitle->setObjectName("lblRequestMakeupTitle");
+
+        verticalLayoutRequestMakeup->addWidget(lblRequestMakeupTitle);
+
+        horizontalLayoutMakeupButtons = new QHBoxLayout();
+        horizontalLayoutMakeupButtons->setObjectName("horizontalLayoutMakeupButtons");
+        btnSubmitMakeupRequest = new QPushButton(requestMakeupPage);
+        btnSubmitMakeupRequest->setObjectName("btnSubmitMakeupRequest");
+
+        horizontalLayoutMakeupButtons->addWidget(btnSubmitMakeupRequest);
+
+        horizontalSpacerMakeup = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayoutMakeupButtons->addItem(horizontalSpacerMakeup);
+
+
+        verticalLayoutRequestMakeup->addLayout(horizontalLayoutMakeupButtons);
+
+        tableMakeupRequests = new QTableWidget(requestMakeupPage);
+        tableMakeupRequests->setObjectName("tableMakeupRequests");
+
+        verticalLayoutRequestMakeup->addWidget(tableMakeupRequests);
+
+        stackedWidget->addWidget(requestMakeupPage);
         profilePage = new QWidget();
         profilePage->setObjectName("profilePage");
         verticalLayoutProfile = new QVBoxLayout(profilePage);
@@ -205,6 +241,12 @@ public:
         lblMyLabsTitle->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
         lblMyLabsTitle->setText(QCoreApplication::translate("InstructorMainWindow", "\360\237\217\253 My Labs", nullptr));
         tableMyLabs->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
+        requestMakeupPage->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "background-color: #FFE1C1;", nullptr));
+        lblRequestMakeupTitle->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
+        lblRequestMakeupTitle->setText(QCoreApplication::translate("InstructorMainWindow", "\360\237\223\235 Request Makeup Lab", nullptr));
+        btnSubmitMakeupRequest->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "background-color: #27AE60; color: white; font-weight: bold; padding: 8px;", nullptr));
+        btnSubmitMakeupRequest->setText(QCoreApplication::translate("InstructorMainWindow", "\342\236\225 Submit New Request", nullptr));
+        tableMakeupRequests->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
         profilePage->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "background-color: #E1FFC1;", nullptr));
         lblProfileTitle->setStyleSheet(QCoreApplication::translate("InstructorMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
         lblProfileTitle->setText(QCoreApplication::translate("InstructorMainWindow", "\360\237\221\244 Profile", nullptr));

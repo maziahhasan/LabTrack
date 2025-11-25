@@ -63,3 +63,14 @@ bool InstructorRepository::update(const Instructor& ins) {
     return found;
 }
 
+bool InstructorRepository::remove(int id) {
+    auto v = load();
+    auto it = std::remove_if(v.begin(), v.end(), [id](const Instructor& i) { return i.getId() == id; });
+    if (it != v.end()) {
+        v.erase(it, v.end());
+        save(v);
+        return true;
+    }
+    return false;
+}
+

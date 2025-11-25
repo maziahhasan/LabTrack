@@ -413,6 +413,7 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDateEdit \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialogButtonBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/InstructorRepository.h \
@@ -457,6 +458,7 @@ CMakeFiles/labtrack.dir/ao_add_lab_dialog.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QTime \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/QDate \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \

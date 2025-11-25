@@ -167,6 +167,7 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_ao_
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDateEdit \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialogButtonBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLineEdit \

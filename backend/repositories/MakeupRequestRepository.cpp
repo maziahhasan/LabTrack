@@ -9,10 +9,11 @@ void MakeupRequestRepository::save(const std::vector<MakeupRequest> &v) {
     for (const auto &m : v) {
         int id = m.getId(); out.write((char*)&id, sizeof(id));
         int lid = m.getLabId(); out.write((char*)&lid, sizeof(lid));
-        int req = m.getRequestedBy(); out.write((char*)&req, sizeof(req));
+        int instr = m.getInstructorId(); out.write((char*)&instr, sizeof(instr));
+        int room = m.getRoomId(); out.write((char*)&room, sizeof(room));
         int len = m.getDate().size(); out.write((char*)&len, sizeof(len)); out.write(m.getDate().c_str(), len);
-        len = m.getStart().size(); out.write((char*)&len, sizeof(len)); out.write(m.getStart().c_str(), len);
-        len = m.getEnd().size(); out.write((char*)&len, sizeof(len)); out.write(m.getEnd().c_str(), len);
+        len = m.getTime().size(); out.write((char*)&len, sizeof(len)); out.write(m.getTime().c_str(), len);
+        len = m.getReason().size(); out.write((char*)&len, sizeof(len)); out.write(m.getReason().c_str(), len);
         len = m.getStatus().size(); out.write((char*)&len, sizeof(len)); out.write(m.getStatus().c_str(), len);
     }
 }
@@ -25,12 +26,13 @@ std::vector<MakeupRequest> MakeupRequestRepository::load() {
     for (int i = 0; i < size; ++i) {
         int id; in.read((char*)&id, sizeof(id));
         int labId; in.read((char*)&labId, sizeof(labId));
-        int reqBy; in.read((char*)&reqBy, sizeof(reqBy));
+        int instrId; in.read((char*)&instrId, sizeof(instrId));
+        int roomId; in.read((char*)&roomId, sizeof(roomId));
         int len; in.read((char*)&len, sizeof(len)); char *buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string date(buf); delete[] buf;
-        in.read((char*)&len, sizeof(len)); buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string start(buf); delete[] buf;
-        in.read((char*)&len, sizeof(len)); buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string end(buf); delete[] buf;
+        in.read((char*)&len, sizeof(len)); buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string time(buf); delete[] buf;
+        in.read((char*)&len, sizeof(len)); buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string reason(buf); delete[] buf;
         in.read((char*)&len, sizeof(len)); buf = new char[len+1]; in.read(buf, len); buf[len]='\0'; std::string status(buf); delete[] buf;
-        outv.push_back(MakeupRequest(id, labId, reqBy, date, start, end, status));
+        outv.push_back(MakeupRequest(id, labId, instrId, roomId, date, time, reason, status));
     }
     return outv;
 }

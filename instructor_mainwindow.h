@@ -8,6 +8,7 @@
 #include <QPdfWriter>
 #include <QPainter>
 #include <QMessageBox>
+#include <memory>
 #include "backend/repositories/LabRepository.h"
 #include "backend/repositories/InstructorRepository.h"
 #include "backend/repositories/TARepository.h"
@@ -37,6 +38,7 @@ private slots:
 
     void on_btnUpdateProfile_clicked();
     void on_btnRequestMakeup_clicked();
+    void on_btnSubmitMakeupRequest_clicked();
 
 private:
     Ui::InstructorMainWindow *ui;
@@ -49,11 +51,12 @@ private:
     ActualTimingRepository actualTimingRepo;
     ReportService reportService;
     MakeupRequestRepository makeupRequestRepo;
-    MakeupService *makeupService;
+    std::unique_ptr<MakeupService> makeupService;
     User currentUser;
 
     void loadMyLabs();
     void loadProfile();
+    void loadMakeupRequests();
 
     void exportToPDF(const QString& title, QTableWidget* table);
 };

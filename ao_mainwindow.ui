@@ -86,22 +86,12 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnScheduleLabs">
+        <widget class="QPushButton" name="btnMakeupRequests">
          <property name="focusPolicy">
           <enum>Qt::FocusPolicy::NoFocus</enum>
          </property>
          <property name="text">
-          <string>📅 Schedule Labs</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnReports">
-         <property name="focusPolicy">
-          <enum>Qt::FocusPolicy::NoFocus</enum>
-         </property>
-         <property name="text">
-          <string>📋 Reports</string>
+          <string>🔄 Makeup Requests</string>
          </property>
         </widget>
        </item>
@@ -365,83 +355,60 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="scheduleLabsPage">
+      <widget class="QWidget" name="makeupRequestsPage">
        <property name="styleSheet">
-        <string>background-color: #FFFAC1;</string>
+        <string>background-color: #FFE5CC;</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayoutScheduleLabs">
+       <layout class="QVBoxLayout" name="verticalLayoutMakeupRequests">
         <item>
-         <widget class="QLabel" name="lblScheduleLabsTitle">
+         <widget class="QLabel" name="lblMakeupRequestsTitle">
           <property name="styleSheet">
            <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
           </property>
           <property name="text">
-           <string>📅 Schedule Labs</string>
+           <string>🔄 Makeup Lab Requests</string>
           </property>
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayoutScheduleButtons">
+         <layout class="QHBoxLayout" name="horizontalLayoutMakeupButtons">
           <item>
-           <widget class="QPushButton" name="btnSetSchedule">
+           <widget class="QPushButton" name="btnAcceptMakeup">
+            <property name="styleSheet">
+             <string>background-color: #27AE60; color: white; font-weight: bold; padding: 8px;</string>
+            </property>
             <property name="text">
-             <string>Set Schedule</string>
+             <string>✓ Accept Request</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRejectMakeup">
+            <property name="styleSheet">
+             <string>background-color: #E74C3C; color: white; font-weight: bold; padding: 8px;</string>
+            </property>
+            <property name="text">
+             <string>✗ Reject Request</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacerMakeup">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
         <item>
-         <widget class="QTableWidget" name="tableSchedule">
-          <property name="styleSheet">
-           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="reportsPage">
-       <property name="styleSheet">
-        <string>background-color: #E1FFC1;</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayoutReports">
-        <item>
-         <widget class="QLabel" name="lblReportsTitle">
-          <property name="styleSheet">
-           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
-          </property>
-          <property name="text">
-           <string>📋 Reports</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayoutReportsButtons">
-          <item>
-           <widget class="QPushButton" name="btnGenerateWeeklySchedule">
-            <property name="text">
-             <string>Generate Weekly Schedule</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnGenerateTimesheets">
-            <property name="text">
-             <string>Generate Timesheets</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnGenerateMakeupSchedule">
-            <property name="text">
-             <string>Generate Makeup Schedule</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QTextEdit" name="textEditReports">
+         <widget class="QTableWidget" name="tableMakeupRequests">
           <property name="styleSheet">
            <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
           </property>

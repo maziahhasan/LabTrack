@@ -480,6 +480,8 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/BuildingRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/Building.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/ActualTimingRepository.h \
+ C:\Users\SMZ\Documents\labtrack\backend/repositories/MakeupRequestRepository.h \
+ C:/Users/SMZ/Documents/labtrack/backend/models/MakeupRequest.h \
  C:\Users\SMZ\Documents\labtrack\backend/services/ReportService.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/UserRepository.h \
@@ -522,13 +524,11 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QStackedWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qstackedwidget.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTextEdit \
- C:/Qt/6.10.0/mingw_64/include/QtWidgets/qtextedit.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qtextcursor.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
@@ -539,6 +539,8 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcombobox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QLineEdit \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlineedit.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qtextcursor.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QInputDialog \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qinputdialog.h \
@@ -551,5 +553,6 @@ CMakeFiles/labtrack.dir/ao_mainwindow.cpp.obj: \
  C:\Users\SMZ\Documents\labtrack\ao_add_lab_dialog.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTimeEdit \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdatetimeedit.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDateEdit \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialogButtonBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h

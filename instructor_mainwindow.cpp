@@ -32,7 +32,7 @@ InstructorMainWindow::InstructorMainWindow(int instructorId, QWidget *parent) :
     ui->setupUi(this);
     
     // Initialize makeup service
-    makeupService = new MakeupService(makeupRequestRepo, labRepo);
+    makeupService = std::make_unique<MakeupService>(makeupRequestRepo, labRepo);
     
     // Load current user
     UserRepository userRepo; // uses users.bin by default
@@ -51,6 +51,7 @@ InstructorMainWindow::InstructorMainWindow(int instructorId, QWidget *parent) :
 
     // Connect update profile button
     connect(ui->btnUpdateProfile, &QPushButton::clicked, this, &InstructorMainWindow::on_btnUpdateProfile_clicked);
+    connect(ui->btnSubmitMakeupRequest, &QPushButton::clicked, this, &InstructorMainWindow::on_btnSubmitMakeupRequest_clicked);
 
     // Load initial data
     loadMyLabs();
@@ -69,7 +70,6 @@ InstructorMainWindow::InstructorMainWindow(int instructorId, QWidget *parent) :
 
 InstructorMainWindow::~InstructorMainWindow()
 {
-    delete makeupService;
     delete ui;
 }
 
@@ -85,13 +85,14 @@ void InstructorMainWindow::on_btnProfile_clicked()
 
 void InstructorMainWindow::on_btnUpdateProfile_clicked()
 {
-    auto instructor = instructorRepo.getInstructorById(instructorId);
-    if (!instructor) return;
+    auto instructorOpt = instructorRepo.getInstructorById(instructorId);
+    if (!instructorOpt.has_value()) return;
 
-    instructor->setName(ui->lineEditName->text().toStdString());
-    instructor->setEmail(ui->lineEditEmail->text().toStdString());
+    auto instructor = instructorOpt.value();
+    instructor.setName(ui->lineEditName->text().toStdString());
+    instructor.setEmail(ui->lineEditEmail->text().toStdString());
     // Assuming phone is stored in email or another field, adjust as needed
-    instructorRepo.update(*instructor);
+    instructorRepo.update(instructor);
 
     QMessageBox::information(this, "Profile Updated", "Your profile has been updated successfully.");
 }
@@ -105,11 +106,11 @@ void InstructorMainWindow::loadMyLabs()
 
     for (int i = 0; i < myLabs.size(); ++i) {
         const auto& lab = myLabs[i];
-        auto room = roomRepo.getRoomById(lab.getRoomId());
+        auto roomOpt = roomRepo.getRoomById(lab.getRoomId());
 
         ui->tableMyLabs->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(lab.getName())));
         ui->tableMyLabs->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(lab.getSchedule())));
-        ui->tableMyLabs->setItem(i, 2, new QTableWidgetItem(room ? QString::fromStdString(room->getName()) : "Unknown"));
+        ui->tableMyLabs->setItem(i, 2, new QTableWidgetItem(roomOpt.has_value() ? QString::fromStdString(roomOpt->getName()) : "Unknown"));
         ui->tableMyLabs->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(lab.getStatus())));
     }
 }
@@ -126,6 +127,46 @@ void InstructorMainWindow::loadProfile()
 }
 
 void InstructorMainWindow::on_btnRequestMakeup_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->requestMakeupPage);
+    loadMakeupRequests();
+}
+
+void InstructorMainWindow::loadMakeupRequests()
+{
+    auto allRequests = makeupRequestRepo.load();
+    ui->tableMakeupRequests->setRowCount(0);
+    ui->tableMakeupRequests->setColumnCount(7);
+    ui->tableMakeupRequests->setHorizontalHeaderLabels({"ID", "Lab", "Room", "Date", "Time", "Reason", "Status"});
+    
+    int row = 0;
+    for (const auto& req : allRequests) {
+        // Only show this instructor's requests
+        if (req.getInstructorId() != instructorId) continue;
+        
+        ui->tableMakeupRequests->insertRow(row);
+        
+        auto labOpt = labRepo.getLabById(req.getLabId());
+        QString labName = labOpt.has_value() ? QString::fromStdString(labOpt->getName()) : "Unknown";
+        
+        auto roomOpt = roomRepo.getRoomById(req.getRoomId());
+        QString roomName = roomOpt.has_value() ? QString::fromStdString(roomOpt->getName()) : "Unknown";
+        
+        ui->tableMakeupRequests->setItem(row, 0, new QTableWidgetItem(QString::number(req.getId())));
+        ui->tableMakeupRequests->setItem(row, 1, new QTableWidgetItem(labName));
+        ui->tableMakeupRequests->setItem(row, 2, new QTableWidgetItem(roomName));
+        ui->tableMakeupRequests->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(req.getDate())));
+        ui->tableMakeupRequests->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(req.getTime())));
+        ui->tableMakeupRequests->setItem(row, 5, new QTableWidgetItem(QString::fromStdString(req.getReason())));
+        ui->tableMakeupRequests->setItem(row, 6, new QTableWidgetItem(QString::fromStdString(req.getStatus())));
+        
+        row++;
+    }
+    
+    ui->tableMakeupRequests->resizeColumnsToContents();
+}
+
+void InstructorMainWindow::on_btnSubmitMakeupRequest_clicked()
 {
     auto myLabs = labRepo.getLabsByInstructorId(instructorId);
     if (myLabs.empty()) {
@@ -149,13 +190,42 @@ void InstructorMainWindow::on_btnRequestMakeup_clicked()
     
     int labId = labMap[selectedLab];
     auto labOpt = labRepo.getLabById(labId);
-    if (!labOpt) return;
+    if (!labOpt.has_value()) return;
     
     // Get date
     QString dateStr = QInputDialog::getText(this, "Request Makeup Lab", 
         "Enter date (YYYY-MM-DD):", QLineEdit::Normal, 
         QDate::currentDate().toString("yyyy-MM-dd"), &ok);
     if (!ok || dateStr.isEmpty()) return;
+    
+    // Get room - show available rooms
+    QStringList roomNames;
+    QMap<QString, int> roomMap;
+    auto allRooms = roomRepo.getAll();
+    for (const auto& room : allRooms) {
+        QString name = QString::fromStdString(room.getName());
+        roomNames << name;
+        roomMap[name] = room.getId();
+    }
+    
+    // Default to the lab's assigned room
+    int defaultRoomId = labOpt->getRoomId();
+    QString defaultRoomName;
+    for (const auto& room : allRooms) {
+        if (room.getId() == defaultRoomId) {
+            defaultRoomName = QString::fromStdString(room.getName());
+            break;
+        }
+    }
+    
+    int defaultIndex = roomNames.indexOf(defaultRoomName);
+    if (defaultIndex < 0) defaultIndex = 0;
+    
+    QString selectedRoom = QInputDialog::getItem(this, "Request Makeup Lab", 
+        "Select Room:", roomNames, defaultIndex, false, &ok);
+    if (!ok || selectedRoom.isEmpty()) return;
+    
+    int roomId = roomMap[selectedRoom];
     
     // Get start time
     QString startTime = QInputDialog::getText(this, "Request Makeup Lab", 
@@ -170,22 +240,28 @@ void InstructorMainWindow::on_btnRequestMakeup_clicked()
     // Get reason
     QString reason = QInputDialog::getText(this, "Request Makeup Lab", 
         "Enter reason for makeup request:", QLineEdit::Normal, "", &ok);
-    if (!ok) reason = "";
+    if (!ok || reason.trimmed().isEmpty()) {
+        QMessageBox::warning(this, "Invalid Input", "Reason is required.");
+        return;
+    }
     
-    // Create makeup request
+    // Create makeup request with combined time string
+    QString timeRange = startTime + "-" + endTime;
     int requestId = makeupRequestRepo.getNextId();
-    MakeupRequest request(requestId, labId, instructorId, dateStr.toStdString(), 
-        startTime.toStdString(), endTime.toStdString(), "Pending");
+    MakeupRequest request(requestId, labId, instructorId, roomId, dateStr.toStdString(), 
+        timeRange.toStdString(), reason.toStdString(), "Pending");
     makeupRequestRepo.add(request);
     
     QMessageBox::information(this, "Success", 
         QString("Makeup lab request submitted successfully!\nRequest ID: %1\n"
-                "Lab: %2\nDate: %3\nTime: %4 - %5")
+                "Lab: %2\nRoom: %3\nDate: %4\nTime: %5")
             .arg(requestId)
             .arg(selectedLab)
+            .arg(selectedRoom)
             .arg(dateStr)
-            .arg(startTime)
-            .arg(endTime));
+            .arg(timeRange));
+    
+    loadMakeupRequests();
 }
 void InstructorMainWindow::exportToPDF(const QString& title, QTableWidget* table)
 {

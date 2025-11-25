@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -60,7 +62,8 @@ public:
     QLabel *lblWeeklyScheduleTitle;
     QHBoxLayout *horizontalLayoutFilters;
     QLabel *lblFilterWeek;
-    QComboBox *comboWeek;
+    QCalendarWidget *calendarWeekSchedule;
+    QSpacerItem *horizontalSpacer;
     QPushButton *btnExportSchedule;
     QTableWidget *tableWeeklySchedule;
     QWidget *weeklyTimesheetsPage;
@@ -68,7 +71,8 @@ public:
     QLabel *lblWeeklyTimesheetsTitle;
     QHBoxLayout *horizontalLayoutTimesheetFilters;
     QLabel *lblFilterTimesheetWeek;
-    QComboBox *comboTimesheetWeek;
+    QCalendarWidget *calendarWeekTimesheets;
+    QSpacerItem *horizontalSpacerTimesheets;
     QPushButton *btnExportTimesheets;
     QTableWidget *tableWeeklyTimesheets;
     QWidget *labHistoryPage;
@@ -226,10 +230,14 @@ public:
 
         horizontalLayoutFilters->addWidget(lblFilterWeek);
 
-        comboWeek = new QComboBox(weeklySchedulePage);
-        comboWeek->setObjectName("comboWeek");
+        calendarWeekSchedule = new QCalendarWidget(weeklySchedulePage);
+        calendarWeekSchedule->setObjectName("calendarWeekSchedule");
 
-        horizontalLayoutFilters->addWidget(comboWeek);
+        horizontalLayoutFilters->addWidget(calendarWeekSchedule);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayoutFilters->addItem(horizontalSpacer);
 
         btnExportSchedule = new QPushButton(weeklySchedulePage);
         btnExportSchedule->setObjectName("btnExportSchedule");
@@ -261,10 +269,14 @@ public:
 
         horizontalLayoutTimesheetFilters->addWidget(lblFilterTimesheetWeek);
 
-        comboTimesheetWeek = new QComboBox(weeklyTimesheetsPage);
-        comboTimesheetWeek->setObjectName("comboTimesheetWeek");
+        calendarWeekTimesheets = new QCalendarWidget(weeklyTimesheetsPage);
+        calendarWeekTimesheets->setObjectName("calendarWeekTimesheets");
 
-        horizontalLayoutTimesheetFilters->addWidget(comboTimesheetWeek);
+        horizontalLayoutTimesheetFilters->addWidget(calendarWeekTimesheets);
+
+        horizontalSpacerTimesheets = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayoutTimesheetFilters->addItem(horizontalSpacerTimesheets);
 
         btnExportTimesheets = new QPushButton(weeklyTimesheetsPage);
         btnExportTimesheets->setObjectName("btnExportTimesheets");
@@ -448,15 +460,15 @@ public:
         weeklySchedulePage->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background-color: #C1FFD7;", nullptr));
         lblWeeklyScheduleTitle->setStyleSheet(QCoreApplication::translate("HODMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
         lblWeeklyScheduleTitle->setText(QCoreApplication::translate("HODMainWindow", "\360\237\223\205 Weekly Lab Schedule", nullptr));
-        lblFilterWeek->setText(QCoreApplication::translate("HODMainWindow", "Week:", nullptr));
-        comboWeek->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:4px; padding:4px; border:1px solid #ccc;", nullptr));
+        lblFilterWeek->setText(QCoreApplication::translate("HODMainWindow", "Select Week:", nullptr));
+        calendarWeekSchedule->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:4px; padding:4px; border:1px solid #ccc;", nullptr));
         btnExportSchedule->setText(QCoreApplication::translate("HODMainWindow", "Export to PDF", nullptr));
         tableWeeklySchedule->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
         weeklyTimesheetsPage->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background-color: #C1E1FF;", nullptr));
         lblWeeklyTimesheetsTitle->setStyleSheet(QCoreApplication::translate("HODMainWindow", "font-family:\"Segoe UI\"; font-size:22px; font-weight:bold; color:#2C3E50;", nullptr));
         lblWeeklyTimesheetsTitle->setText(QCoreApplication::translate("HODMainWindow", "\342\217\260 Weekly Timesheets", nullptr));
-        lblFilterTimesheetWeek->setText(QCoreApplication::translate("HODMainWindow", "Week:", nullptr));
-        comboTimesheetWeek->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:4px; padding:4px; border:1px solid #ccc;", nullptr));
+        lblFilterTimesheetWeek->setText(QCoreApplication::translate("HODMainWindow", "Select Week:", nullptr));
+        calendarWeekTimesheets->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:4px; padding:4px; border:1px solid #ccc;", nullptr));
         btnExportTimesheets->setText(QCoreApplication::translate("HODMainWindow", "Export to PDF", nullptr));
         tableWeeklyTimesheets->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background:white; border-radius:8px; padding:6px; border:1px solid #ccc;", nullptr));
         labHistoryPage->setStyleSheet(QCoreApplication::translate("HODMainWindow", "background-color: #FFD1DC;", nullptr));

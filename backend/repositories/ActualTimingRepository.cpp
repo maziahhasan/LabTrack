@@ -105,3 +105,49 @@ bool ActualTimingRepository::update(const ActualTiming &timing) {
     }
     return found;
 }
+
+bool ActualTimingRepository::remove(int labId, const std::string& date) {
+    auto all = getAllActualTimings();
+    auto it = std::remove_if(all.begin(), all.end(), 
+        [labId, &date](const ActualTiming& t) { 
+            return t.getLabId() == labId && t.getDate() == date; 
+        });
+    if (it != all.end()) {
+        all.erase(it, all.end());
+        std::ofstream out(fileName, std::ios::binary | std::ios::trunc);
+        int count = (int)all.size(); out.write((char*)&count, sizeof(count));
+        for (const auto &a : all) {
+            int lid = a.getLabId(); out.write((char*)&lid, sizeof(lid));
+            int tid = a.getTaId(); out.write((char*)&tid, sizeof(tid));
+            writeString(out, a.getDate());
+            writeString(out, a.getStartTime());
+            writeString(out, a.getEndTime());
+            double dur = a.getDuration(); out.write((char*)&dur, sizeof(dur));
+            writeString(out, a.getNotes());
+        }
+        return true;
+    }
+    return false;
+}
+
+bool ActualTimingRepository::removeByLabId(int labId) {
+    auto all = getAllActualTimings();
+    auto it = std::remove_if(all.begin(), all.end(), 
+        [labId](const ActualTiming& t) { return t.getLabId() == labId; });
+    if (it != all.end()) {
+        all.erase(it, all.end());
+        std::ofstream out(fileName, std::ios::binary | std::ios::trunc);
+        int count = (int)all.size(); out.write((char*)&count, sizeof(count));
+        for (const auto &a : all) {
+            int lid = a.getLabId(); out.write((char*)&lid, sizeof(lid));
+            int tid = a.getTaId(); out.write((char*)&tid, sizeof(tid));
+            writeString(out, a.getDate());
+            writeString(out, a.getStartTime());
+            writeString(out, a.getEndTime());
+            double dur = a.getDuration(); out.write((char*)&dur, sizeof(dur));
+            writeString(out, a.getNotes());
+        }
+        return true;
+    }
+    return false;
+}

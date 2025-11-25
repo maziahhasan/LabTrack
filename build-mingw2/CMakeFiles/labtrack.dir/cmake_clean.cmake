@@ -32,6 +32,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/labtrack.dir/backend/repositories/UserRepository.cpp.obj.d"
   "CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj"
   "CMakeFiles/labtrack.dir/backend/services/AuthService.cpp.obj.d"
+  "CMakeFiles/labtrack.dir/backend/services/ExportService.cpp.obj"
+  "CMakeFiles/labtrack.dir/backend/services/ExportService.cpp.obj.d"
   "CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj"
   "CMakeFiles/labtrack.dir/backend/services/LabService.cpp.obj.d"
   "CMakeFiles/labtrack.dir/backend/services/MakeupService.cpp.obj"

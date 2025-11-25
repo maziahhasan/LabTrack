@@ -3,6 +3,7 @@
 #include <QLineEdit>
 #include <QComboBox>
 #include <QTimeEdit>
+#include <QDateEdit>
 #include <QDialogButtonBox>
 #include "backend/repositories/InstructorRepository.h"
 #include "backend/repositories/RoomRepository.h"
@@ -22,6 +23,8 @@ public:
     QString dayOfWeek() const;
     QTime startTime() const;
     QTime endTime() const;
+    QDate semesterStart() const;
+    QDate semesterEnd() const;
 
 private:
     QLineEdit *editCourse;
@@ -31,5 +34,7 @@ private:
     QComboBox *comboDay;
     QTimeEdit *timeStart;
     QTimeEdit *timeEnd;
+    QDateEdit *dateSemesterStart;
+    QDateEdit *dateSemesterEnd;
     QDialogButtonBox *buttons;
 };

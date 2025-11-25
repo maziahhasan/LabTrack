@@ -32,6 +32,8 @@ HODMainWindow::HODMainWindow(QWidget *parent) :
 
     // Connect other controls
     connect(ui->comboSelectLab, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &HODMainWindow::on_comboSelectLab_currentIndexChanged);
+    connect(ui->calendarWeekSchedule, &QCalendarWidget::selectionChanged, this, &HODMainWindow::on_calendarWeekSchedule_selectionChanged);
+    connect(ui->calendarWeekTimesheets, &QCalendarWidget::selectionChanged, this, &HODMainWindow::on_calendarWeekTimesheets_selectionChanged);
     connect(ui->btnExportSchedule, &QPushButton::clicked, this, &HODMainWindow::on_btnExportSchedule_clicked);
     connect(ui->btnExportTimesheets, &QPushButton::clicked, this, &HODMainWindow::on_btnExportTimesheets_clicked);
     connect(ui->btnExportHistory, &QPushButton::clicked, this, &HODMainWindow::on_btnExportHistory_clicked);
@@ -44,7 +46,7 @@ HODMainWindow::HODMainWindow(QWidget *parent) :
     // Don't load lab history and makeup requests until user navigates to those pages
 
     // construct reportService now that repos are initialized
-    reportService = new ReportService(labRepo, instructorRepo, taRepo, roomRepo, buildingRepo, actualTimingRepo);
+    reportService = std::make_unique<ReportService>(labRepo, instructorRepo, taRepo, roomRepo, buildingRepo, actualTimingRepo);
 
 
     // Set default page to Dashboard
@@ -68,7 +70,6 @@ HODMainWindow::HODMainWindow(int hodId, QWidget *parent)
 
 HODMainWindow::~HODMainWindow()
 {
-    delete reportService;
     delete ui;
 }
 
@@ -103,28 +104,46 @@ void HODMainWindow::on_btnMakeupRequests_clicked()
 void HODMainWindow::on_comboSelectLab_currentIndexChanged(int index)
 {
     if (index >= 0) {
-        loadLabHistory();
+        loadLabHistoryDetails();
     }
+}
+
+void HODMainWindow::on_calendarWeekSchedule_selectionChanged()
+{
+    loadWeeklySchedule();
+}
+
+void HODMainWindow::on_calendarWeekTimesheets_selectionChanged()
+{
+    loadWeeklyTimesheets();
 }
 
 void HODMainWindow::on_btnExportSchedule_clicked()
 {
-    exportToPDF("Weekly Lab Schedule", ui->tableWeeklySchedule);
+    exportToExcel("Weekly Lab Schedule", ui->tableWeeklySchedule);
 }
 
 void HODMainWindow::on_btnExportTimesheets_clicked()
 {
-    exportToPDF("Weekly Timesheets", ui->tableWeeklyTimesheets);
+    exportToExcel("Weekly Timesheets", ui->tableWeeklyTimesheets);
 }
 
 void HODMainWindow::on_btnExportHistory_clicked()
 {
-    exportToPDF("Lab History", ui->tableLabHistory);
+    QString labName = ui->comboSelectLab->currentText();
+    QString totalHours = ui->lblTotalContactHoursValue->text();
+    QString totalLeaves = ui->lblTotalLeavesValue->text();
+    QString totalMakeup = ui->lblTotalMakeupSessionsValue->text();
+    
+    exportToExcel("Lab History - " + labName, ui->tableLabHistory, 
+                  "Total Contact Hours: " + totalHours + "\n" +
+                  "Total Leaves: " + totalLeaves + "\n" +
+                  "Total Makeup Sessions: " + totalMakeup);
 }
 
 void HODMainWindow::on_btnExportRequests_clicked()
 {
-    exportToPDF("Makeup Lab Requests", ui->tableMakeupRequests);
+    exportToExcel("Makeup Lab Requests", ui->tableMakeupRequests);
 }
 
 void HODMainWindow::loadDashboard()
@@ -144,38 +163,62 @@ void HODMainWindow::loadDashboard()
 
 void HODMainWindow::loadWeeklySchedule()
 {
-    auto allLabs = labRepo.getAllLabs();
-    ui->tableWeeklySchedule->setRowCount(allLabs.size());
-    ui->tableWeeklySchedule->setColumnCount(6);
-    ui->tableWeeklySchedule->setHorizontalHeaderLabels({"Lab Name", "Instructor", "Room", "Day", "Time", "Status"});
-
-    for (int i = 0; i < allLabs.size(); ++i) {
-        const auto& lab = allLabs[i];
-        auto instructor = instructorRepo.getInstructorById(lab.getInstructorId());
-        auto room = roomRepo.getRoomById(lab.getRoomId());
-
-        QString timeStr = QString::fromStdString(lab.getSchedule().getStart()) + " - " + QString::fromStdString(lab.getSchedule().getEnd());
-
-        ui->tableWeeklySchedule->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(lab.getName())));
-        ui->tableWeeklySchedule->setItem(i, 1, new QTableWidgetItem(instructor ? QString::fromStdString(instructor->getName()) : "Unknown"));
-        ui->tableWeeklySchedule->setItem(i, 2, new QTableWidgetItem(room ? QString::fromStdString(room->getName()) : "Unknown"));
-        ui->tableWeeklySchedule->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(lab.getSchedule().getDay())));
-        ui->tableWeeklySchedule->setItem(i, 4, new QTableWidgetItem(timeStr));
-        ui->tableWeeklySchedule->setItem(i, 5, new QTableWidgetItem(QString::fromStdString(lab.getStatus())));
+    // Get selected week from calendar
+    QDate selectedDate = ui->calendarWeekSchedule->selectedDate();
+    int daysToMonday = (selectedDate.dayOfWeek() - 1); // Qt: 1=Monday
+    QDate weekStart = selectedDate.addDays(-daysToMonday);
+    QDate weekEnd = weekStart.addDays(6);
+    
+    // Get all timings for this week range
+    auto allTimings = actualTimingRepo.getAllActualTimings();
+    std::vector<ActualTiming> weekTimings;
+    
+    for (const auto& timing : allTimings) {
+        QDate timingDate = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
+        if (timingDate.isValid() && timingDate >= weekStart && timingDate <= weekEnd) {
+            weekTimings.push_back(timing);
+        }
     }
-
-    // Populate week combo
-    ui->comboWeek->clear();
-    ui->comboWeek->addItem("Current Week");
-    ui->comboWeek->addItem("Next Week");
+    
+    ui->tableWeeklySchedule->setRowCount(static_cast<int>(weekTimings.size()));
+    ui->tableWeeklySchedule->setColumnCount(7);
+    ui->tableWeeklySchedule->setHorizontalHeaderLabels({"Date", "Day", "Lab Name", "Instructor", "Room", "Time", "Duration"});
+    
+    for (size_t i = 0; i < weekTimings.size(); ++i) {
+        const auto& timing = weekTimings[i];
+        auto labOpt = labRepo.getLabById(timing.getLabId());
+        
+        QDate timingDate = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
+        QString day = timingDate.isValid() ? timingDate.toString("dddd") : "Unknown";
+        QString labName = labOpt.has_value() ? QString::fromStdString(labOpt->getName()) : "Unknown";
+        
+        QString instructorName = "Unknown";
+        QString roomName = "Unknown";
+        if (labOpt.has_value()) {
+            auto instructorOpt = instructorRepo.getInstructorById(labOpt->getInstructorId());
+            auto roomOpt = roomRepo.getRoomById(labOpt->getRoomId());
+            if (instructorOpt.has_value()) instructorName = QString::fromStdString(instructorOpt->getName());
+            if (roomOpt.has_value()) roomName = QString::fromStdString(roomOpt->getName());
+        }
+        
+        QString timeStr = QString::fromStdString(timing.getStartTime()) + " - " + QString::fromStdString(timing.getEndTime());
+        
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 0, new QTableWidgetItem(QString::fromStdString(timing.getDate())));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 1, new QTableWidgetItem(day));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 2, new QTableWidgetItem(labName));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 3, new QTableWidgetItem(instructorName));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 4, new QTableWidgetItem(roomName));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 5, new QTableWidgetItem(timeStr));
+        ui->tableWeeklySchedule->setItem(static_cast<int>(i), 6, new QTableWidgetItem(QString::number(timing.getDuration(), 'f', 2)));
+    }
 }
 
 void HODMainWindow::loadWeeklyTimesheets()
 {
-    // Get current week's date range
-    QDate today = QDate::currentDate();
-    int daysToMonday = (today.dayOfWeek() - 1); // Qt uses 1=Monday
-    QDate monday = today.addDays(-daysToMonday);
+    // Get selected week from calendar
+    QDate selectedDate = ui->calendarWeekTimesheets->selectedDate();
+    int daysToMonday = (selectedDate.dayOfWeek() - 1); // Qt uses 1=Monday
+    QDate monday = selectedDate.addDays(-daysToMonday);
     QDate sunday = monday.addDays(6);
     
     // Get all timings for this week
@@ -185,7 +228,7 @@ void HODMainWindow::loadWeeklyTimesheets()
     std::vector<ActualTiming> weekTimings;
     for (const auto& timing : allTimings) {
         QDate timingDate = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
-        if (timingDate >= monday && timingDate <= sunday) {
+        if (timingDate.isValid() && timingDate >= monday && timingDate <= sunday) {
             weekTimings.push_back(timing);
         }
     }
@@ -196,26 +239,22 @@ void HODMainWindow::loadWeeklyTimesheets()
 
     for (int i = 0; i < weekTimings.size(); ++i) {
         const auto& timing = weekTimings[i];
-        auto lab = labRepo.getLabById(timing.getLabId());
+        auto labOpt = labRepo.getLabById(timing.getLabId());
         QString instructorName = "Unknown";
-        if (lab) {
-            auto instructor = instructorRepo.getInstructorById(lab->getInstructorId());
-            if (instructor) {
-                instructorName = QString::fromStdString(instructor->getName());
+        if (labOpt.has_value()) {
+            auto instructorOpt = instructorRepo.getInstructorById(labOpt->getInstructorId());
+            if (instructorOpt.has_value()) {
+                instructorName = QString::fromStdString(instructorOpt->getName());
             }
         }
 
         ui->tableWeeklyTimesheets->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(timing.getDate())));
-        ui->tableWeeklyTimesheets->setItem(i, 1, new QTableWidgetItem(lab ? QString::fromStdString(lab->getName()) : "Unknown"));
+        ui->tableWeeklyTimesheets->setItem(i, 1, new QTableWidgetItem(labOpt.has_value() ? QString::fromStdString(labOpt->getName()) : "Unknown"));
         ui->tableWeeklyTimesheets->setItem(i, 2, new QTableWidgetItem(instructorName));
         ui->tableWeeklyTimesheets->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(timing.getStartTime())));
         ui->tableWeeklyTimesheets->setItem(i, 4, new QTableWidgetItem(QString::fromStdString(timing.getEndTime())));
         ui->tableWeeklyTimesheets->setItem(i, 5, new QTableWidgetItem(QString::number(timing.getDuration(), 'f', 2)));
     }
-
-    // Populate week combo
-    ui->comboTimesheetWeek->clear();
-    ui->comboTimesheetWeek->addItem(QString("Week of %1").arg(monday.toString("MMM dd")));
 }
 
 void HODMainWindow::loadLabHistory()
@@ -242,46 +281,92 @@ void HODMainWindow::loadLabHistory()
         
         // Re-enable signals after populating
         ui->comboSelectLab->blockSignals(false);
+        
+        // Load details for first lab
+        loadLabHistoryDetails();
+    } catch (...) {
+        QMessageBox::critical(this, "Error", "Failed to load lab list.");
+    }
+}
 
+void HODMainWindow::loadLabHistoryDetails()
+{
+    try {
         int selectedLabId = ui->comboSelectLab->currentData().toInt();
         if (selectedLabId == 0) {
-            selectedLabId = allLabs[0].getId();
+            ui->lblTotalContactHoursValue->setText("0.00");
+            ui->lblTotalLeavesValue->setText("0");
+            ui->lblTotalMakeupSessionsValue->setText("0");
+            ui->tableLabHistory->setRowCount(0);
+            return;
         }
         
         // Get all timings for this lab
         auto timings = actualTimingRepo.getActualTimingsByLabId(selectedLabId);
-        
-        // Calculate total contact hours
+
+        // Robust calculations:
+        // - totalHours: sum of durations for recorded sessions (exclude leaves)
+        // - explicitLeaves: timings explicitly recorded as 00:00 - 00:00
+        // - recordedSessions: timings with valid non-leave times
+        // - expectedSessions: default semester sessions (fallback to 15)
+        // - implicitLeaves: expectedSessions - (recordedSessions + explicitLeaves) if positive
+        // - totalLeaves = explicitLeaves + implicitLeaves
         double totalHours = 0.0;
-        for (const auto& timing : timings) {
-            totalHours += timing.getDuration();
-        }
-        ui->lblTotalContactHoursValue->setText(QString::number(totalHours, 'f', 2));
-        
-        // Calculate leaves (sessions marked as 00:00 - 00:00)
-        int leaves = 0;
-        for (const auto& timing : timings) {
-            if (timing.getStartTime() == "00:00" && timing.getEndTime() == "00:00") {
-                leaves++;
+        int explicitLeaves = 0;
+        int recordedSessions = 0;
+
+        for (const auto &timing : timings) {
+            const std::string &s = timing.getStartTime();
+            const std::string &e = timing.getEndTime();
+            bool isLeaveEntry = (s == "00:00" && e == "00:00");
+            if (isLeaveEntry) {
+                explicitLeaves++;
+                continue;
             }
+            // only count durations for real sessions
+            double dur = timing.getDuration();
+            if (dur > 0.0) {
+                totalHours += dur;
+            }
+            // if date/time parseable, consider it a recorded session
+            QDate d = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
+            if (d.isValid()) recordedSessions++;
         }
-        ui->lblTotalLeavesValue->setText(QString::number(leaves));
-        
-        // Count makeup sessions (sessions not on scheduled day)
+
+        ui->lblTotalContactHoursValue->setText(QString::number(totalHours, 'f', 2));
+
+        // Determine expected sessions for semester.
+        // If lab has a schedule we assume weekly sessions across a 15-week semester by default.
+        int expectedSessions = 15;
+        auto labOpt = labRepo.getLabById(selectedLabId);
+        if (labOpt.has_value()) {
+            // TODO: if semester dates are available, compute expectedSessions based on date range
+        }
+
+        int implicitLeaves = 0;
+        int totalRecorded = recordedSessions + explicitLeaves;
+        if (expectedSessions > totalRecorded) implicitLeaves = expectedSessions - totalRecorded;
+        int totalLeaves = explicitLeaves + implicitLeaves;
+
+        ui->lblTotalLeavesValue->setText(QString::number(totalLeaves));
+
+        // Count makeup sessions: recorded sessions that occur on a day different from scheduled day
         int makeupCount = 0;
-        auto lab = labRepo.getLabById(selectedLabId);
-        if (lab) {
-            std::string scheduledDay = lab->getSchedule().getDay();
-            for (const auto& timing : timings) {
+        if (labOpt.has_value()) {
+            std::string scheduledDay = labOpt->getSchedule().getDay();
+            for (const auto &timing : timings) {
                 QDate timingDate = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
-                if (timingDate.isValid()) {
-                    QString actualDay = timingDate.toString("dddd");
-                    if (actualDay.toStdString() != scheduledDay) {
+                if (!timingDate.isValid()) continue;
+                QString actualDay = timingDate.toString("dddd");
+                if (actualDay.toStdString() != scheduledDay) {
+                    // ignore explicit leaves
+                    if (!(timing.getStartTime() == "00:00" && timing.getEndTime() == "00:00")) {
                         makeupCount++;
                     }
                 }
             }
         }
+
         ui->lblTotalMakeupSessionsValue->setText(QString::number(makeupCount));
 
         ui->tableLabHistory->setRowCount(static_cast<int>(timings.size()));
@@ -289,7 +374,7 @@ void HODMainWindow::loadLabHistory()
         ui->tableLabHistory->setHorizontalHeaderLabels({"Date", "Day", "Start Time", "End Time", "Duration (hrs)"});
 
         for (size_t i = 0; i < timings.size(); ++i) {
-            const auto& timing = timings[i];
+            const auto &timing = timings[i];
             QDate timingDate = QDate::fromString(QString::fromStdString(timing.getDate()), "yyyy-MM-dd");
             QString day = timingDate.isValid() ? timingDate.toString("dddd") : "Unknown";
 
@@ -343,45 +428,15 @@ void HODMainWindow::loadMakeupRequests()
     ui->comboFilterStatus->addItem("Rejected");
 }
 
-void HODMainWindow::exportToPDF(const QString& title, QTableWidget* table)
+void HODMainWindow::exportToExcel(const QString& title, QTableWidget* table, const QString& summary)
 {
-    QString fileName = QFileDialog::getSaveFileName(this, "Export to PDF", "", "PDF Files (*.pdf)");
+    QString fileName = QFileDialog::getSaveFileName(this, "Export to Excel", title + ".csv", "CSV Files (*.csv);;All Files (*)");
     if (fileName.isEmpty()) return;
 
-    QPdfWriter writer(fileName);
-    writer.setPageSize(QPageSize(QPageSize::A4));
-    writer.setTitle(title);
-
-    QPainter painter(&writer);
-    painter.setFont(QFont("Arial", 12));
-
-    int y = 100;
-    painter.drawText(100, y, title);
-    y += 50;
-
-    // Draw table headers
-    for (int col = 0; col < table->columnCount(); ++col) {
-        QTableWidgetItem* headerItem = table->horizontalHeaderItem(col);
-        if (headerItem) {
-            painter.drawText(100 + col * 150, y, headerItem->text());
-        }
+    if (ExportService::exportToCSV(fileName, title, table, summary)) {
+        QMessageBox::information(this, "Export Successful", 
+            QString("Report exported successfully to:\n%1\n\nYou can open this file with Microsoft Excel.").arg(fileName));
+    } else {
+        QMessageBox::warning(this, "Export Failed", "Could not export the report.");
     }
-    y += 30;
-
-    // Draw table data
-    for (int row = 0; row < table->rowCount(); ++row) {
-        for (int col = 0; col < table->columnCount(); ++col) {
-            QTableWidgetItem* item = table->item(row, col);
-            if (item) {
-                painter.drawText(100 + col * 150, y, item->text());
-            }
-        }
-        y += 25;
-        if (y > 1000) { // New page if needed
-            writer.newPage();
-            y = 100;
-        }
-    }
-
-    QMessageBox::information(this, "Export Complete", "PDF exported successfully!");
 }

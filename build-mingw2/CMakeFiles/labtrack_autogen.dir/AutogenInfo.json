@@ -355,6 +355,12 @@
 			null
 		],
 		[
+			"C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.h",
+			"MU",
+			"ZPPB3KFOUR/moc_ExportService.cpp",
+			null
+		],
+		[
 			"C:/Users/SMZ/Documents/labtrack/backend/services/LabService.h",
 			"MU",
 			"ZPPB3KFOUR/moc_LabService.cpp",
@@ -550,6 +556,11 @@
 		],
 		[
 			"C:/Users/SMZ/Documents/labtrack/backend/services/AuthService.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.cpp",
 			"MU",
 			null
 		],

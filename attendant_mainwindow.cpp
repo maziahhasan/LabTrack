@@ -95,12 +95,12 @@ void AttendantMainWindow::on_comboSelectLab_currentIndexChanged(int index)
 {
     if (index < 0) return;
     int labId = ui->comboSelectLab->itemData(index).toInt();
-    auto lab = labRepo.getLabById(labId);
-    if (!lab) return;
+    auto labOpt = labRepo.getLabById(labId);
+    if (!labOpt.has_value()) return;
     
     // Set scheduled time as default
-    ui->timeStart->setTime(QTime::fromString(QString::fromStdString(lab->getSchedule().getStart()), "hh:mm"));
-    ui->timeEnd->setTime(QTime::fromString(QString::fromStdString(lab->getSchedule().getEnd()), "hh:mm"));
+    ui->timeStart->setTime(QTime::fromString(QString::fromStdString(labOpt->getSchedule().getStart()), "hh:mm"));
+    ui->timeEnd->setTime(QTime::fromString(QString::fromStdString(labOpt->getSchedule().getEnd()), "hh:mm"));
 }
 
 void AttendantMainWindow::on_btnSubmitTimesheet_clicked()
@@ -129,14 +129,14 @@ void AttendantMainWindow::on_btnSubmitTimesheet_clicked()
     double duration = isLeave ? 0.0 : start.secsTo(end) / 3600.0;
     
     // Verify attendant is assigned to this building
-    auto lab = labRepo.getLabById(labId);
-    if (!lab) {
+    auto labOpt = labRepo.getLabById(labId);
+    if (!labOpt.has_value()) {
         QMessageBox::critical(this, "Error", "Lab not found.");
         return;
     }
     
     int buildingId = getBuildingIdForAttendant();
-    if (buildingId == -1 || lab->getBuildingId() != buildingId) {
+    if (buildingId == -1 || labOpt->getBuildingId() != buildingId) {
         QMessageBox::critical(this, "Error", "You can only fill timesheets for labs in your assigned building.");
         return;
     }

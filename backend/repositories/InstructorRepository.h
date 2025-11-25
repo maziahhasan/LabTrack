@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <fstream>
+#include <optional>
 #include "../models/Instructor.h"
 
 class InstructorRepository {
@@ -13,14 +14,15 @@ public:
     int getNextId();
     void add(const Instructor &ins);
     bool update(const Instructor& ins);
+    bool remove(int id);
     std::vector<Instructor> getAll();
     // New queries for new model fields
     std::vector<Instructor> getInstructorsByStatus(const std::string& status);
     std::vector<Instructor> getInstructorsByEmail(const std::string& email);
-    // Return pointer (caller may assume ownership) to match UI usage patterns
-    Instructor* getInstructorById(int id) {
+    // Return optional to avoid memory leaks
+    std::optional<Instructor> getInstructorById(int id) {
         auto v = load();
-        for (const auto &i : v) if (i.getId() == id) return new Instructor(i);
-        return nullptr;
+        for (const auto &i : v) if (i.getId() == id) return i;
+        return std::nullopt;
     }
 };

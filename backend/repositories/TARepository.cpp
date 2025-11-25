@@ -1,5 +1,6 @@
 #include "TARepository.h"
 #include <fstream>
+#include <algorithm>
 
 TARepository::TARepository(const std::string &file) { fileName = file; }
 
@@ -42,4 +43,15 @@ bool TARepository::update(const TA &ta) {
     }
     if (found) save(v);
     return found;
+}
+
+bool TARepository::remove(int id) {
+    auto v = load();
+    auto it = std::remove_if(v.begin(), v.end(), [id](const TA& t) { return t.getId() == id; });
+    if (it != v.end()) {
+        v.erase(it, v.end());
+        save(v);
+        return true;
+    }
+    return false;
 }

@@ -450,16 +450,6 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialog.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/QPdfWriter \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpdfwriter.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpagedpaintdevice.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpagelayout.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpagesize.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpageranges.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/QPainter \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpainter.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qtextoption.h \
- C:/Qt/6.10.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
@@ -482,6 +472,10 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: \
  C:\Users\SMZ\Documents\labtrack\backend/repositories/ActualTimingRepository.h \
  C:\Users\SMZ\Documents\labtrack\backend/services/ReportService.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/User.h \
+ C:\Users\SMZ\Documents\labtrack\backend/services/ExportService.h \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/qstring.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
  C:\Users\SMZ\Documents\labtrack\backend/utils/DateUtils.h \
  C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/include/ui_hod_mainwindow.h \
  C:/Qt/6.10.0/mingw_64/include/QtCore/QVariant \
@@ -499,6 +493,8 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.10.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QCalendarWidget \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcalendarwidget.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qcombobox.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFormLayout \
@@ -523,12 +519,24 @@ CMakeFiles/labtrack.dir/hod_mainwindow.cpp.obj: \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QSpacerItem \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qlayoutitem.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QStackedWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qstackedwidget.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/QPdfWriter \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpdfwriter.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpagedpaintdevice.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpagelayout.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpagesize.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpageranges.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/QPainter \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpainter.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.10.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMenuBar \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenubar.h \
  C:/Qt/6.10.0/mingw_64/include/QtWidgets/qmenu.h \

@@ -539,6 +539,10 @@ CMakeFiles/labtrack.dir/login.cpp.obj: \
  C:/Users/SMZ/Documents/labtrack/backend/repositories/MakeupRequestRepository.h \
  C:/Users/SMZ/Documents/labtrack/backend/models/MakeupRequest.h \
  C:\Users\SMZ\Documents\labtrack\hod_mainwindow.h \
+ C:\Users\SMZ\Documents\labtrack\backend/services/ExportService.h \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
+ C:/Qt/6.10.0/mingw_64/include/QtCore/qstring.h \
+ C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
  C:\Users\SMZ\Documents\labtrack\backend/utils/DateUtils.h \
  C:\Users\SMZ\Documents\labtrack\ao_mainwindow.h \
  C:\Users\SMZ\Documents\labtrack\attendant_mainwindow.h \

@@ -462,6 +462,7 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_ao_
   C:/Users/SMZ/Documents/labtrack/backend/models/HOD.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Instructor.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Lab.h \
+  C:/Users/SMZ/Documents/labtrack/backend/models/MakeupRequest.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/Room.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/ScheduleTiming.h \
   C:/Users/SMZ/Documents/labtrack/backend/models/TA.h \
@@ -472,6 +473,7 @@ C:/Users/SMZ/Documents/labtrack/build-mingw2/labtrack_autogen/EWIEGA46WW/moc_ao_
   C:/Users/SMZ/Documents/labtrack/backend/repositories/HODRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/InstructorRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/LabRepository.h \
+  C:/Users/SMZ/Documents/labtrack/backend/repositories/MakeupRequestRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/RoomRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h \

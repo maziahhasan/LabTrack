@@ -222,6 +222,7 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QComboBox \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDateEdit \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDialogButtonBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QFileDialog \
@@ -1229,6 +1230,8 @@ C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qpoint.h:
 
+C:/Qt/6.10.0/mingw_64/include/QtWidgets/QDateEdit:
+
 C:/Qt/6.10.0/mingw_64/include/QtCore/qrect.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qscopeguard.h:
@@ -1749,9 +1752,9 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exce
 
 C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake:
 
-C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
-
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h:
+
+C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake:
 
 C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake:
 

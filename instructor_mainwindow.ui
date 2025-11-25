@@ -117,6 +117,57 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="requestMakeupPage">
+       <property name="styleSheet">
+        <string>background-color: #FFE1C1;</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutRequestMakeup">
+        <item>
+         <widget class="QLabel" name="lblRequestMakeupTitle">
+          <property name="styleSheet">
+           <string>font-family:"Segoe UI"; font-size:22px; font-weight:bold; color:#2C3E50;</string>
+          </property>
+          <property name="text">
+           <string>📝 Request Makeup Lab</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayoutMakeupButtons">
+          <item>
+           <widget class="QPushButton" name="btnSubmitMakeupRequest">
+            <property name="styleSheet">
+             <string>background-color: #27AE60; color: white; font-weight: bold; padding: 8px;</string>
+            </property>
+            <property name="text">
+             <string>➕ Submit New Request</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacerMakeup">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableMakeupRequests">
+          <property name="styleSheet">
+           <string>background:white; border-radius:8px; padding:6px; border:1px solid #ccc;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="profilePage">
        <property name="styleSheet">
         <string>background-color: #E1FFC1;</string>

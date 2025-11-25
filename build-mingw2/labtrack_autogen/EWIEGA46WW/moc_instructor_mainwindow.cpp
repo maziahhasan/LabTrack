@@ -43,7 +43,8 @@ template <> constexpr inline auto InstructorMainWindow::qt_create_metaobjectdata
         "",
         "on_btnProfile_clicked",
         "on_btnUpdateProfile_clicked",
-        "on_btnRequestMakeup_clicked"
+        "on_btnRequestMakeup_clicked",
+        "on_btnSubmitMakeupRequest_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -55,6 +56,8 @@ template <> constexpr inline auto InstructorMainWindow::qt_create_metaobjectdata
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_btnRequestMakeup_clicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_btnSubmitMakeupRequest_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -82,6 +85,7 @@ void InstructorMainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 1: _t->on_btnProfile_clicked(); break;
         case 2: _t->on_btnUpdateProfile_clicked(); break;
         case 3: _t->on_btnRequestMakeup_clicked(); break;
+        case 4: _t->on_btnSubmitMakeupRequest_clicked(); break;
         default: ;
         }
     }
@@ -107,14 +111,14 @@ int InstructorMainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
