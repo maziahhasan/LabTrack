@@ -1,5 +1,5 @@
-1|ta1|21120117673542122|TA
-2|instr1|10936957358199084568|Instructor
-3|hod1|14227578801586210531|HOD
-4|ao1|7729630977305113724|AcademicOfficer
-5|maziah@gmail.com|10089081994332581363|Instructor
+1|admin|adminpass|AcademicOfficer
+2|instr_a|instrpass|Instructor
+3|hod_a|hodpass|HOD
+4|ta_a|tapass|TA
+5|att_a|attpass|Attendant

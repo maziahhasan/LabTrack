@@ -40,6 +40,7 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Program\ Files/CMake/share/cmake-4.2/Modules/Platform/Windows-windres.cmake \
   C:/Program\ Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake \
   C:/Program\ Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake \
+  C:/Qt/6.10.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.0/mingw_64/include/QtCore/q20iterator.h \
@@ -231,6 +232,7 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidgetItem \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTimeEdit \
   C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -707,6 +709,8 @@ labtrack_autogen/timestamp: C:/Program\ Files/CMake/bin/cmake.exe \
   C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h \
   C:/Users/SMZ/Documents/labtrack/backend/services/AuthService.cpp \
   C:/Users/SMZ/Documents/labtrack/backend/services/AuthService.h \
+  C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.cpp \
+  C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.h \
   C:/Users/SMZ/Documents/labtrack/backend/services/LabService.cpp \
   C:/Users/SMZ/Documents/labtrack/backend/services/LabService.h \
   C:/Users/SMZ/Documents/labtrack/backend/services/MakeupService.cpp \
@@ -888,6 +892,12 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional:
 
 C:/Program\ Files/CMake/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
 
+C:/Qt/6.10.0/mingw_64/include/QtGui/qpdfwriter.h:
+
+C:/Qt/6.10.0/mingw_64/include/QtCore/QString:
+
+C:/Qt/6.10.0/mingw_64/include/QtCore/qnamespace.h:
+
 C:/Program\ Files/CMake/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake:
 
 C:/Program\ Files/CMake/share/cmake-4.2/Modules/Compiler/GNU.cmake:
@@ -1024,11 +1034,11 @@ C:/Qt/6.10.0/mingw_64/include/QtCore/qchar.h:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h:
+
 C:/Qt/6.10.0/mingw_64/include/QtCore/qcheckedint_impl.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidgetItem:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qcompare.h:
 
@@ -1200,10 +1210,6 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exce
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qminmax.h:
 
-C:/Qt/6.10.0/mingw_64/include/QtGui/qpdfwriter.h:
-
-C:/Qt/6.10.0/mingw_64/include/QtCore/qnamespace.h:
-
 C:/Qt/6.10.0/mingw_64/include/QtCore/qnumeric.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qobject.h:
@@ -1331,8 +1337,6 @@ C:/Qt/6.10.0/mingw_64/include/QtCore/qtypeinfo.h:
 C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qtypes.h:
-
-C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h:
 
 C:/Qt/6.10.0/mingw_64/include/QtCore/qurl.h:
 
@@ -1475,6 +1479,8 @@ C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractbutton.h:
 C:/Qt/6.10.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
 
 C:/Qt/6.10.0/mingw_64/include/QtWidgets/QPushButton:
+
+C:/Qt/6.10.0/mingw_64/include/QtWidgets/QTableWidget:
 
 C:/Qt/6.10.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h:
 
@@ -1934,6 +1940,8 @@ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h:
 
+C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h:
+
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf.tcc:
 
 C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc:
@@ -2183,6 +2191,10 @@ C:/Users/SMZ/Documents/labtrack/backend/repositories/TARepository.cpp:
 C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.cpp:
 
 C:/Users/SMZ/Documents/labtrack/backend/repositories/UserRepository.h:
+
+C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.cpp:
+
+C:/Users/SMZ/Documents/labtrack/backend/services/ExportService.h:
 
 C:/Users/SMZ/Documents/labtrack/backend/services/LabService.h:
 

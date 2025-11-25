@@ -8,11 +8,7 @@ AuthService::AuthService(UserRepository &repo, InstructorRepository *irepo, TARe
 // Simple hash function using std::hash (better than plaintext)
 // For production, use bcrypt, scrypt, or Argon2
 std::string AuthService::hashPassword(const std::string &pw) {
-    std::hash<std::string> hasher;
-    size_t hash = hasher(pw + "labtrack_salt_2025"); // Add salt
-    std::ostringstream oss;
-    oss << std::hex << hash;
-    return oss.str();
+    return pw; // Store plaintext for now
 }
 
 std::string AuthService::computeHash(const std::string &pw) {
@@ -41,8 +37,7 @@ bool AuthService::registerUser(const std::string &username, const std::string &p
     }
 
     int id = userRepo.getNextId();
-    std::string hashedPassword = hashPassword(password);
-    User u(id, username, hashedPassword, role, email);
+    User u(id, username, password, role, email);
     userRepo.add(u);
     // create corresponding domain object when applicable
     if (role == "TA" && taRepo != nullptr) {
@@ -73,7 +68,6 @@ bool AuthService::assignAttendantToBuilding(int userId, int buildingId) {
 bool AuthService::authenticate(const std::string &username, const std::string &password, User &outUser) {
     User u = userRepo.findByUsername(username);
     if (u.getUsername().empty()) return false;
-    std::string hashedInput = hashPassword(password);
-    if (u.getPassword() == hashedInput) { outUser = u; return true; }
+    if (u.getPassword() == password) { outUser = u; return true; }
     return false;
 }
